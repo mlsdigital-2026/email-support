@@ -18,83 +18,75 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur-lg">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
         {/* Logo */}
 
-    <Link href="/" className="flex items-center">
-  <Image
-    src="/logo.png"
-    alt="SBC Mail Me"
-    width={140}
-    height={50}
-    className="object-contain"
-  />
-</Link>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="SBCMailMe"
+            width={170}
+            height={55}
+            priority
+            className="object-contain"
+          />
+        </Link>
 
-          {/* <div>
-            <h1 className="text-lg font-bold text-slate-900">
-              Email Support
-            </h1>
+        {/* Desktop Navigation */}
 
-            <p className="text-xs text-slate-500">
-              Help & Recovery Guides
-            </p>
-          </div>
-        </Link> */}
-
-        {/* Desktop */}
-
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-10 lg:flex">
           {navLinks.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="font-medium text-slate-700 transition hover:text-blue-600"
+              className="font-medium text-slate-700 transition-colors duration-200 hover:text-blue-600"
             >
               {item.name}
             </Link>
           ))}
         </nav>
 
-        {/* Right */}
+        {/* Right Side */}
 
         <div className="hidden items-center gap-4 lg:flex">
 
-          <button className="rounded-xl bg-slate-100 p-3 transition hover:bg-slate-200">
-            <Search size={18} />
+          <button className="rounded-xl bg-slate-100 p-3 text-slate-700 transition hover:bg-blue-50 hover:text-blue-600">
+            <Search size={19} />
           </button>
 
           <Link
             href="/contact"
-            className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700"
           >
             Get Help
           </Link>
+
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Button */}
 
         <button
-          className="lg:hidden"
+          className="text-slate-700 lg:hidden"
           onClick={() => setOpen(!open)}
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
-
       </div>
 
+      {/* Mobile Menu */}
+
       {open && (
-        <div className="border-t bg-white lg:hidden">
-          <div className="flex flex-col p-6">
+        <div className="border-t border-slate-100 bg-white shadow-lg lg:hidden">
+          <div className="flex flex-col px-6 py-5">
 
             {navLinks.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="py-3"
                 onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 font-medium text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
               >
                 {item.name}
               </Link>
@@ -102,7 +94,8 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className="mt-4 rounded-xl bg-blue-600 py-3 text-center font-semibold text-white"
+              onClick={() => setOpen(false)}
+              className="mt-4 rounded-xl bg-blue-600 py-3 text-center font-semibold text-white transition hover:bg-blue-700"
             >
               Get Help
             </Link>

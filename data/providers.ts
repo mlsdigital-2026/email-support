@@ -1,50 +1,50 @@
 export const providers = [
   {
     id: 1,
-    slug: "gmail",
-    name: "Gmail",
+    slug: "account-recovery",
+    name: "Account Recovery",
     image: "/images/provider-gmail.png",
     description:
-      "Learn about Gmail account recovery, password reset, login help, and security tips.",
+      "Learn how to regain access to your email account using official recovery methods.",
   },
   {
     id: 2,
-    slug: "outlook",
-    name: "Outlook",
+    slug: "password-reset",
+    name: "Password Reset",
     image: "/images/provider-outlook.png",
     description:
-      "Helpful guides for Outlook sign in, password recovery, and account protection.",
+      "Educational guides for resetting your email password safely.",
   },
   {
     id: 3,
-    slug: "yahoo",
-    name: "Yahoo Mail",
+    slug: "login-help",
+    name: "Login Help",
     image: "/images/provider-yahoo.png",
     description:
-      "Educational resources covering Yahoo Mail login, password reset, and recovery.",
+      "Troubleshoot common email sign-in and authentication issues.",
   },
   {
     id: 4,
-    slug: "aol",
-    name: "AOL Mail",
+    slug: "email-security",
+    name: "Email Security",
     image: "/images/provider-aol.png",
     description:
-      "Find AOL Mail recovery guides and account security information.",
+      "Learn best practices to protect your email account from unauthorized access.",
   },
   {
     id: 5,
-    slug: "icloud",
-    name: "iCloud Mail",
+    slug: "account-settings",
+    name: "Account Settings",
     image: "/images/provider-icloud.png",
     description:
-      "Learn how iCloud Mail account recovery and security features work.",
+      "Understand common email account settings and configuration options.",
   },
   {
     id: 6,
-    slug: "sbcglobal",
-    name: "SBCGlobal",
+    slug: "email-guides",
+    name: "Email Guides",
     image: "/images/provider-sbcglobal.png",
     description:
-      "Educational help for SBCGlobal email login and account recovery.",
+      "Helpful educational resources covering common email account topics.",
   },
 ];

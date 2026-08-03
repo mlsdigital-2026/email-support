@@ -44,25 +44,29 @@ export default function ContactPage() {
 
           <div>
 
-            <div className="mb-8 flex items-center gap-4 rounded-2xl border p-6">
-              <Mail className="text-blue-600" size={30} />
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-slate-600">
-                  support@emailsupport.com
-                </p>
-              </div>
-            </div>
+          <a
+  href="mailto:info@sbcmailme.com"
+  className="flex items-center gap-5 rounded-3xl border border-slate-300 p-8 transition hover:border-blue-600 hover:bg-blue-50"
+>
+  <Mail className="text-blue-600" size={34} />
 
-            <div className="mb-8 flex items-center gap-4 rounded-2xl border p-6">
-              <Phone className="text-blue-600" size={30} />
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <p className="text-slate-600">
-                  +1 (800) 123-4567
-                </p>
-              </div>
-            </div>
+  <div>
+    <h3 className="text-2xl font-semibold text-slate-900">Email</h3>
+    <p className="text-slate-600">info@sbcmailme.com</p>
+  </div>
+</a>
+
+          <a
+  href="tel:+18001234567"
+  className="flex items-center gap-5 rounded-3xl border border-slate-300 p-8 transition hover:border-blue-600 hover:bg-blue-50"
+>
+  <Phone className="text-blue-600" size={34} />
+
+  <div>
+    <h3 className="text-2xl font-semibold text-slate-900">Phone</h3>
+    <p className="text-slate-600">+1 (800) 123-4567</p>
+  </div>
+</a>
 
             <div className="flex items-center gap-4 rounded-2xl border p-6">
               <MapPin className="text-blue-600" size={30} />

@@ -39,22 +39,22 @@ const services = [
   },
 ];
 
-const providers = [
+const resources = [
   {
-    name: "Gmail",
-    href: "/providers/gmail",
+    name: "Latest Articles",
+    href: "/blog",
   },
   {
-    name: "Outlook",
-    href: "/providers/outlook",
+    name: "FAQs",
+    href: "/faq",
   },
   {
-    name: "Yahoo Mail",
-    href: "/providers/yahoo-mail",
+    name: "Support Center",
+    href: "/services",
   },
   {
-    name: "AOL Mail",
-    href: "/providers/aol-mail",
+    name: "Contact Support",
+    href: "/contact",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Mail size={18} />
-                support@example.com
+                info@sbcmailme.com
               </div>
 
               <div className="flex items-center gap-3">
@@ -174,23 +174,21 @@ export default function Footer() {
           <div>
 
             <h3 className="mb-6 text-xl font-semibold text-white">
-              Email Providers
+              Resources
             </h3>
 
             <ul className="space-y-4">
 
-              {providers.map((item) => (
-
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="transition hover:text-blue-400"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-
-              ))}
+              {resources.map((item) => (
+  <li key={item.name}>
+    <Link
+      href={item.href}
+      className="transition hover:text-blue-400"
+    >
+      {item.name}
+    </Link>
+  </li>
+))}
 
             </ul>
 

@@ -31,8 +31,8 @@ export default function Hero() {
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
               Find easy-to-follow resources for password reset, login issues,
-              account recovery, email security, and provider-specific help for
-              Gmail, Outlook, Yahoo, AOL, SBCGlobal, and more.
+account recovery, email security, and general email troubleshooting
+for a wide range of email services.
             </p>
 
             {/* Buttons */}
@@ -74,7 +74,7 @@ export default function Hero() {
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-600" />
                 <span className="text-slate-700">
-                  Multiple Email Providers
+                 Multiple Email Services
                 </span>
               </div>
 
@@ -150,7 +150,7 @@ export default function Hero() {
 
             <div>
               <h3 className="text-3xl font-bold text-blue-600">6+</h3>
-              <p className="text-slate-600">Popular Providers</p>
+              <p className="text-slate-600">Multiple Email Services</p>
             </div>
 
             <div>
