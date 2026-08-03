@@ -1,14 +1,97 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
 import CTA from "@/components/home/CTA";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+} from "lucide-react";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setSuccess("");
+    setError("");
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    ) {
+      setError("Please fill in all required fields.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message);
+      }
+
+      setSuccess("Your message has been sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (err: any) {
+      setError(
+        err.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="bg-white pt-20">
 
       {/* Hero */}
 
-      <section className="bg-gradient-to-b from-blue-50 to-white py-24">
+      <section className="bg-gradient-to-b from-blue-50 via-white to-white py-24">
 
         <div className="mx-auto max-w-6xl px-6 text-center">
 
@@ -16,12 +99,14 @@ export default function ContactPage() {
             Contact Us
           </span>
 
-          <h1 className="mt-6 text-5xl font-bold">
-            We're Here to Help
+          <h1 className="mt-6 text-5xl font-bold text-slate-900 lg:text-6xl">
+            We'd Love to Hear From You
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
-            Have questions about our educational resources? Reach out using the information below.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            Have questions about our educational resources, account recovery
+            guides, or password assistance? Fill out the form below and we'll
+            get back to you as soon as possible.
           </p>
 
         </div>
@@ -30,59 +115,183 @@ export default function ContactPage() {
 
       {/* Contact Section */}
 
-      <section className="py-24">
+      <section className="py-20">
 
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 lg:grid-cols-2">
 
-          <Image
-            src="/images/contact.png"
-            alt="Contact"
-            width={550}
-            height={450}
-            className="mx-auto"
-          />
+          {/* Left Side */}
 
           <div>
 
-          <a
-  href="mailto:info@sbcmailme.com"
-  className="flex items-center gap-5 rounded-3xl border border-slate-300 p-8 transition hover:border-blue-600 hover:bg-blue-50"
->
-  <Mail className="text-blue-600" size={34} />
-
-  <div>
-    <h3 className="text-2xl font-semibold text-slate-900">Email</h3>
-    <p className="text-slate-600">info@sbcmailme.com</p>
-  </div>
-</a>
-
-          <a
-  href="tel:+18001234567"
-  className="flex items-center gap-5 rounded-3xl border border-slate-300 p-8 transition hover:border-blue-600 hover:bg-blue-50"
->
-  <Phone className="text-blue-600" size={34} />
-
-  <div>
-    <h3 className="text-2xl font-semibold text-slate-900">Phone</h3>
-    <p className="text-slate-600">+1 (800) 123-4567</p>
-  </div>
-</a>
-
-            <div className="flex items-center gap-4 rounded-2xl border p-6">
-              <MapPin className="text-blue-600" size={30} />
-              <div>
-                <h3 className="font-semibold">Address</h3>
-                <p className="text-slate-600">
-                  New York, United States
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/images/contact.png"
+              alt="Contact Support"
+              width={600}
+              height={550}
+              className="mx-auto"
+              priority
+            />
 
           </div>
 
+          {/* Right Side */}
+          <div className="space-y-8">
+
+  <div>
+    <h2 className="text-3xl font-bold text-slate-900">
+      Send us a Message
+    </h2>
+
+    <p className="mt-3 text-slate-600">
+      Complete the form below and our support team will respond as soon as possible.
+    </p>
+  </div>
+
+  <form
+    onSubmit={handleSubmit}
+    className="space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg"
+  >
+    <input
+      type="text"
+      name="name"
+      placeholder="Full Name *"
+      value={formData.name}
+      onChange={handleChange}
+      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+    />
+
+    <input
+      type="email"
+      name="email"
+      placeholder="Email Address *"
+      value={formData.email}
+      onChange={handleChange}
+      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+    />
+
+    <input
+      type="text"
+      name="phone"
+      placeholder="Phone Number"
+      value={formData.phone}
+      onChange={handleChange}
+      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+    />
+
+    <input
+      type="text"
+      name="subject"
+      placeholder="Subject *"
+      value={formData.subject}
+      onChange={handleChange}
+      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+    />
+
+    <textarea
+      rows={6}
+      name="message"
+      placeholder="Write your message..."
+      value={formData.message}
+      onChange={handleChange}
+      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+    />
+
+    {success && (
+      <div className="rounded-xl border border-green-300 bg-green-50 p-4 text-green-700">
+        {success}
+      </div>
+    )}
+
+    {error && (
+      <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-700">
+        {error}
+      </div>
+    )}
+
+    <button
+      type="submit"
+      disabled={loading}
+      className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      <Send size={18} />
+      {loading ? "Sending..." : "Send Message"}
+    </button>
+  </form>
+
+  <div className="grid gap-5">
+
+    <a
+      href="mailto:info@sbcmailme.com"
+      className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5 transition hover:border-blue-600 hover:bg-blue-50"
+    >
+      <Mail className="text-blue-600" size={28} />
+
+      <div>
+        <h3 className="font-semibold text-slate-900">
+          Email
+        </h3>
+
+        <p className="text-slate-600">
+          info@sbcmailme.com
+        </p>
+      </div>
+    </a>
+
+    <a
+      href="tel:+18001234567"
+      className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5 transition hover:border-blue-600 hover:bg-blue-50"
+    >
+      <Phone className="text-blue-600" size={28} />
+
+      <div>
+        <h3 className="font-semibold text-slate-900">
+          Phone
+        </h3>
+
+        <p className="text-slate-600">
+          +1 (800) 123-4567
+        </p>
+      </div>
+    </a>
+
+    <div className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5">
+      <MapPin className="text-blue-600" size={28} />
+
+      <div>
+        <h3 className="font-semibold text-slate-900">
+          Address
+        </h3>
+
+        <p className="text-slate-600">
+          New York, United States
+        </p>
+      </div>
+    </div>
+
+    <div className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5">
+      <Clock className="text-blue-600" size={28} />
+
+      <div>
+        <h3 className="font-semibold text-slate-900">
+          Business Hours
+        </h3>
+
+        <p className="text-slate-600">
+          Monday – Friday
+          <br />
+          9:00 AM – 6:00 PM
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
         </div>
 
       </section>
+
+      {/* CTA Section */}
 
       <CTA />
 
