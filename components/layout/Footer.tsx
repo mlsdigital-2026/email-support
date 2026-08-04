@@ -68,52 +68,28 @@ export default function Footer() {
 
           {/* Brand */}
 
-          <div>
+         {/* Disclaimer */}
 
-            <div className="flex items-center gap-3">
+<div>
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-xl font-bold text-white">
-                E
-              </div>
+  <h2 className="text-2xl font-bold text-white">
+    Disclaimer
+  </h2>
 
-              <div>
-                <h2 className="text-xl font-bold text-white">
-                  Email Recovery Guides
-                </h2>
+  <p className="mt-6 leading-8 text-slate-300">
+    SBC Mail Me is an independent third-party provider of email account
+    recovery, password recovery, troubleshooting, and technical guidance.
+    We are not affiliated with, authorized by, endorsed by, or sponsored
+    by any email service provider or brand.
+  </p>
 
-                <p className="text-sm text-slate-400">
-                  Educational Resources
-                </p>
+  <p className="mt-6 leading-8 text-slate-400">
+    All trademarks, logos, brand names, and product names are the property
+    of their respective owners and are used solely for identification
+    purposes.
+  </p>
 
-              </div>
-
-            </div>
-
-            <p className="mt-6 leading-8">
-              Helpful educational guides covering email account recovery,
-              password reset, login issues, and security best practices.
-            </p>
-
-            <div className="mt-8 space-y-3">
-
-              <div className="flex items-center gap-3">
-                <Mail size={18} />
-                info@sbcmailme.com
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone size={18} />
-                8555290095
-              </div>
-
-              <div className="flex items-center gap-3">
-                <MapPin size={18} />
-                United States
-              </div>
-
-            </div>
-
-          </div>
+</div>
 
           {/* Quick Links */}
 
@@ -204,9 +180,13 @@ export default function Footer() {
 
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-8 md:flex-row">
 
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Email Recovery Guides. All rights reserved.
-          </p>
+         <p className="text-sm text-slate-400">
+  © {new Date().getFullYear()}{" "}
+  <Link href="/" className="hover:text-blue-400">
+    SBCMailMe.com
+  </Link>
+  . All rights reserved.
+</p>
 
           <div className="flex gap-5">
 
@@ -241,7 +221,13 @@ export default function Footer() {
               href="/terms"
               className="hover:text-blue-400"
             >
-              Terms of Service
+              Terms & Conditions
+            </Link>
+             <Link
+              href="/refund-policy"
+              className="hover:text-blue-400"
+            >
+              Refund Policy
             </Link>
 
           </div>
