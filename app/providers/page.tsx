@@ -4,10 +4,10 @@ import CTA from "@/components/home/CTA";
 
 export default function ProvidersPage() {
   return (
-    <main className="bg-white pt-20">
+    <main className="bg-white ">
       <ProvidersHero />
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6">
         <ProvidersGrid />
       </section>
 

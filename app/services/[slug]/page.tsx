@@ -30,11 +30,11 @@ export default async function ServiceDetail({ params }: Props) {
     serviceContent[slug as keyof typeof serviceContent];
 
   return (
-    <main className="bg-white">
+    <main className="bg-white py-20">
 
       {/* Hero */}
 
-      <section className="bg-slate-50 py-20">
+      <section className="bg-slate-50">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
 
           <div>

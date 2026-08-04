@@ -1,8 +1,8 @@
 export default function ServicesHero() {
   return (
-    <section className="bg-gradient-to-b from-blue-50 to-white py-24">
+    <section className="bg-gradient-to-b from-blue-50 to-white ">
 
-      <div className="mx-auto max-w-5xl px-6 text-center">
+      <div className="mx-auto max-w-5xl px-6 text-center py-20">
 
         <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
           Our Services
