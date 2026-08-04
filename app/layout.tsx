@@ -4,6 +4,7 @@ import "./globals.css";
 import LiveChat from "@/components/layout/LiveChat";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sbcmailme.com"),
@@ -106,15 +107,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white text-slate-900">
-        <Navbar />
+   <body className="antialiased bg-white text-slate-900">
 
-        <main>{children}</main>
+  {/* Google Analytics + Google Ads */}
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-18YL7M74QY"
+    strategy="afterInteractive"
+  />
 
-        <Footer />
+  <Script id="google-tag" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        <LiveChat />
-      </body>
+      // Google Analytics 4
+      gtag('config', 'G-18YL7M74QY');
+
+      // Google Ads
+      gtag('config', 'AW-18372150847');
+    `}
+  </Script>
+
+  <Navbar />
+
+  <main>{children}</main>
+
+  <Footer />
+
+  <LiveChat />
+</body>
     </html>
   );
 }
