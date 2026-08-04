@@ -1,10 +1,10 @@
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaXTwitter,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa6";
+// import {
+//   FaFacebookF,
+//   FaXTwitter,
+//   FaLinkedinIn,
+//   FaGithub,
+// } from "react-icons/fa6";
 import {
   Mail,
   Phone,
@@ -190,7 +190,7 @@ export default function Footer() {
 
           <div className="flex gap-5">
 
-            <Link href="#" className="hover:text-blue-400">
+            {/* <Link href="#" className="hover:text-blue-400">
               <FaFacebookF size={20} />
             </Link>
 
@@ -204,7 +204,7 @@ export default function Footer() {
 
             <Link href="#" className="hover:text-blue-400">
               <FaGithub size={20} />
-            </Link>
+            </Link> */}
 
           </div>
 

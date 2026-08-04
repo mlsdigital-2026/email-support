@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import CTA from "@/components/home/CTA";
 import {
   Mail,
@@ -88,13 +87,10 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white pt-20">
-
       {/* Hero */}
 
       <section className="bg-gradient-to-b from-blue-50 via-white to-white py-24">
-
         <div className="mx-auto max-w-6xl px-6 text-center">
-
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             Contact Us
           </span>
@@ -108,193 +104,100 @@ export default function ContactPage() {
             guides, or password assistance? Fill out the form below and we'll
             get back to you as soon as possible.
           </p>
-
         </div>
-
       </section>
 
       {/* Contact Section */}
 
-      <section className="py-20">
+    {/* Contact Section */}
 
-        <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 lg:grid-cols-2">
+<section className="py-20">
+  <div className="mx-auto max-w-3xl px-6">
 
-          {/* Left Side */}
+    <div className="mb-8 text-center">
+      <h2 className="text-3xl font-bold text-slate-900">
+        Send us a Message
+      </h2>
 
-          <div>
-
-            <Image
-              src="/images/contact.png"
-              alt="Contact Us"
-              width={600}
-              height={550}
-              className="mx-auto"
-              priority
-            />
-
-          </div>
-
-          {/* Right Side */}
-          <div className="space-y-8">
-
-  <div>
-    <h2 className="text-3xl font-bold text-slate-900">
-      Send us a Message
-    </h2>
-
-    <p className="mt-3 text-slate-600">
-      Complete the form below and our  team will respond as soon as possible.
-    </p>
-  </div>
-
-  <form
-    onSubmit={handleSubmit}
-    className="space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg"
-  >
-    <input
-      type="text"
-      name="name"
-      placeholder="Full Name *"
-      value={formData.name}
-      onChange={handleChange}
-      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
-    />
-
-    <input
-      type="email"
-      name="email"
-      placeholder="Email Address *"
-      value={formData.email}
-      onChange={handleChange}
-      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
-    />
-
-    <input
-      type="text"
-      name="phone"
-      placeholder="Phone Number"
-      value={formData.phone}
-      onChange={handleChange}
-      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
-    />
-
-    <input
-      type="text"
-      name="subject"
-      placeholder="Subject *"
-      value={formData.subject}
-      onChange={handleChange}
-      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
-    />
-
-    <textarea
-      rows={6}
-      name="message"
-      placeholder="Write your message..."
-      value={formData.message}
-      onChange={handleChange}
-      className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
-    />
-
-    {success && (
-      <div className="rounded-xl border border-green-300 bg-green-50 p-4 text-green-700">
-        {success}
-      </div>
-    )}
-
-    {error && (
-      <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-700">
-        {error}
-      </div>
-    )}
-
-    <button
-      type="submit"
-      disabled={loading}
-      className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
-    >
-      <Send size={18} />
-      {loading ? "Sending..." : "Send Message"}
-    </button>
-  </form>
-
-  <div className="grid gap-5">
-
-    <a
-      href="mailto:info@sbcmailme.com"
-      className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5 transition hover:border-blue-600 hover:bg-blue-50"
-    >
-      <Mail className="text-blue-600" size={28} />
-
-      <div>
-        <h3 className="font-semibold text-slate-900">
-          Email
-        </h3>
-
-        <p className="text-slate-600">
-          info@sbcmailme.com
-        </p>
-      </div>
-    </a>
-
-    <a
-      href="tel:+18001234567"
-      className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5 transition hover:border-blue-600 hover:bg-blue-50"
-    >
-      <Phone className="text-blue-600" size={28} />
-
-      <div>
-        <h3 className="font-semibold text-slate-900">
-          Phone
-        </h3>
-
-        <p className="text-slate-600">
-          8555290095
-        </p>
-      </div>
-    </a>
-
-    <div className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5">
-      <MapPin className="text-blue-600" size={28} />
-
-      <div>
-        <h3 className="font-semibold text-slate-900">
-          Address
-        </h3>
-
-        <p className="text-slate-600">
-          New York, United States
-        </p>
-      </div>
+      <p className="mt-3 text-slate-600">
+        Complete the form below and our team will respond as soon as possible.
+      </p>
     </div>
 
-    <div className="flex items-center gap-4 rounded-2xl border border-slate-200 p-5">
-      <Clock className="text-blue-600" size={28} />
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-lg"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Full Name *"
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+      />
 
-      <div>
-        <h3 className="font-semibold text-slate-900">
-          Business Hours
-        </h3>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address *"
+        value={formData.email}
+        onChange={handleChange}
+        className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+      />
 
-        <p className="text-slate-600">
-          Monday – Friday
-          <br />
-          9:00 AM – 6:00 PM
-        </p>
-      </div>
-    </div>
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        value={formData.phone}
+        onChange={handleChange}
+        className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+      />
 
-  </div>
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject *"
+        value={formData.subject}
+        onChange={handleChange}
+        className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+      />
 
-</div>
+      <textarea
+        rows={6}
+        name="message"
+        placeholder="Write your message..."
+        value={formData.message}
+        onChange={handleChange}
+        className="w-full rounded-xl border border-slate-300 px-5 py-4 outline-none transition focus:border-blue-600"
+      />
+
+      {success && (
+        <div className="rounded-xl border border-green-300 bg-green-50 p-4 text-green-700">
+          {success}
         </div>
+      )}
 
-      </section>
+      {error && (
+        <div className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-700">
+          {error}
+        </div>
+      )}
 
-      {/* CTA Section */}
+      <button
+        type="submit"
+        disabled={loading}
+        className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        <Send size={18} />
+        {loading ? "Sending..." : "Send Message"}
+      </button>
+    </form>
 
+  </div>
+</section>
       <CTA />
-
     </main>
   );
 }
