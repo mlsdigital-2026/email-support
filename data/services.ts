@@ -1,34 +1,50 @@
 export const services = [
   {
     id: 1,
-    title: "Account Recovery",
     slug: "account-recovery",
-    image: "/images/account-recovery.png",
+    title: "Account Recovery",
     description:
-      "Guidance for recovering access to your email account using official recovery methods.",
+      "Educational guides explaining account recovery options for popular email providers.",
+    image: "/images/service-account.png",
   },
   {
     id: 2,
-    title: "Password Reset",
     slug: "password-reset",
-    image: "/images/password-reset.png",
+    title: "Password Reset",
     description:
-      "Learn how to reset your email password safely and regain access to your account.",
+      "Learn the typical password reset process and best practices for securing your account.",
+    image: "/images/service-password.png",
   },
   {
     id: 3,
-    title: "Login Help",
-    slug: "login-help",
-    image: "/images/login-help.png",
+    slug: "forgot-password",
+    title: "Forgot My Password",
     description:
-      "Troubleshoot common email login issues and understand available recovery options.",
+      "Helpful information about recovering access after forgetting your email password.",
+    image: "/images/service-forgot.png",
   },
   {
     id: 4,
-    title: "Email Security",
-    slug: "email-security",
-    image: "/images/email-security.png",
+    slug: "login-help",
+    title: "Email Login Help",
     description:
-      "Best practices to improve your account security and help protect against unauthorized access.",
+      "Understand common login issues and the official recovery options available.",
+    image: "/images/service-login.png",
+  },
+  {
+    id: 5,
+    slug: "email-security",
+    title: "Email Security",
+    description:
+      "Security tips, account protection guidance, and best practices.",
+    image: "/images/service-security.png",
+  },
+  {
+    id: 6,
+    slug: "email",
+    title: "Email Help",
+    description:
+      "Educational Gmail account recovery and password guidance.",
+    image: "/images/service-gmail.png",
   },
 ];
