@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import BlogCard from "./BlogCard";
-import { Blog } from "@/data/blog/types";
+import { Blog } from "@/data/blog/type";
 
 interface Props {
   blogs: Blog[];
