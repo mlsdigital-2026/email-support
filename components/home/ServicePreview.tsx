@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/data/services";
+
 import ServiceCard from "@/components/services/ServiceCard";
 
 export default function ServicePreview() {
