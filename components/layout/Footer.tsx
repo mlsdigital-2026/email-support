@@ -48,12 +48,12 @@ const resources = [
     name: "FAQs",
     href: "/faq",
   },
+  // {
+  //   name: "Support Center",
+  //   href: "/services",
+  // },
   {
-    name: "Support Center",
-    href: "/services",
-  },
-  {
-    name: "Contact Support",
+    name: "Contact Us",
     href: "/contact",
   },
 ];
@@ -78,7 +78,7 @@ export default function Footer() {
 
               <div>
                 <h2 className="text-xl font-bold text-white">
-                  Email Support
+                  Email Recovery Guides
                 </h2>
 
                 <p className="text-sm text-slate-400">
@@ -103,7 +103,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Phone size={18} />
-                +1 (000) 000-0000
+                8555290095
               </div>
 
               <div className="flex items-center gap-3">
@@ -205,7 +205,7 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-8 md:flex-row">
 
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Email Support Portal. All rights reserved.
+            © {new Date().getFullYear()} Email Recovery Guides. All rights reserved.
           </p>
 
           <div className="flex gap-5">

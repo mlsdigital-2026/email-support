@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 interface Blog {
   id: number;
@@ -14,44 +14,58 @@ interface Blog {
 
 export default function BlogCard({ blog }: { blog: Blog }) {
   return (
-    <div className="overflow-hidden rounded-3xl border bg-white shadow-sm hover:shadow-xl transition">
+    <article className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
 
-      <Image
-        src={blog.image}
-        alt={blog.title}
-        width={500}
-        height={300}
-        className="w-full"
-      />
+      {/* Blog Image */}
 
-      <div className="p-6">
+      <div className="overflow-hidden">
 
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700">
-          {blog.category}
-        </span>
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          width={600}
+          height={360}
+          className="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+        />
 
-        <h3 className="mt-4 text-2xl font-bold">
+      </div>
+
+      {/* Content */}
+
+      <div className="p-7">
+
+        <div className="flex items-center justify-between">
+
+          <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
+            {blog.category}
+          </span>
+
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <Calendar size={15} />
+            {blog.date}
+          </div>
+
+        </div>
+
+        <h3 className="mt-5 text-2xl font-bold leading-snug text-slate-900 transition group-hover:text-blue-600">
           {blog.title}
         </h3>
 
-        <p className="mt-4 text-slate-600">
+        <p className="mt-4 leading-7 text-slate-600">
           {blog.description}
-        </p>
-
-        <p className="mt-4 text-sm text-slate-500">
-          {blog.date}
         </p>
 
         <Link
           href={`/blog/${blog.slug}`}
-          className="mt-6 inline-flex items-center font-semibold text-blue-600"
+          className="mt-8 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:gap-3"
         >
-          Read More
-          <ArrowRight className="ml-2 h-5 w-5" />
+          Read Article
+
+          <ArrowRight size={18} />
         </Link>
 
       </div>
 
-    </div>
+    </article>
   );
 }

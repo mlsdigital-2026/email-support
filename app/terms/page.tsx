@@ -18,7 +18,7 @@ export default function TermsPage() {
           <h2>Educational Purpose</h2>
           <p>
             This website provides educational information related to email
-            account recovery, password assistance, login troubleshooting, and
+            account recovery, password assistance, and
             security awareness.
           </p>
 
@@ -31,7 +31,7 @@ export default function TermsPage() {
           <h2>Use of Content</h2>
           <p>
             The information provided is for educational purposes only and should
-            not replace official support documentation.
+            not replace official  documentation.
           </p>
 
           <h2>Limitation of Liability</h2>

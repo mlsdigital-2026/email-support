@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
               Our website provides educational guidance to help you understand
-              account recovery, password reset, login troubleshooting, and email
+              account recovery, password reset, login, and email
               security for popular email providers.
             </p>
 

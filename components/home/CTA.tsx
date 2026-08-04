@@ -25,7 +25,7 @@ export default function CTA() {
 
               <p className="mt-6 text-lg leading-8 text-blue-100">
                 Browse our educational resources covering account recovery,
-                password reset, login troubleshooting, and email security for
+                password reset, login and email security for
                 popular email providers.
               </p>
 
@@ -57,7 +57,7 @@ export default function CTA() {
 
               <Image
                 src="/images/cta-support.png"
-                alt="Email Support"
+                alt="Email Recovery Guidance"
                 width={550}
                 height={450}
                 className="w-full max-w-lg"

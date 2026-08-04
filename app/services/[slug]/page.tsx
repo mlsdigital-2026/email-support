@@ -40,7 +40,7 @@ export default async function ServiceDetail({ params }: Props) {
           <div>
 
             <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-              Email Support Guide
+              Email Recovery Guide
             </span>
 
             <h1 className="mt-6 text-5xl font-bold text-slate-900">
@@ -55,7 +55,7 @@ export default async function ServiceDetail({ params }: Props) {
               href="/contact"
               className="mt-8 inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
             >
-              Contact Support
+              Contact 
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
 

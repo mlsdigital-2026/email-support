@@ -20,7 +20,7 @@ export default async function BlogDetail({ params }: Props) {
   }
 
   return (
-    <main className="bg-white pt-20">
+    <main className="bg-white">
 
       {/* Hero */}
 
@@ -32,11 +32,11 @@ export default async function BlogDetail({ params }: Props) {
             {blog.category}
           </span>
 
-          <h1 className="mt-6 text-5xl font-bold text-slate-900">
+          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
             {blog.title}
           </h1>
 
-          <p className="mt-6 text-slate-500">
+          <p className="mt-5 text-slate-500">
             {blog.date}
           </p>
 
@@ -46,16 +46,17 @@ export default async function BlogDetail({ params }: Props) {
 
       {/* Featured Image */}
 
-      <section className="py-12">
+      <section className="pb-10">
 
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-6xl px-6">
 
           <Image
             src={blog.image}
             alt={blog.title}
-            width={1000}
-            height={550}
-            className="rounded-3xl"
+            width={1200}
+            height={650}
+            className="w-full rounded-3xl object-cover"
+            priority
           />
 
         </div>
@@ -66,20 +67,43 @@ export default async function BlogDetail({ params }: Props) {
 
       <section className="pb-20">
 
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-4xl px-6">
 
-          {blog.content.map((paragraph: string, index: number) => (
+          {blog.content.map((paragraph, index) => (
+
             <p
               key={index}
               className="mb-8 text-lg leading-9 text-slate-700"
             >
               {paragraph}
             </p>
+
           ))}
+
+          <div className="mt-16 rounded-3xl bg-blue-50 p-8">
+
+            <h3 className="text-2xl font-bold text-slate-900">
+              Need More Email Help?
+            </h3>
+
+            <p className="mt-4 text-slate-600">
+              Browse our email recovery guides, password reset tutorials,
+              account security resources, and provider-specific support
+              articles.
+            </p>
+
+            <Link
+              href="/services"
+              className="mt-6 inline-flex rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+            >
+              Explore Services
+            </Link>
+
+          </div>
 
           <Link
             href="/blog"
-            className="mt-12 inline-flex items-center font-semibold text-blue-600"
+            className="mt-12 inline-flex items-center font-semibold text-blue-600 hover:text-blue-700"
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
             Back to Blog

@@ -13,7 +13,7 @@ export default function Providers() {
         <div className="mx-auto mb-16 max-w-3xl text-center">
 
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Supported Providers
+            Guidance Providers
           </span>
 
           <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">

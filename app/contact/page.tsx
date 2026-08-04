@@ -125,7 +125,7 @@ export default function ContactPage() {
 
             <Image
               src="/images/contact.png"
-              alt="Contact Support"
+              alt="Contact Us"
               width={600}
               height={550}
               className="mx-auto"
@@ -143,7 +143,7 @@ export default function ContactPage() {
     </h2>
 
     <p className="mt-3 text-slate-600">
-      Complete the form below and our support team will respond as soon as possible.
+      Complete the form below and our  team will respond as soon as possible.
     </p>
   </div>
 
@@ -249,7 +249,7 @@ export default function ContactPage() {
         </h3>
 
         <p className="text-slate-600">
-          +1 (800) 123-4567
+          8555290095
         </p>
       </div>
     </a>

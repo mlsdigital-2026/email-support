@@ -41,7 +41,7 @@ export default function FAQ() {
 
             <Image
               src="/images/faq-support.png"
-              alt="FAQ Support"
+              alt="FAQ "
               width={550}
               height={550}
               className="w-full max-w-lg"
