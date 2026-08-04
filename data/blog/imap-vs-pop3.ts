@@ -1,4 +1,4 @@
-import { Blog } from "./types";
+import { Blog } from "./type";
 
 export const imapVsPop3Blog: Blog = {
   id: 2,
