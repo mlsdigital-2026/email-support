@@ -40,19 +40,19 @@ export default function Hero() {
             {/* Buttons */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="/services"
+                href="/contact"
                 className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
               >
                 Start Recovery
                 <ArrowRight size={18} />
               </Link>
 
-              <Link
+              {/* <Link
                 href="/contact"
                 className="rounded-xl border border-slate-300 px-7 py-4 font-semibold text-slate-700 transition hover:bg-slate-100"
               >
                 Get Guidance
-              </Link>
+              </Link> */}
             </div>
 
             {/* Features */}
