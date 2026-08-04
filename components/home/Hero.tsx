@@ -34,7 +34,7 @@ export default function Hero() {
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
               Forgot your password? Lost access to your email? SBCMailMe
               provides step-by-step recovery guides to help you regain access
-              safely and securely—no technical knowledge required.
+              safely and securely,no technical knowledge required.
             </p>
 
             {/* Buttons */}
@@ -51,7 +51,7 @@ export default function Hero() {
                 href="/contact"
                 className="rounded-xl border border-slate-300 px-7 py-4 font-semibold text-slate-700 transition hover:bg-slate-100"
               >
-                Get Support
+                Get Guidance
               </Link>
             </div>
 
@@ -74,7 +74,7 @@ export default function Hero() {
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-600" />
                 <span className="text-slate-700">
-                  Support for Multiple Email Providers
+                  Guidance for Multiple Email Providers
                 </span>
               </div>
 
@@ -145,50 +145,53 @@ export default function Hero() {
         </div>
 
         {/* Bottom Trust Bar */}
-        <div className="mt-14 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="grid gap-6 text-center md:grid-cols-4">
-            <div>
-              <h3 className="text-3xl font-bold text-blue-600">
-                20+
-              </h3>
+     {/* What You'll Learn */}
+<div className="mt-14 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
 
-              <p className="text-slate-600">
-                Recovery Guides
-              </p>
-            </div>
+  <div className="text-center">
+    <h2 className="text-3xl font-bold text-slate-900">
+      Everything You Need to Recover Your Email Account
+    </h2>
 
-            <div>
-              <h3 className="text-3xl font-bold text-blue-600">
-                6+
-              </h3>
+    <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">
+     Explore expert guidance for recovering email accounts, fixing login problems, resetting passwords, and keeping your email secure.
+    </p>
+  </div>
 
-              <p className="text-slate-600">
-                Email Providers
-              </p>
-            </div>
+  <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-            <div>
-              <h3 className="text-3xl font-bold text-blue-600">
-                24/7
-              </h3>
+    <div>
+      <h3 className="font-bold text-xl">Recover Access</h3>
+      <p className="mt-3 text-slate-600">
+        Learn how to regain access to locked or forgotten email accounts.
+      </p>
+    </div>
 
-              <p className="text-slate-600">
-                Helpful Resources
-              </p>
-            </div>
+    <div>
+      <h3 className="font-bold text-xl">Reset Passwords</h3>
+      <p className="mt-3 text-slate-600">
+        Follow easy password recovery and reset instructions.
+      </p>
+    </div>
 
-            <div>
-              <h3 className="text-3xl font-bold text-blue-600">
-                100%
-              </h3>
+    <div>
+      <h3 className="font-bold text-xl">Secure Your Account</h3>
+      <p className="mt-3 text-slate-600">
+        Protect your email with stronger passwords and security settings.
+      </p>
+    </div>
 
-              <p className="text-slate-600">
-                Free Guides
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+      <h3 className="font-bold text-xl">Fix Login Issues</h3>
+      <p className="mt-3 text-slate-600">
+        Resolve common sign-in and account verification problems.
+      </p>
+    </div>
+
+  </div>
+  </div>
+
+</div>
     </section>
   );
 }

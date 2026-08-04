@@ -29,7 +29,7 @@ const features = [
     icon: CheckCircle,
     title: "Provider-Specific Information",
     description:
-      "Helpful resources for Gmail, Outlook, Yahoo Mail, AOL, SBCGlobal, and other providers.",
+      "Helpful guidance for recovering accounts, resetting passwords, and resolving common email issues.",
   },
 ];
 

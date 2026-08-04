@@ -14,7 +14,7 @@ export default function BlogHero() {
 
         <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-600">
           Explore expert guides on password recovery, account protection,
-          email setup, IMAP, POP3, login troubleshooting, and security best
+          email setup, IMAP, POP3, login, and security best
           practices to keep your email account safe.
         </p>
 

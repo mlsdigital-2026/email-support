@@ -88,8 +88,8 @@ export default async function BlogDetail({ params }: Props) {
 
             <p className="mt-4 text-slate-600">
               Browse our email recovery guides, password reset tutorials,
-              account security resources, and provider-specific support
-              articles.
+              account security resources, and provider-specific guidance to help you regain access to your email account.
+              
             </p>
 
             <Link

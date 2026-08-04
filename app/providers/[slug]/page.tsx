@@ -93,7 +93,7 @@ export default async function ProviderDetail({ params }: Props) {
             <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
               Explore educational guides covering password recovery,
               account access, email setup, security, IMAP, POP3, and
-              troubleshooting for {provider.name}.
+              resources for {provider.name}.
             </p>
 
           </div>

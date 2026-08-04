@@ -262,7 +262,7 @@ export default function BlogPage() {
     <li>Try signing in from a trusted device.</li>
     <li>Use another available verification method.</li>
     <li>Wait a few minutes before requesting another verification code.</li>
-    <li>Contact your email provider using official support channels if necessary.</li>
+    <li>Contact your email provider using official  channels if necessary.</li>
   </ul>
 
   <p className="mt-6 text-lg leading-8 text-slate-700">
@@ -490,7 +490,7 @@ export default function BlogPage() {
 
       <p className="mt-3 text-lg leading-8 text-slate-700">
         Many email providers offer additional identity verification procedures.
-        Contact your provider's official support if standard recovery methods
+        Contact your provider's official guidance if standard recovery methods
         are unavailable.
       </p>
     </div>

@@ -88,7 +88,7 @@ export const blogs = [
 
       "Always use a strong and unique password for your email account.",
 
-      "Enable Two-Factor Authentication whenever your email provider supports it.",
+      "Enable Two-Factor Authentication whenever your email provider guidance recommends it.",
 
       "Avoid clicking suspicious links or downloading unknown attachments from emails.",
 
