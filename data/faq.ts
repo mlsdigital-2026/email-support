@@ -2,26 +2,26 @@ export const faqs = [
   {
     question: "How can I recover my email account?",
     answer:
-      "The recovery process depends on your email provider. In most cases, you'll need to verify your identity using your recovery email, phone number, or other account information.",
+      "Most email providers offer official account recovery options. Our guides explain where to find these recovery tools and the steps involved.",
   },
   {
-    question: "What should I do if I forgot my email password?",
+    question: "I forgot my email password. What should I do?",
     answer:
-      "Use your provider's password reset option. If you no longer have access to your recovery information, follow the provider's account recovery process.",
+      "If you've forgotten your password, visit your provider's official password reset page. Our resources explain the typical recovery process.",
   },
   {
-    question: "Can I recover a hacked email account?",
+    question: "Which email providers are covered?",
     answer:
-      "If you believe your account has been compromised, change your password immediately if possible, review your recovery settings, and contact your email provider if necessary.",
+      "Helpful guidance for recovering accounts, resetting passwords, and resolving common email issues.",
   },
   {
-    question: "Which email providers do you cover?",
+    question: "Are these recovery guides free?",
     answer:
-      "Our content includes guidance for Gmail, Outlook, Yahoo Mail, AOL Mail, SBCGlobal, and other popular email services.",
+      "Yes. Our website provides free educational guides and best practices to help you understand common email account issues.",
   },
   {
     question: "How can I make my email account more secure?",
     answer:
-      "Use a strong password, enable two-factor authentication if available, and keep your recovery information up to date.",
+      "Use a strong unique password, enable two-factor authentication where available, and regularly review your account security settings.",
   },
 ];
