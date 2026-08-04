@@ -1,117 +1,123 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { blogs } from "@/data/blogs";
+import { blogs } from "@/data/blog";
+import BlogSidebar from "@/components/blog/BlogSidebar";
+import BlogContent from "@/components/blog/BlogContent";
+import Breadcrumb from "@/components/blog/Breadcrumb";
+import RelatedBlogs from "@/components/blog/RelatedBlogs";
+import ReadingTime from "@/components/blog/ReadingTime";
 
-interface Props {
+type Props = {
   params: Promise<{
     slug: string;
   }>;
-}
+};
 
-export default async function BlogDetail({ params }: Props) {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
 
-  const blog = blogs.find((item) => item.slug === slug);
+  const blog = blogs.find((b) => b.slug === slug);
+
+  if (!blog) {
+    return {};
+  }
+
+  return {
+    title: blog.metaTitle,
+    description: blog.metaDescription,
+  };
+}
+
+export default async function BlogArticlePage({ params }: Props) {
+  const { slug } = await params;
+
+  const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.metaDescription,
+    image: `https://sbcmailme.com${blog.image}`,
+    author: {
+      "@type": "Organization",
+      name: "SBC Mail Me",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SBC Mail Me",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://sbcmailme.com/logo.png",
+      },
+    },
+    datePublished: blog.date,
+    dateModified: blog.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://sbcmailme.com/blog/${blog.slug}`,
+    },
+  };
+
   return (
-    <main className="bg-white">
+    <main className="bg-white pt-20">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(jsonLd),
+  }}
+/>
 
-      {/* Hero */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-7xl px-6 py-14">
 
-      <section className="bg-gradient-to-b from-blue-50 to-white py-20">
+          <Breadcrumb title={blog.title} />
 
-        <div className="mx-auto max-w-4xl px-6 text-center">
-
-          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="mt-6 inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
             {blog.category}
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-tight text-slate-900 lg:text-5xl">
+          <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-tight text-slate-900">
             {blog.title}
           </h1>
 
-          <p className="mt-5 text-slate-500">
-            {blog.date}
-          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-6 text-slate-600">
+            <span>{blog.author}</span>
 
-        </div>
+            <span>{blog.date}</span>
 
-      </section>
-
-      {/* Featured Image */}
-
-      <section className="pb-10">
-
-        <div className="mx-auto max-w-6xl px-6">
-
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            width={1200}
-            height={650}
-            className="w-full rounded-3xl object-cover"
-            priority
-          />
-
-        </div>
-
-      </section>
-
-      {/* Article */}
-
-      <section className="pb-20">
-
-        <div className="mx-auto max-w-4xl px-6">
-
-          {blog.content.map((paragraph, index) => (
-
-            <p
-              key={index}
-              className="mb-8 text-lg leading-9 text-slate-700"
-            >
-              {paragraph}
-            </p>
-
-          ))}
-
-          <div className="mt-16 rounded-3xl bg-blue-50 p-8">
-
-            <h3 className="text-2xl font-bold text-slate-900">
-              Need More Email Help?
-            </h3>
-
-            <p className="mt-4 text-slate-600">
-              Browse our email recovery guides, password reset tutorials,
-              account security resources, and provider-specific guidance to help you regain access to your email account.
-              
-            </p>
-
-            <Link
-              href="/services"
-              className="mt-6 inline-flex rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
-            >
-              Explore Services
-            </Link>
-
+            <ReadingTime
+              text={blog.sections
+                .flatMap((section) => [
+                  section.heading,
+                  ...section.paragraphs,
+                  ...(section.bullets ?? []),
+                ])
+                .join(" ")}
+            />
           </div>
 
-          <Link
-            href="/blog"
-            className="mt-12 inline-flex items-center font-semibold text-blue-600 hover:text-blue-700"
-          >
-            <ArrowLeft className="mr-2 h-5 w-5" />
-            Back to Blog
-          </Link>
+        </div>
+      </section>
+
+      <section className="py-16">
+
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[1fr_320px]">
+
+      <div>
+  <BlogContent blog={blog} />
+</div>
+
+          <BlogSidebar blog={blog} />
 
         </div>
 
       </section>
+
+      <RelatedBlogs currentSlug={blog.slug} />
 
     </main>
   );
