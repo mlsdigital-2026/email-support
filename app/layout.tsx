@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 import LiveChat from "@/components/layout/LiveChat";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sbcmailme.com"),
@@ -73,7 +73,6 @@ export const metadata: Metadata = {
     title: "SBC Mail Me",
     description:
       "Educational guides about email password recovery, email security, account protection, email setup, IMAP, POP3, SMTP, and email best practices.",
-
     images: [
       {
         url: "/og-image.jpg",
@@ -89,7 +88,6 @@ export const metadata: Metadata = {
     title: "SBC Mail Me",
     description:
       "Educational guides about email password recovery, email security, account protection, email setup, IMAP, POP3, SMTP, and email best practices.",
-
     images: ["/og-image.jpg"],
   },
 
@@ -107,36 +105,65 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-   <body className="antialiased bg-white text-slate-900">
+      <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm" strategy="beforeInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KWGCC8RJ');
+          `}
+        </Script>
+      </head>
 
-  {/* Google Analytics + Google Ads */}
-  <Script
-    src="https://www.googletagmanager.com/gtag/js?id=G-18YL7M74QY"
-    strategy="afterInteractive"
-  />
+      <body className="antialiased bg-white text-slate-900">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KWGCC8RJ"
+            height="0"
+            width="0"
+            style={{
+              display: "none",
+              visibility: "hidden",
+            }}
+          />
+        </noscript>
 
-  <Script id="google-tag" strategy="afterInteractive">
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        {/* Google Analytics + Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-18YL7M74QY"
+          strategy="afterInteractive"
+        />
 
-      // Google Analytics 4
-      gtag('config', 'G-18YL7M74QY');
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-      // Google Ads
-      gtag('config', 'AW-18372150847');
-    `}
-  </Script>
+            // Google Analytics 4
+            gtag('config', 'G-18YL7M74QY');
 
-  <Navbar />
+            // Google Ads
+            gtag('config', 'AW-18372150847');
+          `}
+        </Script>
 
-  <main>{children}</main>
+        <Navbar />
 
-  <Footer />
+        <main>{children}</main>
 
-  <LiveChat />
-</body>
+        <Footer />
+
+        <LiveChat />
+      </body>
     </html>
   );
 }
