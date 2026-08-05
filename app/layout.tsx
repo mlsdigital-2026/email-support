@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-import LiveChat from "@/components/layout/LiveChat";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import LiveChat from "@/components/layout/LiveChat";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sbcmailme.com"),
@@ -42,11 +42,8 @@ export const metadata: Metadata = {
   ],
 
   creator: "SBC Mail Me",
-
   publisher: "SBC Mail Me",
-
   applicationName: "SBC Mail Me",
-
   category: "Technology",
 
   robots: {
@@ -105,24 +102,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <head>
+
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="beforeInteractive">
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];
-            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;
-            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            f.parentNode.insertBefore(j,f);
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),
+              dl=l!='dataLayer'?'&l='+l:'';
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+              f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-KWGCC8RJ');
           `}
         </Script>
+
       </head>
 
-      <body className="antialiased bg-white text-slate-900">
+      <body className="bg-white text-slate-900 antialiased">
+
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -136,22 +138,40 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* Google Analytics + Google Ads */}
+        {/* ===========================
+            Google Analytics (GA4)
+        ============================ */}
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-18YL7M74QY"
           strategy="afterInteractive"
         />
 
-        <Script id="google-tag" strategy="afterInteractive">
+        <Script id="ga4" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            // Google Analytics 4
             gtag('config', 'G-18YL7M74QY');
+          `}
+        </Script>
 
-            // Google Ads
+        {/* ===========================
+            Google Ads
+        ============================ */}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18372150847"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
             gtag('config', 'AW-18372150847');
           `}
         </Script>
@@ -163,7 +183,9 @@ export default function RootLayout({
         <Footer />
 
         <LiveChat />
+
       </body>
+
     </html>
   );
 }
