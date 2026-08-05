@@ -44,7 +44,7 @@ export const services = [
     slug: "email",
     title: "Email Help",
     description:
-      "Educational Gmail account recovery and password guidance.",
+      "Educational resources for common email account issues and recovery methods.",
     image: "/images/service-gmail.png",
   },
 ];

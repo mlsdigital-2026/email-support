@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { providers } from "@/data/providers";
 import CTA from "@/components/home/CTA";
-import BlogNavigation from "@/components/blog/BlogNavigation";
+
 
 interface Props {
   params: Promise<{

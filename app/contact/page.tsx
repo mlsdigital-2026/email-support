@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import CTA from "@/components/home/CTA";
+import { useRouter } from "next/navigation";
 import {
   Mail,
   Phone,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,8 +69,7 @@ export default function ContactPage() {
         throw new Error(data.message);
       }
 
-      setSuccess("Your message has been sent successfully!");
-
+     router.push("/thank-you");
       setFormData({
         name: "",
         email: "",
