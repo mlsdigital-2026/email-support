@@ -102,29 +102,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <head>
-
         {/* Google Tag Manager */}
-        <Script id="gtm" strategy="beforeInteractive">
+        <Script id="gtm-head" strategy="beforeInteractive">
           {`
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
+            (function(w,d,s,l,i){w[l]=w[l]||[];
+            w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-KWGCC8RJ');
           `}
         </Script>
-
       </head>
 
       <body className="bg-white text-slate-900 antialiased">
-
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -138,16 +133,13 @@ export default function RootLayout({
           />
         </noscript>
 
-        {/* ===========================
-            Google Analytics (GA4)
-        ============================ */}
-
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-18YL7M74QY"
           strategy="afterInteractive"
         />
 
-        <Script id="ga4" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -157,10 +149,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* ===========================
-            Google Ads
-        ============================ */}
-
+        {/* Google Ads */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18372150847"
           strategy="afterInteractive"
@@ -183,9 +172,7 @@ export default function RootLayout({
         <Footer />
 
         <LiveChat />
-
       </body>
-
     </html>
   );
 }
