@@ -25,9 +25,32 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: blog.metaTitle,
     description: blog.metaDescription,
+
+    alternates: {
+      canonical: `/blog/${blog.slug}`,
+    },
+
+    openGraph: {
+      type: "article",
+      url: `/blog/${blog.slug}`,
+      title: blog.metaTitle,
+      description: blog.metaDescription,
+      images: [
+        {
+          url: blog.image,
+          alt: blog.title,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: blog.metaTitle,
+      description: blog.metaDescription,
+      images: [blog.image],
+    },
   };
 }
-
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
 
