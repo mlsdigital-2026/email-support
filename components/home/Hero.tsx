@@ -14,12 +14,12 @@ export default function Hero() {
       {/* Background Blur */}
       <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-blue-100 opacity-50 blur-3xl" />
       <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-indigo-100 opacity-60 blur-3xl" />
-
-      <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-8 lg:pt-24 lg:pb-10">
+<div className="relative mx-auto max-w-7xl px-6 pt-12 pb-8 lg:pt-16 lg:pb-10">
+      
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left Content */}
           <div>
-            <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex items-center rounded-full bg-blue-100 px-4  text-sm font-semibold text-blue-700">
               Trusted Email Recovery Guides
             </span>
 
@@ -38,14 +38,24 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
-              >
-                Start Recovery
-                <ArrowRight size={18} />
-              </Link>
+           {/* Buttons */}
+{/* Buttons */}
+<div className="mt-10 flex flex-wrap gap-6">
+  <Link
+    href="/contact"
+    className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
+  >
+    Start Recovery
+    <ArrowRight size={18} />
+  </Link>
+
+  <a
+    href="tel:+18555290095"
+    className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
+  >
+    Call Now
+  </a>
+</div>
 
               {/* <Link
                 href="/contact"
@@ -53,7 +63,7 @@ export default function Hero() {
               >
                 Get Guidance
               </Link> */}
-            </div>
+           
 
             {/* Features */}
             <div className="mt-12 grid gap-5 sm:grid-cols-2">

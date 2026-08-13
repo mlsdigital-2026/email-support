@@ -5,7 +5,7 @@ import { providers } from "@/data/providers";
 
 export default function Providers() {
   return (
-    <section className="bg-slate-50 py-24">
+  <section className="bg-slate-50 pt-10 pb-24">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Heading */}

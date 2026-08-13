@@ -57,13 +57,12 @@ export default function Navbar() {
     <Search size={19} />
   </button>
 
-  <Link
-    href="/contact"
-    className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700"
-  >
-    Get Help
-  </Link>
-
+<Link
+  href="tel:+18555290095"
+  className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700"
+>
+   8555290095
+</Link>
 </div>
 
         {/* Mobile Button */}
