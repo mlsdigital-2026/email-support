@@ -61,7 +61,7 @@ export default function Navbar() {
   href="tel:+18555290095"
   className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-md transition hover:bg-blue-700"
 >
-   8555290095
+   +1 855-529-0095
 </Link>
 </div>
 
