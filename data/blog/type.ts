@@ -35,4 +35,6 @@ export interface Blog {
   sections: BlogSection[];
 
   faqs?: BlogFaq[];
+
+  tags?: string[];
 }
