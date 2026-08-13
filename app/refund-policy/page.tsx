@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Refund Policy | SBC Mail Me",
@@ -9,6 +10,18 @@ export const metadata: Metadata = {
 export default function RefundPolicyPage() {
   return (
     <main className="bg-white">
+        <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Refund Policy",
+        url: "https://sbcmailme.com/refund-policy",
+      },
+    ]}
+  />
       <section className="mx-auto max-w-5xl px-6 py-20">
         <h1 className="text-5xl font-bold text-slate-900">
           Refund Policy

@@ -10,6 +10,7 @@ import {
 
 import { services } from "@/data/services";
 import { serviceContent } from "@/data/serviceContent";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 interface Props {
   params: Promise<{
@@ -31,6 +32,22 @@ export default async function ServiceDetail({ params }: Props) {
 
   return (
     <main className="bg-white py-20">
+      <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Services",
+        url: "https://sbcmailme.com/services",
+      },
+      {
+        name: service.title,
+        url: `https://sbcmailme.com/services/${service.slug}`,
+      },
+    ]}
+  />
 
       {/* Hero */}
 

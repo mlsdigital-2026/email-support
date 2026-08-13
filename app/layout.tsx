@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import OrganizationSchema from "@/components/seo/OrganizationSchema";
+import WebsiteSchema from "@/components/seo/WebsiteSchema";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -132,6 +134,8 @@ export default function RootLayout({
             }}
           />
         </noscript>
+         <OrganizationSchema />
+         <WebsiteSchema/>
 
         {/* Google Analytics */}
         <Script

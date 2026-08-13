@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SBC Mail Me",
@@ -9,6 +10,18 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <main className="bg-white">
+       <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Privacy Policy",
+        url: "https://sbcmailme.com/privacy-policy",
+      },
+    ]}
+  />
       <section className="mx-auto max-w-5xl px-6 py-20">
         <h1 className="text-5xl font-bold text-slate-900">
           Privacy Policy

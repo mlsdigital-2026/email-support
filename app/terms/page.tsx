@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Terms and Conditions | SBC Mail Me",
@@ -9,6 +10,18 @@ export const metadata: Metadata = {
 export default function TermsAndConditionsPage() {
   return (
     <main className="bg-white">
+      <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Terms and Conditions",
+        url: "https://sbcmailme.com/terms-and-conditions",
+      },
+    ]}
+  />
       <section className="mx-auto max-w-5xl px-6 py-20">
         <h1 className="text-5xl font-bold text-slate-900">
           Terms and Conditions

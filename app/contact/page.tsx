@@ -3,6 +3,7 @@
 import { useState } from "react";
 import CTA from "@/components/home/CTA";
 import { useRouter } from "next/navigation";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import {
   Mail,
   Phone,
@@ -89,6 +90,18 @@ export default function ContactPage() {
   return (
     <main className="bg-white pt-20">
       {/* Hero */}
+       <BreadcrumbSchema
+      items={[
+        {
+          name: "Home",
+          url: "https://sbcmailme.com",
+        },
+        {
+          name: "Contact",
+          url: "https://sbcmailme.com/contact",
+        },
+      ]}
+    />
 
       <section className="bg-gradient-to-b from-blue-50 via-white to-white py-24">
         <div className="mx-auto max-w-6xl px-6 text-center">

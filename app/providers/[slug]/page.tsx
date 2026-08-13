@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { providers } from "@/data/providers";
 import CTA from "@/components/home/CTA";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+
 
 
 interface Props {
@@ -23,6 +25,22 @@ export default async function ProviderDetail({ params }: Props) {
 
   return (
     <main className="bg-white">
+       <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Providers",
+        url: "https://sbcmailme.com/providers",
+      },
+      {
+        name: provider.name,
+        url: `https://sbcmailme.com/providers/${provider.slug}`,
+      },
+    ]}
+  />
 
       {/* Hero Section */}
 

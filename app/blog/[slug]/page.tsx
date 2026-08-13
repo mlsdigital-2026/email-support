@@ -5,6 +5,7 @@ import BlogContent from "@/components/blog/BlogContent";
 import Breadcrumb from "@/components/blog/Breadcrumb";
 import RelatedBlogs from "@/components/blog/RelatedBlogs";
 import ReadingTime from "@/components/blog/ReadingTime";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 type Props = {
   params: Promise<{
@@ -64,6 +65,22 @@ export default async function BlogArticlePage({ params }: Props) {
 
   return (
     <main className="bg-white pt-20">
+       <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Blog",
+        url: "https://sbcmailme.com/blog",
+      },
+      {
+        name: blog.title,
+        url: `https://sbcmailme.com/blog/${blog.slug}`,
+      },
+    ]}
+  />
       <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{

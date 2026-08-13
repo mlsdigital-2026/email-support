@@ -1,0 +1,38 @@
+# SBCMailMe
+
+SBCMailMe is an educational website providing informational resources related to email account access, password recovery, login troubleshooting, and account security.
+
+The website helps users understand common email issues through step-by-step guides and best practices.
+
+## Main Topics
+
+- Email login help
+- Password recovery
+- Account security
+- Two-factor authentication
+- Email troubleshooting
+- Spam protection
+- Email configuration
+
+## Audience
+
+General users seeking educational information about email account management.
+
+## Website Sections
+
+Home
+About
+Contact
+Blog
+FAQ
+Privacy Policy
+Terms & Conditions
+Disclaimer
+
+## Editorial Policy
+
+Content is reviewed for accuracy and updated regularly.
+
+## Affiliation
+
+SBCMailMe is an independent informational website and is not affiliated with Gmail, Yahoo Mail, Outlook, AOL Mail, Apple, Microsoft, Google, or any email service provider.

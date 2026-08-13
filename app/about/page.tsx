@@ -2,10 +2,23 @@ import Image from "next/image";
 import CTA from "@/components/home/CTA";
 // import Hero from "@/components/home/Hero";
 import Stats from "@/components/home/Stats";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export default function AboutPage() {
   return (
    <main className="bg-white">
+       <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://sbcmailme.com",
+          },
+          {
+            name: "About",
+            url: "https://sbcmailme.com/about",
+          },
+        ]}
+      />
 
   {/* <Hero /> */}
 

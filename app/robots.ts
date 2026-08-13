@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: "https://sbcmailme.com/sitemap.xml",
+    host: "https://sbcmailme.com",
   };
 }

@@ -1,3 +1,4 @@
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import FAQHero from "@/components/faq/FAQHero";
 import FAQList from "@/components/faq/FAQList";
 import CTA from "@/components/home/CTA";
@@ -5,6 +6,18 @@ import CTA from "@/components/home/CTA";
 export default function FAQPage() {
   return (
     <main className="bg-white pt-20">
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://sbcmailme.com",
+          },
+          {
+            name: "FAQ",
+            url: "https://sbcmailme.com/faq",
+          },
+        ]}
+      />
 
       <FAQHero />
 
@@ -13,7 +26,6 @@ export default function FAQPage() {
       </section>
 
       <CTA />
-
     </main>
   );
 }
