@@ -31,7 +31,8 @@ export default function CTA() {
                   className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-blue-700 transition hover:bg-slate-100"
                 >
                   <Phone size={20} />
-                  Call Now: (855) 529-0095
+                  Call Now: +1 (855) 529-0095
+ 
                 </Link>
               </div>
             </div>
