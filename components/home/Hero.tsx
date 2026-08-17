@@ -1,207 +1,645 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import {
   ArrowRight,
-  ShieldCheck,
-  Lock,
-  Mail,
   CheckCircle2,
+  Mail,
+  Phone,
+  ShieldCheck,
+  X,
 } from "lucide-react";
 
+interface HeroFormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+interface RecoveryFormData {
+  name: string;
+  email: string;
+  phone: string;
+}
+
 export default function Hero() {
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+  const [showRecoveryModal, setShowRecoveryModal] = useState(false);
+  const [error, setError] = useState("");
+
+  const [heroForm, setHeroForm] = useState<HeroFormData>({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [recoveryForm, setRecoveryForm] = useState<RecoveryFormData>({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleHeroChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setHeroForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleRecoveryChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setRecoveryForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleHeroSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: heroForm.name,
+          email: heroForm.email,
+          phone: heroForm.phone,
+          message: heroForm.message,
+          subject: "Homepage Enquiry",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to submit enquiry.");
+      }
+
+      setHeroForm({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      // Show inline success panel instead of alert
+      setEnquirySubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Something went wrong."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  
+
+  const handleRecoverySubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: recoveryForm.name,
+          email: recoveryForm.email,
+          phone: recoveryForm.phone,
+          subject: "Recovery Request",
+          message: "Customer requested email recovery.",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to submit request.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Something went wrong."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const openRecoveryModal = () => {
+    setSubmitted(false);
+    setError("");
+
+    setRecoveryForm({
+      name: "",
+      email: "",
+      phone: "",
+    });
+
+    setShowRecoveryModal(true);
+  };
+
+  const closeRecoveryModal = () => {
+    setShowRecoveryModal(false);
+    setSubmitted(false);
+    setError("");
+  };
+
+  // removed chat-embedding and startChat helpers per simplified UI request
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      {/* Background Blur */}
-      <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-blue-100 opacity-50 blur-3xl" />
-      <div className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-indigo-100 opacity-60 blur-3xl" />
-<div className="relative mx-auto max-w-7xl px-6 pt-12 pb-8 lg:pt-16 lg:pb-10">
-      
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Left Content */}
-          <div>
-            <span className="inline-flex items-center rounded-full bg-blue-100 px-4  text-sm font-semibold text-blue-700">
-              Trusted Email Recovery Guides
-            </span>
+        <>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-slate-900 lg:text-6xl">
-              Recover Your
-              <br />
-              <span className="text-blue-600">Email Account</span>
-              <br />
-              in Minutes.
-            </h1>
-
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-              Forgot your password? Lost access to your email? SBCMailMe
-              provides step-by-step recovery guides to help you regain access
-              safely and securely,no technical knowledge required.
-            </p>
-
-            {/* Buttons */}
-           {/* Buttons */}
-{/* Buttons */}
-<div className="mt-10 flex flex-wrap gap-6">
-  <Link
-    href="/contact"
-    className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
-  >
-    Start Recovery
-    <ArrowRight size={18} />
-  </Link>
-
-  <a
-    href="tel:+18555290095"
-    className="flex items-center gap-2 rounded-xl bg-blue-600 px-7 py-4 font-semibold text-white transition hover:bg-blue-700"
-  >
-    Call Now
-  </a>
-</div>
-
-              {/* <Link
-                href="/contact"
-                className="rounded-xl border border-slate-300 px-7 py-4 font-semibold text-slate-700 transition hover:bg-slate-100"
-              >
-                Get Guidance
-              </Link> */}
-           
-
-            {/* Features */}
-            <div className="mt-12 grid gap-5 sm:grid-cols-2">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="text-blue-600" />
-                <span className="text-slate-700">
-                  Secure Recovery Guides
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Lock className="text-blue-600" />
-                <span className="text-slate-700">
-                  Password Reset Help
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="text-blue-600" />
-                <span className="text-slate-700">
-                  Guidance for Multiple Email Providers
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-blue-600" />
-                <span className="text-slate-700">
-                  Simple Step-by-Step Instructions
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content */}
-          <div className="relative flex justify-center">
-            <Image
-              src="/images/hero-support.png"
-              alt="Email Recovery Guidance"
-              width={650}
-              height={550}
-              priority
-              className="w-full max-w-xl"
-            />
-
-            {/* Floating Card 1 */}
-            <div className="absolute left-0 top-8 hidden rounded-2xl bg-white p-4 shadow-xl lg:block">
-              <div className="flex items-center gap-3">
-                <div className="rounded-full bg-green-100 p-2">
-                  <CheckCircle2
-                    className="text-green-600"
-                    size={20}
-                  />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-slate-900">
-                    Recovery Guides
-                  </p>
-
-                  <p className="text-sm text-slate-500">
-                    Easy-to-follow instructions
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Card 2 */}
-            <div className="absolute bottom-10 right-0 hidden rounded-2xl bg-white p-4 shadow-xl lg:block">
-              <div className="flex items-center gap-3">
-                <div className="rounded-full bg-blue-100 p-2">
-                  <ShieldCheck
-                    className="text-blue-600"
-                    size={20}
-                  />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-slate-900">
-                    Security Tips
-                  </p>
-
-                  <p className="text-sm text-slate-500">
-                    Keep your account protected
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div className="absolute -left-32 top-0 h-80 w-80 rounded-full bg-blue-200/20 blur-3xl" />
+          <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-sky-200/20 blur-3xl" />
         </div>
 
-        {/* Bottom Trust Bar */}
-     {/* What You'll Learn */}
-<div className="mt-14 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-7xl px-6 py-6 lg:px-8 lg:py-8">
 
-  <div className="text-center">
-    <h2 className="text-3xl font-bold text-slate-900">
-      Everything You Need to Recover Your Email Account
-    </h2>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
 
-    <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600">
-     Explore expert guidance for recovering email accounts, fixing login problems, resetting passwords, and keeping your email secure.
-    </p>
+            {/* ===========================
+                LEFT CONTENT
+            =========================== */}
+
+            <div>
+
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 shadow-sm">
+                <ShieldCheck className="h-5 w-5 text-blue-600" />
+                <span className="text-sm font-semibold text-blue-700">
+                  Trusted Email Recovery Experts
+                </span>
+              </div>
+
+              <h1 className="mt-4 text-3xl font-extrabold leading-snug text-slate-900 md:text-4xl lg:text-5xl">
+                Recover Your
+                <span className="block text-blue-600">
+                  Email Account Securely
+                </span>
+              </h1>
+
+              <div className="mt-6 rounded-2xl border border-blue-100 bg-white p-4 shadow-md">
+
+                <p className="text-sm font-semibold uppercase tracking-wider text-blue-600">
+                  Need Immediate Assistance?
+                </p>
+
+                <a
+                  href="tel:+18555290095"
+                  className="mt-3 flex items-center gap-3 text-3xl font-bold text-slate-900 hover:text-blue-600"
+                >
+                  <Phone className="h-7 w-7" />
+                  +1 (855) 529-0095
+                </a>
+
+              </div>
+
+              <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
+                Get back into your email account quickly and securely with
+                expert recovery assistance. Our specialists help recover
+                locked, hacked, or inaccessible email accounts safely.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+
+                <button
+                  type="button"
+                  onClick={openRecoveryModal}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+                >
+                  Start Recovery
+                  <ArrowRight className="h-5 w-5" />
+                </button>
+
+                <a
+                  href="tel:+18555290095"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
+                >
+                  <Phone className="h-5 w-5" />
+                  Call Now • +1 (855) 529-0095
+                </a>
+
+              </div>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-2">
+
+                <div className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-green-600" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900">
+                      Secure Recovery
+                    </h3>
+                    <p className="text-sm text-slate-500">
+                      Safe and verified recovery assistance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-green-600" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900">
+                      24/7 Support
+                    </h3>
+                    <p className="text-sm text-slate-500">
+                      Help whenever you need it.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-green-600" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900">
+                      Fast Assistance
+                    </h3>
+                    <p className="text-sm text-slate-500">
+                      Quick response from recovery specialists.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 rounded-xl bg-white p-4 shadow-sm">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-green-600" />
+                  <div>
+                    <h3 className="font-semibold text-slate-900">
+                      Trusted Team
+                    </h3>
+                    <p className="text-sm text-slate-500">
+                      Professional email support you can trust.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* ===========================
+                RIGHT ENQUIRY FORM
+            =========================== */}
+
+            <div className="rounded-3xl bg-white p-8 shadow-2xl">
+
+              <div className="mb-8 flex items-center gap-4">
+
+                <div className="rounded-2xl bg-blue-100 p-3">
+                  <Mail className="h-7 w-7 text-blue-600" />
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    Start Your Enquiry
+                  </h2>
+
+                  <p className="text-sm text-slate-500">
+                    Complete the form below and we'll contact you shortly.
+                  </p>
+                </div>
+
+              </div>
+
+              {enquirySubmitted && (
+                <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-green-600" />
+                      <p>We've received your enquiry. Our team will contact you shortly.</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setEnquirySubmitted(false)}
+                      className="ml-4 rounded px-2 py-1 text-sm font-semibold text-green-700 hover:bg-green-100"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              <form
+                onSubmit={handleHeroSubmit}
+                className="space-y-5"
+              >
+                                {/* Name */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Name *
+                  </label>
+
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={heroForm.name}
+                    onChange={handleHeroChange}
+                    placeholder="Enter your full name"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    required
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Email Address *
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={heroForm.email}
+                    onChange={handleHeroChange}
+                    placeholder="Enter your email address"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    required
+                  />
+                </div>
+
+                {/* Contact removed as requested */}
+
+                {/* Phone */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Phone Number *
+                  </label>
+
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={heroForm.phone}
+                    onChange={handleHeroChange}
+                    placeholder=""
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    required
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="mb-2 block text-sm font-semibold text-slate-700"
+                  >
+                    Message *
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    value={heroForm.message}
+                    onChange={handleHeroChange}
+                    placeholder="Tell us how we can help..."
+                    className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                    required
+                  />
+                </div>
+
+                {error && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                    {error}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {loading ? "Submitting..." : "Submit Enquiry"}
+
+                  {!loading && (
+                    <ArrowRight className="h-5 w-5" />
+                  )}
+                </button>
+
+                <p className="text-center text-xs text-slate-500">
+                  Your information is secure and will never be shared.
+                </p>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+            {/* =========================
+          RECOVERY MODAL
+      ========================= */}
+      {showRecoveryModal && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          onClick={closeRecoveryModal}
+        >
+          <div
+            className="relative w-full max-w-lg rounded-3xl bg-white p-8 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={closeRecoveryModal}
+              className="absolute right-5 top-5 rounded-full bg-slate-100 p-2 text-slate-500 hover:bg-slate-200"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            {!submitted ? (
+              <>
+                <div className="mb-8 text-center">
+
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
+                    <Mail className="h-8 w-8 text-blue-600" />
+                  </div>
+
+                  <h2 className="text-3xl font-bold text-slate-900">
+                    Start Recovery
+                  </h2>
+
+                  <p className="mt-3 text-slate-600">
+                    Complete this form and one of our recovery specialists
+                    will contact you as soon as possible.
+                  </p>
+
+                </div>
+
+                <form
+                  onSubmit={handleRecoverySubmit}
+                  className="space-y-5"
+                >
+
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">
+                      Name *
+                    </label>
+
+                    <input
+                      type="text"
+                      name="name"
+                      value={recoveryForm.name}
+                      onChange={handleRecoveryChange}
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">
+                      Email Address *
+                    </label>
+
+                    <input
+                      type="email"
+                      name="email"
+                      value={recoveryForm.email}
+                      onChange={handleRecoveryChange}
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold text-slate-700">
+                      Phone Number *
+                    </label>
+
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={recoveryForm.phone}
+                      onChange={handleRecoveryChange}
+                      className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100"
+                      required
+                    />
+                  </div>
+
+                  {error && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                      {error}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-700 disabled:opacity-60"
+                  >
+                    {loading
+                      ? "Submitting..."
+                      : "Submit Recovery Request"}
+
+                    {!loading && (
+                      <ArrowRight className="h-5 w-5" />
+                    )}
+                  </button>
+
+                </form>
+
+              </>
+            ) : (
+              <>
+                <div className="text-center">
+
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                    <CheckCircle2 className="h-10 w-10 text-green-600" />
+                  </div>
+
+                  <h2 className="mt-6 text-3xl font-bold text-slate-900">
+                    Thank You!
+                  </h2>
+
+                  <p className="mt-4 text-slate-600">
+                    Your recovery request has been submitted successfully.
+                    Our team will contact you shortly.
+                  </p>
+
+                  <div className="mt-8 space-y-4">
+                    <p className="text-sm text-center text-slate-500">Need instant help?</p>
+                    <a
+                      href="tel:+18555290095"
+                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 font-semibold text-white transition hover:bg-blue-700"
+                    >
+                      <Phone className="h-5 w-5" />
+                      Call Now • +1 (855) 529-0095
+                    </a>
+
+               <div className="rounded-xl border border-slate-200 bg-white p-6 text-center">
+  <h3 className="text-2xl font-bold text-slate-900">
+    Need Instant Help?
+  </h3>
+
+  <p className="mt-2 text-slate-600">
+    Connect with one of our support specialists now.
+  </p>
+
+  <div className="mt-6">
+    <div
+      data-id="4216f8efb1"
+      className="livechat_button"
+    >
+      <a
+        href="https://www.livechat.com/utm-builder/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_19881537"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:bg-slate-800 hover:shadow-xl"
+      >
+        💬 Chat With Support
+      </a>
+    </div>
   </div>
-
-  <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-    <div>
-      <h3 className="font-bold text-xl">Recover Access</h3>
-      <p className="mt-3 text-slate-600">
-        Learn how to regain access to locked or forgotten email accounts.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="font-bold text-xl">Reset Passwords</h3>
-      <p className="mt-3 text-slate-600">
-        Follow easy password recovery and reset instructions.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="font-bold text-xl">Secure Your Account</h3>
-      <p className="mt-3 text-slate-600">
-        Protect your email with stronger passwords and security settings.
-      </p>
-    </div>
-
-    <div>
-      <h3 className="font-bold text-xl">Fix Login Issues</h3>
-      <p className="mt-3 text-slate-600">
-        Resolve common sign-in and account verification problems.
-      </p>
-    </div>
-
-  </div>
-  </div>
-
 </div>
-    </section>
+                    <button
+                      type="button"
+                      onClick={closeRecoveryModal}
+                      className="w-full rounded-xl border border-slate-300 px-6 py-4 font-semibold text-slate-700 transition hover:bg-slate-50"
+                    >
+                      Close
+                    </button>
+
+                  </div>
+
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
+              
