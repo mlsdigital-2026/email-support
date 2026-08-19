@@ -1,3 +1,9 @@
+'use client';
+
+import React from 'react';
+// ... rest of your code
+
+
 import { Star } from "lucide-react";
 import Image from "next/image";
 

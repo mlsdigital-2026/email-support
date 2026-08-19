@@ -1,3 +1,9 @@
+'use client';
+
+import React from 'react';
+// ... rest of your imports and code
+
+
 import Image from "next/image";
 import {
   ShieldCheck,
@@ -5,6 +11,7 @@ import {
   BookOpen,
   CheckCircle,
 } from "lucide-react";
+
 
 const features = [
   {

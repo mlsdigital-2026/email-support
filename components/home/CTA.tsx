@@ -1,3 +1,9 @@
+'use client';
+
+import React from 'react';
+// ... rest of your code
+
+
 import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";

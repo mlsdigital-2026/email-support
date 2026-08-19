@@ -1,4 +1,11 @@
+'use client';
+
 import { Users, ShieldCheck, Clock3, Mail } from "lucide-react";
+import React from 'react';
+
+// ... rest of your code
+
+
 
 const stats = [
   {

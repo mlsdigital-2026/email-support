@@ -1,7 +1,15 @@
+'use client';
+
+import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { providers } from "@/data/providers";
+
+// ... rest of your code
+
+
+
 
 export default function Providers() {
   return (

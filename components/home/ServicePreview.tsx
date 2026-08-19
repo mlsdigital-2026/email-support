@@ -1,3 +1,9 @@
+'use client';
+
+import React from 'react';
+// ... rest of your code
+
+
 import Link from "next/link";
 import { services } from "@/data/services";
 
