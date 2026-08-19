@@ -214,19 +214,13 @@ export default function RecoveryModal({
           Call Now • +1 (855) 529-0095
         </a>
 
-        <div
-          data-id="4216f8efb1"
-          className="livechat_button flex justify-center rounded-xl bg-slate-900 px-6 py-4"
-        >
-          <a
-            href="https://www.livechat.com/utm-builder/?utm_source=chat_button&utm_medium=referral&utm_campaign=lc_19881537"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-white"
-          >
-            Start Live Chat
-          </a>
-        </div>
+     <button
+  type="button"
+  onClick={() => window.LiveChatWidget?.call("maximize")}
+  className="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl"
+>
+  Start Live Chat
+</button>
 
         <button
           type="button"
