@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import StartRecoveryButton from "@/components/recovery/StartRecoveryButton";
+// import ServiceActions from "@/components/services/ServiceActions";
 import {
   ArrowRight,
   ShieldCheck,
@@ -10,6 +12,7 @@ import {
 
 import { services } from "@/data/services";
 import { serviceContent } from "@/data/serviceContent";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 interface Props {
   params: Promise<{
@@ -30,17 +33,33 @@ export default async function ServiceDetail({ params }: Props) {
     serviceContent[slug as keyof typeof serviceContent];
 
   return (
-    <main className="bg-white">
+    <main className="bg-white py-20">
+      <BreadcrumbSchema
+    items={[
+      {
+        name: "Home",
+        url: "https://sbcmailme.com",
+      },
+      {
+        name: "Services",
+        url: "https://sbcmailme.com/services",
+      },
+      {
+        name: service.title,
+        url: `https://sbcmailme.com/services/${service.slug}`,
+      },
+    ]}
+  />
 
       {/* Hero */}
 
-      <section className="bg-slate-50 py-20">
+      <section className="bg-slate-50">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
 
           <div>
 
             <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-              Email Support Guide
+              Email Recovery Guide
             </span>
 
             <h1 className="mt-6 text-5xl font-bold text-slate-900">
@@ -51,13 +70,43 @@ export default async function ServiceDetail({ params }: Props) {
               {service.description}
             </p>
 
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
-            >
-              Contact Support
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <div className="mt-8 flex flex-wrap gap-4">
+
+ <div className="mt-8">
+
+  {/* Primary Actions */}
+ <div className="mt-8 flex flex-wrap gap-4">
+
+  {/* Primary */}
+ <StartRecoveryButton
+  className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
+/>
+
+  {/* Secondary */}
+  <a
+    href="tel:+18555290095"
+    className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-slate-800"
+  >
+    Call Now • +1 (855) 529-0095
+  </a>
+
+</div>
+
+<div className="mt-8">
+<p className="mb-3 text-sm text-slate-500">
+  Need additional assistance?
+</p>
+
+<Link
+  href="/contact"
+  className="inline-flex items-center rounded-xl border-2 border-blue-600 bg-white px-6 py-3 font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
+>
+  Contact Us
+</Link>
+</div>
+
+</div>
+</div>
 
           </div>
 

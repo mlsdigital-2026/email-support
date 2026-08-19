@@ -19,8 +19,8 @@ export const features = [
     icon: Clock3,
   },
   {
-    title: "Experienced Support",
-    description: "Our team helps users troubleshoot a wide range of email account problems.",
+    title: "Experienced Team",
+    description: "Our team helps users with a wide range of email account problems.",
     icon: Users,
   },
   {

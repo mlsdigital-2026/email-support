@@ -19,7 +19,7 @@ const stats = [
   {
     icon: Clock3,
     value: "24/7",
-    label: "Support Available",
+    label: "Guidance Available",
   },
 ];
 

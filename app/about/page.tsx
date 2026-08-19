@@ -1,16 +1,35 @@
 import Image from "next/image";
 import CTA from "@/components/home/CTA";
+// import Hero from "@/components/home/Hero";
+import Stats from "@/components/home/Stats";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 export default function AboutPage() {
   return (
-    <main className="bg-white pt-20">
+   <main className="bg-white">
+       <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://sbcmailme.com",
+          },
+          {
+            name: "About",
+            url: "https://sbcmailme.com/about",
+          },
+        ]}
+      />
+
+  {/* <Hero /> */}
+
+  <Stats />
 
       <section className="bg-gradient-to-b from-blue-50 to-white py-24">
 
         <div className="mx-auto max-w-6xl px-6 text-center">
 
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            About EmailSupport
+            About Email Recovery
           </span>
 
           <h1 className="mt-6 text-5xl font-bold text-slate-900">
@@ -18,7 +37,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-600">
-            EmailSupport provides educational resources to help users understand
+            Email provides educational resources to help users understand
             account recovery, password reset, login issues, and email security
             for popular email providers.
           </p>

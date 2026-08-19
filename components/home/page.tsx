@@ -5,7 +5,7 @@ import Providers from "@/components/home/Providers";
 
 export default function Home() {
   return (
-    < >
+    <>
       <Hero />
       <Stats />
       <ServicePreview />

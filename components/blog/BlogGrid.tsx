@@ -1,12 +1,6 @@
-import { blogs } from "@/data/blogs";
-import BlogCard from "./BlogCard";
+import { blogs } from "@/data/blog";
+import BlogFilters from "./BlogFilters";
 
 export default function BlogGrid() {
-  return (
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {blogs.map((blog) => (
-        <BlogCard key={blog.id} blog={blog} />
-      ))}
-    </div>
-  );
+  return <BlogFilters blogs={blogs} />;
 }

@@ -21,7 +21,7 @@ export const providers = [
     name: "Login Help",
     image: "/images/provider-yahoo.png",
     description:
-      "Troubleshoot common email sign-in and authentication issues.",
+      "Help with email sign-in and authentication issues.",
   },
   {
     id: 4,

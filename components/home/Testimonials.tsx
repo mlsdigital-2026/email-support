@@ -16,7 +16,7 @@ const testimonials = [
     role: "Freelancer",
     image: "/avatars/user2.jpg",
     review:
-      "Everything was organized clearly. The provider-specific information saved me time while troubleshooting my login issue.",
+      "Everything was organized clearly. The provider-specific information saved me time while resolving my login issue.",
   },
   {
     id: 3,

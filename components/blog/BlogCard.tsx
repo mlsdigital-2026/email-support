@@ -1,27 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
+import { Blog } from "@/data/blog/type";
 
-interface Blog {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  date: string;
-}
-
-export default function BlogCard({ blog }: { blog: Blog }) {
+export default function BlogCard({
+  blog,
+}: {
+  blog: Blog;
+}) {
   return (
-    <div className="overflow-hidden rounded-3xl border bg-white shadow-sm hover:shadow-xl transition">
+    <article className="overflow-hidden rounded-3xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
 
       <Image
         src={blog.image}
         alt={blog.title}
-        width={500}
-        height={300}
-        className="w-full"
+        width={600}
+        height={350}
+        className="h-56 w-full object-cover"
       />
 
       <div className="p-6">
@@ -30,28 +25,31 @@ export default function BlogCard({ blog }: { blog: Blog }) {
           {blog.category}
         </span>
 
-        <h3 className="mt-4 text-2xl font-bold">
+        <h2 className="mt-5 text-2xl font-bold text-slate-900">
           {blog.title}
-        </h3>
+        </h2>
 
         <p className="mt-4 text-slate-600">
           {blog.description}
         </p>
 
-        <p className="mt-4 text-sm text-slate-500">
-          {blog.date}
-        </p>
+        <div className="mt-6 flex items-center justify-between">
 
-        <Link
-          href={`/blog/${blog.slug}`}
-          className="mt-6 inline-flex items-center font-semibold text-blue-600"
-        >
-          Read More
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+          <div className="flex items-center gap-2 text-sm text-slate-500">
+            <Calendar size={16} />
+            {blog.date}
+          </div>
+
+          <Link
+            href={`/blog/${blog.slug}`}
+            className="font-semibold text-blue-600 hover:underline"
+          >
+            Read More →
+          </Link>
+
+        </div>
 
       </div>
-
-    </div>
+    </article>
   );
 }

@@ -15,19 +15,18 @@ export async function POST(req: Request) {
     const dnsResult = await dns.lookup(process.env.SMTP_HOST!);
     console.log("DNS RESULT:", dnsResult);
 
-    // Create transporter
-const transporter = nodemailer.createTransport({
-  host: "67.223.118.117",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  tls: {
-    servername: "sbcmailme.com",
-  },
-});
+    const transporter = nodemailer.createTransport({
+      host: "67.223.118.117",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        servername: "sbcmailme.com",
+      },
+    });
 
     console.log("Verifying SMTP connection...");
 
@@ -39,7 +38,7 @@ const transporter = nodemailer.createTransport({
       from: `"Website Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_USER,
       replyTo: body.email,
-      subject: body.subject,
+      subject: "New Contact Form Enquiry",
       text: `
 Name: ${body.name}
 Email: ${body.email}
@@ -49,12 +48,11 @@ Message:
 ${body.message}
       `,
       html: `
-        <h2>New Contact Form Submission</h2>
+        <h2>New Contact Form Enquiry</h2>
 
         <p><strong>Name:</strong> ${body.name}</p>
         <p><strong>Email:</strong> ${body.email}</p>
         <p><strong>Phone:</strong> ${body.phone}</p>
-        <p><strong>Subject:</strong> ${body.subject}</p>
 
         <hr>
 

@@ -4,12 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/data/faq";
+import FAQSchema from "@/components/seo/FAQSchema";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="bg-slate-50 py-24">
+         <FAQSchema faqs={faqs} />
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Heading */}
@@ -41,7 +43,7 @@ export default function FAQ() {
 
             <Image
               src="/images/faq-support.png"
-              alt="FAQ Support"
+              alt="FAQ "
               width={550}
               height={550}
               className="w-full max-w-lg"

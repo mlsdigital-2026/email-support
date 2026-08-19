@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/data/services";
+
 import ServiceCard from "@/components/services/ServiceCard";
 
 export default function ServicePreview() {
@@ -17,7 +18,7 @@ export default function ServicePreview() {
           </span>
 
           <h2 className="mt-6 text-5xl font-bold">
-            Popular Email Support Guides
+            Popular Email  Guides
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">

@@ -29,13 +29,13 @@ const features = [
     icon: CheckCircle,
     title: "Provider-Specific Information",
     description:
-      "Helpful resources for Gmail, Outlook, Yahoo Mail, AOL, SBCGlobal, and other providers.",
+      "Helpful guidance for recovering accounts, resetting passwords, and resolving common email issues.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white ">
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
 
             <p className="mt-6 text-lg leading-8 text-slate-600">
               Our website provides educational guidance to help you understand
-              account recovery, password reset, login troubleshooting, and email
+              account recovery, password reset, login, and email
               security for popular email providers.
             </p>
 

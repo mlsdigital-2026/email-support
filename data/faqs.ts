@@ -1,6 +1,6 @@
 export const faqs = [
   {
-    question: "How do I recover my Gmail account?",
+    question: "How do I recover my Email account?",
     answer:
       "Use Google's official account recovery page to verify your identity and regain access to your account.",
   },
@@ -20,9 +20,9 @@ export const faqs = [
       "Use a strong password, enable two-factor authentication, and keep your recovery information up to date.",
   },
   {
-    question: "Is EmailSupport affiliated with Gmail or Outlook?",
+    question: "Is Email affiliated with any email provider?",
     answer:
-      "No. EmailSupport is an independent educational website and is not affiliated with Google, Microsoft, Yahoo, Apple, AOL, or any other email provider.",
+      "No. Email needed is an independent educational website and is not affiliated with Google, Microsoft, Yahoo, Apple, AOL, or any other email provider.",
   },
   {
     question: "Can you recover my email account?",

@@ -1,0 +1,28 @@
+# SBCMailMe
+
+> Educational resource for email account help, login guidance, password reset information, account security tips, and troubleshooting.
+
+Website: https://sbcmailme.com
+Sitemap: https://sbcmailme.com/sitemap.xml
+
+## Documentation
+
+- Home: https://sbcmailme.com/
+- About: https://sbcmailme.com/about
+- Contact: https://sbcmailme.com/contact
+- Blog: https://sbcmailme.com/blog
+- FAQ: https://sbcmailme.com/faq
+
+## Topics
+
+- Email account recovery
+- Password reset guides
+- Login troubleshooting
+- Email security
+- Account protection
+- Authentication help
+
+## Notes
+
+SBCMailMe provides educational guides and informational resources only.
+It is not affiliated with Gmail, Yahoo Mail, Outlook, AOL Mail, Apple, Microsoft, Google, or any other third-party email provider.

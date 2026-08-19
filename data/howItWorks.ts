@@ -13,7 +13,7 @@ export const steps = [
     icon: Search,
   },
   {
-    title: "Get Guided Support",
+    title: "Get Guided Assistance",
     description:
       "Receive clear, step-by-step guidance tailored to your email provider and situation.",
     icon: MessageCircle,
@@ -21,7 +21,7 @@ export const steps = [
   {
     title: "Follow Recovery Steps",
     description:
-      "Complete the recommended recovery or troubleshooting process using secure best practices.",
+      "Complete the recommended recovery  process using secure best practices.",
     icon: Wrench,
   },
   {
