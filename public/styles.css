@@ -935,15 +935,22 @@ a:hover {
 .promo-image-frame {
   width: 100%;
   max-width: 380px;
+  min-height: 200px;
+  aspect-ratio: 16 / 10;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  background: #000000;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .promo-laptop-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 200px;
   display: block;
   object-fit: cover;
   transition: transform 0.4s ease;
