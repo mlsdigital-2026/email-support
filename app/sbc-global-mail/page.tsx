@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-export default function ComcastPage() {
+export default function Page() {
   return (
     <iframe
-      src="/comcast/index.html"
+      src="/sbc-global-mail/index.html"
       style={{
         width: '100vw',
         height: '100vh',
@@ -16,7 +16,7 @@ export default function ComcastPage() {
         zIndex: 9999,
         background: '#ffffff'
       }}
-      title="Comcast Email Login & Support Portal"
+      title="SBCGlobal Mail Login & Support Portal"
     />
   );
 }

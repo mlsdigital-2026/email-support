@@ -29,40 +29,56 @@ export default function LiveChat() {
     window.__lc.integration_name = "manual_channels";
     window.__lc.product_name = "livechat";
 
-    (function (n: Window, t: Document, c: typeof Array.prototype.slice) {
+    (function (
+      n: Window,
+      t: Document,
+      c: typeof Array.prototype.slice
+    ) {
       function i(args: unknown[]) {
-        return e._h ? e._h.apply(null, args) : e._q.push(args);
+        return e._h
+          ? e._h.apply(null, args)
+          : e._q.push(args);
       }
 
       const e: any = {
         _q: [],
         _h: null,
         _v: "2.0",
+
         on() {
           i(["on", c.call(arguments)]);
         },
+
         once() {
           i(["once", c.call(arguments)]);
         },
+
         off() {
           i(["off", c.call(arguments)]);
         },
+
         get() {
           if (!e._h) {
             throw new Error(
               "[LiveChatWidget] You can't use getters before load."
             );
           }
+
           return i(["get", c.call(arguments)]);
         },
+
         call() {
           i(["call", c.call(arguments)]);
         },
+
         init() {
           const s = t.createElement("script");
+
           s.async = true;
           s.type = "text/javascript";
-          s.src = "https://cdn.livechatinc.com/tracking.js";
+          s.src =
+            "https://cdn.livechatinc.com/tracking.js";
+
           t.head.appendChild(s);
         },
       };
@@ -71,11 +87,34 @@ export default function LiveChat() {
         e.init();
       }
 
-      n.LiveChatWidget = n.LiveChatWidget || e;
+      n.LiveChatWidget =
+        n.LiveChatWidget || e;
     })(window, document, [].slice);
 
+    /* =====================================================
+       OPEN LIVE CHAT EVENT
+       ===================================================== */
+
+    const openLiveChat = () => {
+      if (window.LiveChatWidget) {
+        window.LiveChatWidget.call("maximize");
+      }
+    };
+
+    window.addEventListener(
+      "open-live-chat",
+      openLiveChat
+    );
+
+    /* =====================================================
+       CLEANUP
+       ===================================================== */
+
     return () => {
-      // Do nothing - keep LiveChat loaded for the whole app
+      window.removeEventListener(
+        "open-live-chat",
+        openLiveChat
+      );
     };
   }, []);
 

@@ -4,10 +4,12 @@ html {
 }
 
 body {
-  background: #ffffff;
-  color: #0f172a;
+  background: #020b16;
+  color: #e2eaf6;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
 /* section {
   padding: 5rem 0;
 } */
+ 

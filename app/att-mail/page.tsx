@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-export default function ComcastPage() {
+export default function AttMailPage() {
   return (
     <iframe
-      src="/comcast/index.html"
+      src="/att-mail/index.html"
       style={{
         width: '100vw',
         height: '100vh',
@@ -16,7 +16,7 @@ export default function ComcastPage() {
         zIndex: 9999,
         background: '#ffffff'
       }}
-      title="Comcast Email Login & Support Portal"
+      title="AT&T Email Login & Support Portal"
     />
   );
 }
