@@ -1442,3 +1442,1141 @@ button { cursor: pointer; }
   .btn-suspended-chat,
   .btn-phone-helpline { width: 100%; }
 }
+
+
+/* =========================================================
+   AT&T PREMIUM RESPONSIVE POLISH
+   Added after the original CSS so it safely overrides
+   existing desktop/mobile rules.
+========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+.container,
+.top-nav-container,
+.footer-inner {
+  max-width: 1280px;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.top-nav-container {
+  min-width: 0;
+}
+
+.top-brand-group,
+.top-header-title {
+  min-width: 0;
+}
+
+.top-header-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-header-action {
+  flex: 0 0 auto;
+}
+
+.btn-top-login {
+  white-space: nowrap;
+}
+
+/* ---------------- PAGE TITLE / NAV ---------------- */
+
+.page-main-heading {
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.quick-nav-links {
+  min-width: 0;
+}
+
+.q-link,
+.q-link-btn {
+  white-space: nowrap;
+}
+
+/* ---------------- HERO LOGIN FORM ---------------- */
+
+.hero-content-grid,
+.hero-brand-panel,
+.hero-form-panel,
+.login-card {
+  min-width: 0;
+}
+
+.login-card {
+  max-width: 470px;
+}
+
+.form-input,
+.official-underline-input {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.form-row-options,
+.official-card-options-row {
+  min-width: 0;
+}
+
+.forgot-pw-link,
+.official-forgot-link {
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- PREMIUM ARTICLE HEADINGS ----------------
+   Smaller, lighter and more editorial than the original
+   oversized headings.
+------------------------------------------------------------ */
+
+.article-section {
+  padding: 34px 0 42px;
+}
+
+.article-section.bg-subtle {
+  padding-top: 28px;
+}
+
+.article-block {
+  padding: 22px 22px 10px;
+  border-radius: 22px;
+}
+
+.section-title-wrap {
+  gap: 9px;
+}
+
+.article-title {
+  max-width: 900px;
+  font-size: clamp(1.8rem, 3.4vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+  color: #0b1728;
+}
+
+.heading-accent-line {
+  width: 100%;
+  max-width: 900px;
+  opacity: .65;
+}
+
+.article-lead {
+  max-width: 760px;
+  margin-bottom: 16px;
+  font-size: .9rem;
+  line-height: 1.6;
+  color: #53657b;
+}
+
+.trouble-list-wrapper {
+  gap: 10px;
+}
+
+.trouble-card-box {
+  padding: 14px 16px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.72);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.trouble-card-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15,23,42,.07);
+  border-color: rgba(29,114,232,.2);
+}
+
+.trouble-header {
+  gap: 9px;
+  margin-bottom: 5px;
+}
+
+.trouble-heading {
+  font-size: clamp(1rem, 1.45vw, 1.25rem);
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.trouble-body {
+  font-size: .86rem;
+  line-height: 1.58;
+}
+
+/* ---------------- REQUIREMENTS ---------------- */
+
+#requirements-section {
+  padding-top: 24px;
+}
+
+#requirements-section .article-block {
+  padding-top: 20px;
+}
+
+#requirements-section .article-lead {
+  margin-bottom: 12px;
+}
+
+.requirements-grid-wrapper {
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.req-box-item {
+  padding: 14px;
+  border-radius: 15px;
+}
+
+.req-box-top {
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.req-box-top strong {
+  font-size: .9rem;
+  line-height: 1.35;
+}
+
+.req-box-item p {
+  margin-bottom: 9px;
+  font-size: .82rem;
+  line-height: 1.52;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.portal-footer {
+  padding-top: 22px;
+}
+
+.footer-inner {
+  gap: 16px;
+  padding-bottom: 14px;
+}
+
+.footer-brand {
+  min-width: 0;
+}
+
+.footer-brand p {
+  line-height: 1.45;
+}
+
+.footer-links {
+  justify-content: flex-end;
+}
+
+.footer-btn-link {
+  white-space: nowrap;
+}
+
+.footer-bottom-copy {
+  padding: 11px 0 15px;
+}
+
+.footer-bottom-copy p {
+  line-height: 1.45;
+}
+
+/* ---------------- LOGIN MODAL ---------------- */
+
+.official-login-modal-overlay,
+.account-suspended-overlay {
+  padding: 16px;
+  overscroll-behavior: contain;
+}
+
+.official-login-modal-box {
+  width: min(100%, 960px);
+  max-height: calc(100dvh - 32px);
+  margin: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.official-login-body-grid {
+  align-items: stretch;
+}
+
+.login-modal-promo-col,
+.login-modal-card-col,
+.official-aol-card,
+.official-card-form {
+  min-width: 0;
+}
+
+.official-aol-card {
+  max-width: 420px;
+}
+
+.official-underline-input {
+  box-sizing: border-box;
+}
+
+.btn-official-next,
+.btn-official-create,
+.btn-autofill-demo {
+  max-width: 100%;
+}
+
+/* ---------------- SUSPENDED POPUP ---------------- */
+
+.suspended-card-box {
+  width: min(100%, 540px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.suspended-card-inner,
+.suspended-callout-box,
+.suspended-lead {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ---------------- CHAT POPUP ---------------- */
+
+.live-chat-floating-widget {
+  max-width: min(360px, calc(100vw - 30px));
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .container,
+  .top-nav-container,
+  .footer-inner {
+    width: min(100% - 32px, 1280px);
+  }
+
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    min-height: auto;
+    padding: 28px 30px 22px;
+  }
+
+  .hero-brand-panel {
+    padding: 8px 0 0;
+  }
+
+  .hero-form-panel {
+    padding: 0 0 8px;
+  }
+
+  .login-card {
+    width: min(100%, 540px);
+    max-width: 540px;
+  }
+
+  .support-hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .official-login-body-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-modal-promo-col {
+    min-height: 0;
+  }
+
+  .promo-laptop-img {
+    height: 230px;
+  }
+
+  .article-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .container,
+  .top-nav-container,
+  .footer-inner {
+    width: calc(100% - 24px);
+  }
+
+  /* HEADER */
+  .top-nav-container {
+    min-height: 54px;
+    gap: 8px;
+    padding: 7px 0;
+  }
+
+  .top-brand-group {
+    flex: 1 1 auto;
+    display: block;
+  }
+
+  .top-header-title {
+    display: block;
+    font-size: .75rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .live-pulse-badge {
+    display: none;
+  }
+
+  .btn-top-login {
+    min-width: 68px;
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: .6rem;
+    border-radius: 8px;
+  }
+
+  /* PAGE TITLE */
+  .breadcrumb-flex {
+    min-height: auto;
+    padding: 11px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .page-main-heading {
+    width: 100%;
+    font-size: .96rem;
+  }
+
+  .quick-nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .quick-nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .q-link,
+  .q-link-btn {
+    flex: 0 0 auto;
+    padding: 6px 9px;
+    font-size: .62rem;
+  }
+
+  /* HERO */
+  .hero-banner-section {
+    padding: 12px 0 8px;
+  }
+
+  .hero-canvas-card {
+    border-radius: 18px;
+  }
+
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    padding: 19px 14px 15px;
+  }
+
+  .hero-brand-panel {
+    padding: 0;
+  }
+
+  .logo-txt {
+    font-size: 1.85rem;
+  }
+
+  .tagline-block {
+    margin: 6px 0 10px;
+  }
+
+  .tagline-black,
+  .tagline-blue {
+    font-size: clamp(1.7rem, 8.5vw, 2.55rem);
+    line-height: 1.03;
+    white-space: normal;
+  }
+
+  .tagline-blue-bar {
+    width: 105px;
+    height: 3px;
+    margin-top: 8px;
+  }
+
+  .hero-quick-features {
+    margin-top: 11px;
+    gap: 5px;
+  }
+
+  .feature-chip {
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: .59rem;
+  }
+
+  .hero-form-panel {
+    padding: 0;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: none;
+    padding: 17px 14px 13px;
+    border-radius: 16px;
+  }
+
+  .login-card-header {
+    margin-bottom: 12px;
+  }
+
+  .login-card-title {
+    margin-top: 9px;
+    font-size: 1.5rem;
+  }
+
+  .login-card-subtitle {
+    font-size: .78rem;
+  }
+
+  .login-form {
+    gap: 11px;
+  }
+
+  .form-group {
+    gap: 7px;
+  }
+
+  .field-label {
+    font-size: .72rem;
+  }
+
+  .form-input {
+    min-height: 47px;
+    padding-left: 43px;
+    padding-right: 45px;
+    font-size: .84rem;
+  }
+
+  .domain-quick-tags {
+    gap: 5px;
+  }
+
+  .domain-tag {
+    padding: 4px 6px;
+    font-size: .58rem;
+  }
+
+  .form-row-options {
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .remember-label {
+    font-size: .72rem;
+  }
+
+  .forgot-pw-link {
+    font-size: .68rem;
+    text-align: right;
+  }
+
+  .btn-signin-primary {
+    min-height: 48px;
+    font-size: .86rem;
+  }
+
+  .btn-google-auth {
+    min-height: 43px;
+    font-size: .75rem;
+  }
+
+  .btn-autofill-demo {
+    min-height: 40px;
+    font-size: .65rem;
+    line-height: 1.35;
+    padding: 7px 9px;
+  }
+
+  /* SUPPORT */
+  .quick-support-hub-section {
+    padding: 15px 0 28px;
+  }
+
+  .support-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .support-hub-card {
+    padding: 13px;
+    border-radius: 15px;
+  }
+
+  .hub-card-title {
+    font-size: 1.05rem;
+  }
+
+  .hub-card-desc {
+    font-size: .79rem;
+  }
+
+  /* PREMIUM ARTICLE */
+  .article-section,
+  .article-section.bg-subtle {
+    padding: 22px 0 30px;
+  }
+
+  .article-block,
+  #requirements-section .article-block {
+    padding: 17px 14px 8px;
+    border-radius: 15px;
+  }
+
+  .section-title-wrap {
+    gap: 7px;
+  }
+
+  .article-title {
+    font-size: clamp(1.48rem, 6.8vw, 2.05rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+
+  .article-lead {
+    margin-bottom: 13px;
+    font-size: .8rem;
+    line-height: 1.52;
+  }
+
+  .trouble-list-wrapper {
+    gap: 8px;
+  }
+
+  .trouble-card-box {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .trouble-heading {
+    font-size: .92rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .trouble-body {
+    font-size: .77rem;
+    line-height: 1.5;
+  }
+
+  /* DIAGNOSTIC */
+  .diag-banner-box {
+    margin-top: 13px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 11px;
+  }
+
+  .diag-left {
+    align-items: flex-start;
+  }
+
+  .diag-left h4 {
+    font-size: .88rem;
+    line-height: 1.3;
+  }
+
+  .diag-left p {
+    font-size: .72rem;
+    line-height: 1.45;
+  }
+
+  .btn-diag-run {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .diag-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* REQUIREMENTS */
+  #requirements-section {
+    padding-top: 20px;
+  }
+
+  .requirements-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 11px;
+  }
+
+  .req-box-item {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .req-box-top {
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .req-icon-symbol {
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+    font-size: .9rem;
+  }
+
+  .req-box-top strong {
+    font-size: .82rem;
+  }
+
+  .req-box-item p {
+    font-size: .76rem;
+    line-height: 1.45;
+    margin-bottom: 7px;
+  }
+
+  .req-status-badge {
+    padding: 5px 7px;
+    font-size: .61rem;
+  }
+
+  /* FOOTER */
+  .portal-footer {
+    padding-top: 18px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    padding-bottom: 12px;
+  }
+
+  .footer-brand {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-brand p {
+    font-size: .72rem;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .footer-btn-link {
+    padding: 6px 8px;
+    font-size: .61rem;
+  }
+
+  .footer-bottom-copy {
+    padding: 10px 0 13px;
+  }
+
+  .footer-bottom-copy p {
+    font-size: .61rem;
+  }
+
+  /* LOGIN POPUP */
+  .official-login-modal-overlay,
+  .account-suspended-overlay {
+    padding: 7px;
+    align-items: flex-start;
+  }
+
+  .official-login-modal-box {
+    width: 100%;
+    max-height: calc(100dvh - 14px);
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .modal-brand-header {
+    padding-bottom: 7px;
+  }
+
+  .modal-aol-logo {
+    font-size: 1.35rem;
+  }
+
+  .btn-close-modal,
+  .btn-close-suspended,
+  .btn-chat-min {
+    width: 32px;
+    height: 32px;
+  }
+
+  .official-login-body-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .login-modal-promo-col {
+    padding: 8px 3px 7px;
+    border-radius: 12px;
+  }
+
+  .promo-heading {
+    padding: 8px 11px 0;
+    margin-bottom: 6px;
+    font-size: 1.35rem;
+    line-height: 1.03;
+  }
+
+  .promo-subheading {
+    padding: 0 11px;
+    margin-bottom: 8px;
+    font-size: .68rem;
+  }
+
+  .promo-image-frame {
+    padding: 0 8px 8px;
+  }
+
+  .promo-laptop-img {
+    height: 125px;
+    border-radius: 9px;
+  }
+
+  .login-modal-card-col {
+    padding: 0;
+  }
+
+  .official-aol-card {
+    width: 100%;
+    max-width: none;
+    padding: 14px 12px 11px;
+    border-radius: 13px;
+  }
+
+  .card-signin-title {
+    font-size: 1.4rem;
+  }
+
+  .official-card-form {
+    gap: 10px;
+  }
+
+  .official-underline-input {
+    min-height: 44px;
+    font-size: .82rem;
+  }
+
+  .btn-official-next {
+    min-height: 45px;
+  }
+
+  .btn-official-create {
+    min-height: 42px;
+  }
+
+  .official-card-options-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* SUSPENDED */
+  .suspended-card-box {
+    width: 100%;
+    max-height: calc(100dvh - 14px);
+    border-radius: 13px;
+  }
+
+  .suspended-card-inner {
+    padding: 17px 13px 14px;
+  }
+
+  .suspended-title {
+    font-size: 1.45rem;
+    line-height: 1.1;
+  }
+
+  .suspended-lead {
+    font-size: .8rem;
+    line-height: 1.5;
+  }
+
+  .suspended-callout-box {
+    font-size: .76rem;
+    line-height: 1.45;
+  }
+
+  .suspended-actions-row {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .btn-suspended-chat,
+  .btn-phone-helpline {
+    width: 100%;
+    min-height: 43px;
+  }
+
+  /* CHAT */
+  .live-chat-floating-widget {
+    right: 8px;
+    bottom: 8px;
+    width: calc(100vw - 16px);
+    max-width: 390px;
+  }
+
+  /* TOAST */
+  .toast-container {
+    left: 8px;
+    right: 8px;
+    top: 8px;
+  }
+
+  .toast-message {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .container,
+  .top-nav-container,
+  .footer-inner {
+    width: calc(100% - 20px);
+  }
+
+  .top-header-title {
+    font-size: .69rem;
+  }
+
+  .btn-top-login {
+    min-width: 64px;
+    padding: 0 8px;
+  }
+
+  .hero-content-grid {
+    padding: 17px 11px 13px;
+  }
+
+  .logo-txt {
+    font-size: 1.7rem;
+  }
+
+  .tagline-black,
+  .tagline-blue {
+    font-size: 1.64rem;
+  }
+
+  .feature-chip {
+    font-size: .56rem;
+    padding: 5px 7px;
+  }
+
+  .login-card {
+    padding: 15px 11px 11px;
+  }
+
+  .login-card-title {
+    font-size: 1.38rem;
+  }
+
+  .login-card-subtitle {
+    font-size: .73rem;
+  }
+
+  .form-row-options {
+    flex-wrap: wrap;
+  }
+
+  .forgot-pw-link {
+    margin-left: auto;
+  }
+
+  .article-title {
+    font-size: 1.45rem;
+  }
+
+  .article-block,
+  #requirements-section .article-block {
+    padding: 15px 12px 7px;
+  }
+
+  .article-lead {
+    font-size: .76rem;
+  }
+
+  .trouble-heading {
+    font-size: .88rem;
+  }
+
+  .trouble-body {
+    font-size: .74rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .footer-btn-link {
+    text-align: center;
+  }
+
+  .footer-links .footer-btn-link:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .official-login-modal-box {
+    padding: 8px;
+  }
+
+  .login-modal-promo-col {
+    display: none;
+  }
+
+  .official-login-body-grid {
+    display: block;
+  }
+
+  .official-aol-card {
+    padding: 14px 11px 10px;
+  }
+
+  .card-signin-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .top-nav-container {
+    gap: 6px;
+  }
+
+  .top-header-title {
+    font-size: .64rem;
+  }
+
+  .btn-top-login {
+    min-width: 59px;
+    min-height: 30px;
+    font-size: .56rem;
+  }
+
+  .q-link,
+  .q-link-btn {
+    padding: 5px 7px;
+    font-size: .58rem;
+  }
+
+  .tagline-black,
+  .tagline-blue {
+    font-size: 1.5rem;
+  }
+
+  .feature-chip {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .remember-label,
+  .forgot-pw-link {
+    font-size: .64rem;
+  }
+
+  .article-title {
+    font-size: 1.32rem;
+  }
+
+  .article-lead {
+    font-size: .72rem;
+  }
+
+  .trouble-heading {
+    font-size: .83rem;
+  }
+
+  .trouble-body {
+    font-size: .69rem;
+  }
+
+  .official-login-modal-overlay,
+  .account-suspended-overlay {
+    padding: 4px;
+  }
+
+  .official-login-modal-box,
+  .suspended-card-box {
+    max-height: calc(100dvh - 8px);
+    border-radius: 11px;
+  }
+}
+
+/* =========================================================
+   SHORT MOBILE LANDSCAPE
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 900px) {
+
+  .official-login-modal-overlay,
+  .account-suspended-overlay {
+    align-items: flex-start;
+  }
+
+  .official-login-modal-box,
+  .suspended-card-box {
+    max-height: calc(100dvh - 10px);
+    margin-top: 2px;
+  }
+
+  .login-modal-promo-col {
+    display: none;
+  }
+
+  .official-login-body-grid {
+    display: block;
+  }
+}
