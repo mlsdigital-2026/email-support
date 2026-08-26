@@ -1,18 +1,11 @@
 export default function OrganizationSchema() {
-  const schema = {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SBCMailMe",
+    name: "SBC Mail Me",
     url: "https://sbcmailme.com",
-  logo: "https://sbcmailme.com/images/logo.png",
-    description:
-      "SBCMailMe provides educational guides and resources for email account recovery, login troubleshooting, password assistance, and account security.",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+1-855-529-0095",
-      contactType: "Customer Support",
-      availableLanguage: "English",
-    },
+    logo: "https://sbcmailme.com/logo.png",
+    email: "info@sbcmailme.com",
     sameAs: [],
   };
 
@@ -20,7 +13,7 @@ export default function OrganizationSchema() {
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
+        __html: JSON.stringify(jsonLd),
       }}
     />
   );

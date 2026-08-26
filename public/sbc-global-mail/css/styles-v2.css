@@ -201,30 +201,38 @@ button { cursor: pointer; }
   width: min(360px, 70%);
   height: 30px;
 }
-.tagline-block { margin: 12px 0 18px; }
+.tagline-block {
+  margin: 12px 0 18px;
+}
+
 .tagline-black,
 .tagline-blue {
   margin: 0;
   font-family: "Outfit", "Inter", sans-serif;
-  font-size: clamp(3.4rem, 6vw, 7rem);
-  line-height: 0.92;
-  letter-spacing: -0.08em;
+  font-size: clamp(2.4rem, 4.2vw, 4.6rem); /* Smaller */
+  line-height: 0.98;
+  letter-spacing: -0.05em; /* Less compressed */
+  font-weight: 800; /* Slightly thinner than 900 */
 }
-.tagline-black { color: #0d1b2a; font-weight: 900; }
+
+.tagline-black {
+  color: #0d1b2a;
+}
+
 .tagline-blue {
   color: transparent;
-  background: linear-gradient(90deg, #4f46e5 0%, #6757ff 32%, #2ec5ff 100%);
+  background: linear-gradient(90deg, #4f46e5 0%, #6757ff 40%, #2ec5ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  font-weight: 900;
+  white-space: nowrap; /* Keeps Empowering Tomorrow. on one line */
 }
+
 .tagline-blue-bar {
-  width: 250px;
-  height: 6px;
-  margin-top: 18px;
+  width: 180px;
+  height: 5px;
+  margin-top: 16px;
   border-radius: 999px;
   background: linear-gradient(90deg, #5a48df, #2ec5ff);
-  box-shadow: 0 12px 22px rgba(90,72,223,0.18);
 }
 .hero-quick-features {
   display: flex;

@@ -1560,3 +1560,39 @@ portal-footer,
     width: 100%;
   }
 }
+
+/* ===== FINAL HERO RESPONSIVE FIX ===== */
+.hero-banner-section{overflow:hidden}
+.hero-canvas-card{max-width:1400px;margin:0 auto}
+.hero-content-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(340px,460px);align-items:center;gap:48px}
+.hero-brand-panel,.hero-form-panel{min-width:0}
+.login-card{width:100%;max-width:440px;margin-inline:auto}
+.logo-txt-comcast,.logo-txt-xfinity{font-size:clamp(2rem,4vw,3.2rem);word-break:break-word}
+.tagline-white,.tagline-blue{font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15}
+.form-input{min-width:0}
+
+@media (max-width:1024px){
+.hero-content-grid{grid-template-columns:1fr;gap:36px}
+.hero-brand-panel{text-align:center}
+.hero-quick-features{justify-content:center}
+.login-card{max-width:620px}
+}
+@media (max-width:768px){
+.hero-banner-section{padding:24px 0 36px}
+.hero-canvas-card{padding:22px 16px;border-radius:18px}
+.hero-content-grid{display:flex;flex-direction:column;gap:28px}
+.hero-brand-panel,.hero-form-panel,.login-card{width:100%;max-width:100%}
+.comcast-official-logo{flex-wrap:wrap;justify-content:center}
+.swoosh-curve{width:140px;margin-inline:auto}
+.hero-quick-features{gap:10px;justify-content:center}
+.feature-chip{width:calc(50% - 5px);justify-content:center}
+.form-row-options{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media (max-width:480px){
+.hero-canvas-card{padding:18px 12px}
+.login-card{padding:18px 14px;border-radius:16px}
+.feature-chip{width:100%}
+.logo-txt-comcast,.logo-txt-xfinity{font-size:1.7rem}
+.tagline-white,.tagline-blue{font-size:1.55rem}
+.btn-signin-primary,.btn-google-auth,.form-input{width:100%}
+}

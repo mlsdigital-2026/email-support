@@ -1,3 +1,4 @@
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogGrid from "@/components/blog/BlogGrid";
 
@@ -10,6 +11,19 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <main className="bg-white">
+      <BreadcrumbSchema
+        items={[
+          {
+            name: "Home",
+            url: "https://sbcmailme.com",
+          },
+          {
+            name: "Blog",
+            url: "https://sbcmailme.com/blog",
+          },
+        ]}
+      />
+
       <BlogHero />
 
       <section className="py-20">
