@@ -2633,3 +2633,95 @@ input {
         transform:rotate(360deg);
     }
 }
+
+/* ==========================================
+   Hero Support Section
+========================================== */
+
+.hero-support-box{
+    margin:26px auto 30px;
+    text-align:center;
+    max-width:700px;
+}
+
+.support-heading{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:8px 18px;
+    background:#eef2ff;
+    border-radius:999px;
+    color:#4f46e5;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:14px;
+}
+
+.support-heading i{
+    width:18px;
+    height:18px;
+}
+
+.support-phone{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    text-decoration:none;
+    color:#111827;
+    font-size:32px;
+    font-weight:800;
+    line-height:1;
+    transition:all .25s ease;
+}
+
+.support-phone i{
+    width:28px;
+    height:28px;
+    color:#4f46e5;
+}
+
+.support-phone:hover{
+    color:#4f46e5;
+    transform:translateY(-2px);
+}
+
+.support-text{
+    margin-top:8px;
+    color:#64748b;
+    font-size:15px;
+    line-height:1.6;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .hero-support-box{
+        margin:22px auto 26px;
+    }
+
+    .support-heading{
+        font-size:13px;
+        padding:7px 14px;
+    }
+
+    .support-phone{
+        font-size:26px;
+        gap:10px;
+    }
+
+    .support-phone i{
+        width:24px;
+        height:24px;
+    }
+
+    .support-text{
+        font-size:14px;
+        padding:0 16px;
+    }
+}
