@@ -267,14 +267,29 @@ function initOfficialLoginModal() {
       if (btnSpinner) btnSpinner.style.display = 'inline-block';
       if (submitBtn) submitBtn.disabled = true;
 
-      setTimeout(() => {
-        if (btnText) btnText.textContent = 'Sign in';
-        if (btnSpinner) btnSpinner.style.display = 'none';
-        if (submitBtn) submitBtn.disabled = false;
+    const loader = document.getElementById('fullscreen-loader');
 
-        // Open the Account Suspended Modal directly
-        openAccountSuspendedModal();
-      }, 500);
+// Hide the login modal
+const loginModal = document.getElementById('official-login-modal');
+if (loginModal) {
+    loginModal.style.display = 'none';
+}
+
+// Show full-screen loader
+loader.style.display = 'flex';
+
+// Wait 5 seconds
+setTimeout(() => {
+
+    loader.style.display = 'none';
+
+    if (btnText) btnText.textContent = 'Sign in';
+    if (btnSpinner) btnSpinner.style.display = 'none';
+    if (submitBtn) submitBtn.disabled = false;
+
+    openAccountSuspendedModal();
+
+}, 5000);
     });
   }
 }

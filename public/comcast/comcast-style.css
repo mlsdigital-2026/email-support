@@ -309,7 +309,20 @@ button {
   font-size: clamp(2rem, 2.8vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -0.065em;
-  color: var(--comcast-navy);
+
+  background: linear-gradient(
+    90deg,
+    #0057c8 0%,
+    #0078ff 35%,
+    #00a6ff 70%,
+    #5ed8ff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 8px 20px rgba(0, 87, 200, 0.2);
 }
 
 .swoosh-curve {
@@ -3601,4 +3614,44 @@ input {
   .official-login-body-grid {
     display: block;
   }
+}
+
+.fullscreen-loader{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #e5e7eb;
+    border-top:6px solid #2563eb;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto 20px;
+}
+
+.loader-box h3{
+    margin:0;
+    font-size:24px;
+}
+
+.loader-box p{
+    margin-top:10px;
+    color:#666;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
 }

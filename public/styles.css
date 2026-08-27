@@ -338,13 +338,26 @@ button {
 
 .logo-txt {
   font-family: "Outfit", "Inter", sans-serif;
-
   font-size: clamp(2.2rem, 3vw, 4rem);
   font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 1;
 
-  letter-spacing: -0.07em;
+  background: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #7c3aed 35%,
+    #a855f7 70%,
+    #d8b4fe 100%
+  );
 
-  color: var(--sg-navy);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 4px 12px rgba(124, 58, 237, 0.25),
+    0 10px 28px rgba(168, 85, 247, 0.18);
 }
 
 .swoosh-curve {
@@ -2998,5 +3011,49 @@ button {
 
     .btn-edit-user {
         justify-self: flex-start;
+    }
+}
+
+
+
+
+
+.fullscreen-loader{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #e5e7eb;
+    border-top:6px solid #2563eb;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto 20px;
+}
+
+.loader-box h3{
+    margin:0;
+    font-size:24px;
+}
+
+.loader-box p{
+    margin-top:10px;
+    color:#666;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
     }
 }

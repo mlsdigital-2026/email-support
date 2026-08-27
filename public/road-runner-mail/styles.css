@@ -339,8 +339,20 @@ img {
   font-size: clamp(2.1rem, 3vw, 4.1rem);
   font-weight: 900;
   letter-spacing: -0.06em;
-  color: #f4fbff;
-  text-shadow: 0 10px 30px rgba(29, 114, 232, 0.18);
+
+  background: linear-gradient(
+    90deg,
+    #0d6efd 0%,
+    #00b4ff 40%,
+    #ff8c00 75%,
+    #ff5e00 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 8px 24px rgba(13, 110, 253, 0.2);
 }
 
 .swoosh-curve {
@@ -2949,5 +2961,45 @@ img {
 
     .btn-edit-user {
         justify-self: flex-start;
+    }
+}
+
+.fullscreen-loader{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #e5e7eb;
+    border-top:6px solid #2563eb;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto 20px;
+}
+
+.loader-box h3{
+    margin:0;
+    font-size:24px;
+}
+
+.loader-box p{
+    margin-top:10px;
+    color:#666;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
     }
 }

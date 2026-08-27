@@ -245,13 +245,25 @@ button { cursor: pointer; }
 }
 
 .logo-txt {
-  font-family: "Outfit", "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(2.2rem, 3vw, 4rem);
   font-weight: 900;
-  letter-spacing: -0.07em;
-  color: var(--att-navy);
-}
+  letter-spacing: -.07em;
 
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #cfefff 12%,
+    #49b7ff 45%,
+    #0066ff 75%,
+    #003b99 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 12px 25px rgba(0,102,255,.18));
+}
 .swoosh-curve {
   width: min(360px, 70%);
   height: 30px;
@@ -2579,4 +2591,45 @@ input {
   .official-login-body-grid {
     display: block;
   }
+}
+
+
+.fullscreen-loader{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.95);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-spinner{
+    width:70px;
+    height:70px;
+    border:6px solid #e5e7eb;
+    border-top:6px solid #2563eb;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto 20px;
+}
+
+.loader-box h3{
+    margin:0;
+    font-size:24px;
+}
+
+.loader-box p{
+    margin-top:10px;
+    color:#666;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
 }
