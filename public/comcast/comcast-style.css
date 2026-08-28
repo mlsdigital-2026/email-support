@@ -1450,21 +1450,25 @@ button {
 }
 
 .btn-official-next {
-  min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  border: 0;
+    width: 100%;
+    min-height: 50px;
 
-  border-radius: 12px;
+    border: 0;
+    border-radius: 12px;
 
-  background: linear-gradient(135deg, #0057c8, #1f7ae0);
+    background: linear-gradient(135deg, #0057c8, #1f7ae0);
 
-  color: #fff;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
 
-  font-size: 0.95rem;
-
-  font-weight: 800;
+    margin: 16px 0;
+    cursor: pointer;
 }
-
 .official-card-options-row {
   display: flex;
   align-items: center;

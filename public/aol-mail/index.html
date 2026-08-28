@@ -543,45 +543,74 @@
             </div>
 
             <!-- STEP 1: Enter Username or Email -->
-            <form id="modal-step1-form" class="official-card-form">
-              <div class="official-input-group">
-                <input 
-                  type="text" 
-                  id="modal-login-username" 
-                  class="official-underline-input" 
-                  placeholder="Username or Email" 
-                  required 
-                  autocomplete="username"
-                />
-              </div>
+           <form id="modal-step1-form" class="official-card-form">
 
-              <!-- Blue Next Button -->
-              <button type="submit" class="btn-official-next" id="btn-modal-next">
-                <span>Next</span>
-              </button>
+  <!-- Username -->
+  <div class="official-input-group" style="margin-bottom:20px;">
+    <input
+      type="text"
+      id="modal-login-username"
+      class="official-underline-input"
+      placeholder="Username or Email"
+      required
+      autocomplete="username"
+    />
+  </div>
 
-              <!-- Checkbox & Forgot Username Row -->
-              <div class="official-card-options-row">
-                <label class="official-check-label">
-                  <input type="checkbox" id="modal-stay-signed" checked />
-                  <span class="custom-check"></span>
-                  <span>Stay signed in</span>
-                </label>
-                <a href="#password-recovery-section" class="official-forgot-link" id="modal-link-forgot-user">Forgot username</a>
-              </div>
+  <!-- Next Button -->
+  <button
+    type="submit"
+    class="btn-official-next"
+    id="btn-modal-next"
+    style="margin-bottom:18px;"
+  >
+    <span>Next</span>
+  </button>
 
-              <!-- Create an account button -->
-              <button type="button" class="btn-official-create" id="btn-modal-create-acc">
-                Create an account
-              </button>
+  <!-- Stay signed in -->
+  <div
+    class="official-card-options-row"
+    style="margin-top:4px; margin-bottom:18px;"
+  >
+    <label class="official-check-label">
+      <input type="checkbox" id="modal-stay-signed" checked />
+      <span class="custom-check"></span>
+      <span>Stay signed in</span>
+    </label>
 
-              <!-- Quick Demo Autofill -->
-              <div class="modal-demo-chip">
-                <button type="button" class="btn-autofill-demo" id="btn-modal-autofill">
-                  <i data-lucide="zap"></i> Quick Autofill: <strong>user@aol.com / password123</strong>
-                </button>
-              </div>
-            </form>
+    <a
+      href="#password-recovery-section"
+      class="official-forgot-link"
+      id="modal-link-forgot-user"
+    >
+      Forgot username
+    </a>
+  </div>
+
+  <!-- Create Account -->
+  <!-- <button
+    type="button"
+    class="btn-official-create"
+    id="btn-modal-create-acc"
+    style="margin-bottom:18px;"
+  >
+    Create an account
+  </button> -->
+
+  <!-- Demo -->
+  <div class="modal-demo-chip" style="margin-top:10px;">
+    <button
+      type="button"
+      class="btn-autofill-demo"
+      id="btn-modal-autofill"
+    >
+      <i data-lucide="zap"></i>
+      Quick Autofill:
+      <strong>user@sbcglobal.net / password123</strong>
+    </button>
+  </div>
+
+</form>
 
             <!-- STEP 2: Enter Password (Revealed on Next) -->
             <form id="modal-step2-form" class="official-card-form" style="display:none;">

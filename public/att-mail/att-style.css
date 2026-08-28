@@ -1124,13 +1124,24 @@ button { cursor: pointer; }
 .official-underline-input:focus { border-bottom-color: rgba(96, 165, 250, 0.9); }
 
 .btn-official-next {
-  min-height: 54px;
-  border: 0;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #d32f2f, #ef4444);
-  color: #fff;
-  font-size: 1.08rem;
-  font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 54px;
+
+    border: 0;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #d32f2f, #ef4444);
+
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 800;
+
+    margin: 16px 0;
+    cursor: pointer;
 }
 
 .official-card-options-row {
