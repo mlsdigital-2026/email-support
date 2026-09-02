@@ -320,8 +320,8 @@ button { cursor: pointer; }
   background: rgba(13, 27, 42, 0.22);
 }
 
-.legacy-mail-brand:hover .legacy-mail-name strong,
-.legacy-mail-brand:focus-visible .legacy-mail-name strong {
+a.legacy-mail-brand:hover .legacy-mail-name strong,
+a.legacy-mail-brand:focus-visible .legacy-mail-name strong {
   color: #1472ed;
 }
 
