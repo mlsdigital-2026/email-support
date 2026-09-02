@@ -1940,6 +1940,39 @@ input {
     width: calc(100% - 24px);
   }
 
+  .legacy-mail-brands {
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 100%;
+    gap: 10px 12px;
+  }
+
+  .aol-official-logo {
+    width: 100%;
+  }
+
+  .legacy-mail-divider {
+    display: none;
+  }
+
+  .legacy-att-brand .legacy-mail-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .legacy-att-brand .legacy-mail-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .legacy-att-brand .legacy-mail-name strong {
+    font-size: 1.25rem;
+  }
+
+  .legacy-mail-name strong {
+    font-size: 1rem;
+  }
+
   /* HEADER */
   .top-nav-container {
     min-height: 54px;
