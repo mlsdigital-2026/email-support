@@ -19,7 +19,7 @@ export default function ProviderCard({
   return (
     <div className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
 
-      <div className="bg-slate-50 p-6">
+      <div className="bg-slate-50">
 
         <Image
           src={provider.image}

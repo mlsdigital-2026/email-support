@@ -37,7 +37,7 @@ export default function Providers() {
 
         {/* Banner Illustration */}
 
-        <div className="mb-20 flex justify-center">
+        <div className="mb-4 flex justify-center">
 
           <Image
             src="/images/providers-banner.png"
