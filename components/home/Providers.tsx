@@ -72,9 +72,7 @@ export default function Providers() {
               </p>
 
               <Link
-                href={`/providers/${provider.name
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")}`}
+                href={provider.url}
                 className="mt-8 inline-flex items-center gap-2 font-semibold text-blue-600 transition hover:gap-3"
               >
                 Learn More

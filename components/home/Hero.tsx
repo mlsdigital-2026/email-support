@@ -194,9 +194,9 @@ export default function Hero() {
               </div>
 
               <h1 className="mt-4 text-3xl font-extrabold leading-snug text-slate-900 md:text-4xl lg:text-5xl">
-                Recover Your
+                Locked Out of
                 <span className="block text-blue-600">
-                  Email Account Securely
+                 Your Email?
                 </span>
               </h1>
 

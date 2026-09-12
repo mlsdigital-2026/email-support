@@ -1,50 +1,47 @@
 export const providers = [
   {
     id: 1,
-    slug: "account-recovery",
-    name: "Account Recovery",
-    image: "/images/provider-gmail.png",
+    slug: "aol-mail",
+    name: "AOL Mail",
+    image: "/images/provider-aol.png",
     description:
-      "Learn how to regain access to your email account using official recovery methods.",
+      "Get help with AOL Mail account recovery, password reset, login issues, and email access.",
+    url: "https://sbcmailme.com/aol-mail",
   },
   {
     id: 2,
-    slug: "password-reset",
-    name: "Password Reset",
-    image: "/images/provider-outlook.png",
+    slug: "att-mail",
+    name: "AT&T Mail",
+    image: "/images/provider-att.png",
     description:
-      "Educational guides for resetting your email password safely.",
+      "Find guidance for AT&T Mail login, password recovery, account access, and common email issues.",
+    url: "https://sbcmailme.com/att-mail",
   },
   {
     id: 3,
-    slug: "login-help",
-    name: "Login Help",
-    image: "/images/provider-yahoo.png",
+    slug: "sbc-global-mail",
+    name: "SBCGlobal Mail",
+    image: "/images/provider-sbcglobal.png",
     description:
-      "Help with email sign-in and authentication issues.",
+      "Get assistance with SBCGlobal email login, password recovery, account access, and email problems.",
+    url: "https://sbcmailme.com/sbc-global-mail",
   },
   {
     id: 4,
-    slug: "email-security",
-    name: "Email Security",
-    image: "/images/provider-aol.png",
+    slug: "road-runner-mail",
+    name: "RoadRunner Mail",
+    image: "/images/provider-road-runner.png",
     description:
-      "Learn best practices to protect your email account from unauthorized access.",
+      "Find helpful information for RoadRunner email login, password reset, account recovery, and access issues.",
+    url: "https://sbcmailme.com/road-runner-mail",
   },
   {
     id: 5,
-    slug: "account-settings",
-    name: "Account Settings",
-    image: "/images/provider-icloud.png",
+    slug: "comcast",
+    name: "Comcast Email",
+    image: "/images/provider-comcast.png",
     description:
-      "Understand common email account settings and configuration options.",
-  },
-  {
-    id: 6,
-    slug: "email-guides",
-    name: "Email Guides",
-    image: "/images/provider-sbcglobal.png",
-    description:
-      "Helpful educational resources covering common email account topics.",
+      "Get guidance for Comcast email login, password recovery, account access, and common email issues.",
+    url: "https://sbcmailme.com/comcast",
   },
 ];

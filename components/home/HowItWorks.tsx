@@ -5,33 +5,41 @@ import React from 'react';
 
 
 import {
+  FileText,
   Search,
-  BookOpen,
-  ShieldCheck,
+  Mail,
+  User,
   ArrowRight,
 } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
+    number: "1",
+    icon: FileText,
+    title: "Describe Your Issue",
+    description:
+      "Tell us what happened and which email provider you use.",
+  },
+  {
+    number: "2",
     icon: Search,
-    title: "Choose Your Email Provider",
+    title: "Expert Reviews Request",
     description:
-      "Select the email provider or topic related to your account issue.",
+      "Our team reviews your case and provides the best solution.",
   },
   {
-    number: "02",
-    icon: BookOpen,
-    title: "Follow the Recovery Guide",
+    number: "3",
+    icon: Mail,
+    title: "Receive Recovery Guidance",
     description:
-      "Read the step-by-step instructions for password reset, login issues, or account recovery.",
+      "Get step-by-step instructions tailored to your situation.",
   },
   {
-    number: "03",
-    icon: ShieldCheck,
-    title: "Secure Your Account",
+    number: "4",
+    icon: User,
+    title: "Regain Access",
     description:
-      "Review recommended security practices to help keep your email account protected.",
+      "Follow the guidance and get back to your account.",
   },
 ];
 
@@ -49,19 +57,18 @@ export default function HowItWorks() {
           </span>
 
           <h2 className="mt-6 text-4xl font-bold text-slate-900 lg:text-5xl">
-            Get Started in Three Simple Steps
+            Getting Back to Your Email Is Simple
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Quickly find the right guidance for recovering access to your email
-            account and improving its security.
+            Follow these 4 easy steps.
           </p>
 
         </div>
 
         {/* Steps */}
 
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-4">
 
           {steps.map((step, index) => {
 
@@ -75,13 +82,13 @@ export default function HowItWorks() {
 
                 {/* Step Number */}
 
-                <div className="absolute right-8 top-8 text-5xl font-extrabold text-blue-100">
+                <div className="absolute left-6 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-lg font-bold text-white">
                   {step.number}
                 </div>
 
                 {/* Icon */}
 
-                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
+                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
                   <Icon className="text-blue-600" size={30} />
                 </div>
 
@@ -101,10 +108,7 @@ export default function HowItWorks() {
 
                 {index < steps.length - 1 && (
                   <div className="absolute -right-5 top-1/2 hidden -translate-y-1/2 lg:block">
-                    <ArrowRight
-                      size={36}
-                      className="text-blue-300"
-                    />
+                    <ArrowRight size={30} className="text-blue-300" />
                   </div>
                 )}
 

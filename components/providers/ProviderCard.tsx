@@ -8,6 +8,7 @@ interface Provider {
   name: string;
   image: string;
   description: string;
+  url: string;
 }
 
 export default function ProviderCard({
@@ -32,7 +33,7 @@ export default function ProviderCard({
 
       <div className="p-8">
 
-        <h3 className="text-2xl font-bold">
+        <h3 className="text-2xl font-bold text-slate-900">
           {provider.name}
         </h3>
 
@@ -41,11 +42,11 @@ export default function ProviderCard({
         </p>
 
         <Link
-          href={`/providers/${provider.slug}`}
-          className="mt-6 inline-flex items-center font-semibold text-blue-600"
+          href={provider.url}
+          className="mt-6 inline-flex items-center font-semibold text-blue-600 transition hover:text-blue-700"
         >
           Learn More
-          <ArrowRight className="ml-2 h-5 w-5" />
+          <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
         </Link>
 
       </div>
