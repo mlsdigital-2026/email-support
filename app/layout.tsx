@@ -13,12 +13,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sbcmailme.com"),
 
   title: {
-    default: "SBC Mail Me",
+    default: "Email Management Services & Support | SBC Mail Me",
     template: "%s | SBC Mail Me",
   },
 
-  description:
-    "Educational guides about email password recovery, email security, account protection, email setup, IMAP, POP3, SMTP, and email best practices.",
+  description: "Email Management Services & Support | SBC Mail Me",
 
   keywords: [
     "email recovery",
@@ -70,9 +69,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://sbcmailme.com",
     siteName: "SBC Mail Me",
-    title: "SBC Mail Me",
-    description:
-      "Educational guides about email password recovery, email security, account protection, email setup, IMAP, POP3, SMTP, and email best practices.",
+    title: "Email Management Services & Support | SBC Mail Me",
+    description: "Get reliable email management services and support for account access, password recovery, login issues, security and more.",
     images: [
       {
         url: "/og-image.jpg",
@@ -85,9 +83,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "SBC Mail Me",
-    description:
-      "Educational guides about email password recovery, email security, account protection, email setup, IMAP, POP3, SMTP, and email best practices.",
+    title: "Email Management Services & Support | SBC Mail Me",
+    description: "Get reliable email management services and support for account access, password recovery, login issues, security and more.",
     images: ["/og-image.jpg"],
   },
 

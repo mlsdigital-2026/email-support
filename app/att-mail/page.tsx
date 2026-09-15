@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AT&T Mail",
+  title: "AT&T Email Login & Setup Help",
   description:
-    "AT&T Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+    "Need AT&T email login or setup help? Get guidance for signing in, configuring your account and resolving common password issues.",
   alternates: {
     canonical: "https://sbcmailme.com/att-mail",
   },
   openGraph: {
-    title: "AT&T Mail",
+    title: "AT&T Email Login & Setup Help | SBC Mail Me",
     description:
-      "AT&T Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Need AT&T email login or setup help? Get guidance for signing in, configuring your account and resolving common password issues.",
     url: "https://sbcmailme.com/att-mail",
   },
   twitter: {
-    title: "AT&T Mail",
+    title: "AT&T Email Login & Setup Help | SBC Mail Me",
     description:
-      "AT&T Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Need AT&T email login or setup help? Get guidance for signing in, configuring your account and resolving common password issues.",
   },
 };
 

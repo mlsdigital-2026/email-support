@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 import Hero from "@/components/home/Hero";
@@ -11,6 +12,11 @@ import CTA from "@/components/home/CTA";
 import ServicePreview from "@/components/home/ServicePreview";
 import OrganizationSchema from "@/components/seo/OrganizationSchema";
 import WebsiteSchema from "@/components/seo/WebsiteSchema";
+
+export const metadata: Metadata = {
+  title: "Email Management Services & Support | SBC Mail Me",
+  description: "Get reliable email management services and support for account access, password recovery, login issues, security and more.",
+};
 
 export default function Home() {
   return (

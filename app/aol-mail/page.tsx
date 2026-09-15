@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AOL Mail",
+  title: "AOL Mail Setup & Configuration Help",
   description:
-    "AOL Mail login, password recovery, account setup, IMAP, POP3, SMTP settings and troubleshooting.",
+    "Get help with AOL mail setup, account configuration and common email settings so you can access and use your AOL account.",
   alternates: {
     canonical: "https://sbcmailme.com/aol-mail",
   },
@@ -13,7 +13,7 @@ export default function AolMailPage() {
   return (
     <iframe
       src="/aol-mail/index.html"
-      title="AOL Mail Login & Support Portal"
+      title="AOL Mail Setup & Configuration Help | SBC Mail Me"
       style={{
         width: "100vw",
         height: "100vh",

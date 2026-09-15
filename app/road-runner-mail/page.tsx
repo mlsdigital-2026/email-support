@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Roadrunner Mail",
+  title: "RoadRunner Email Setup & Configuration Help",
   description:
-    "Roadrunner Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+    "Get help with RoadRunner email setup and configuration, including account settings and common issues accessing your email.",
   alternates: {
     canonical: "https://sbcmailme.com/road-runner-mail",
   },
   openGraph: {
-    title: "Roadrunner Mail",
+    title: "RoadRunner Email Setup & Configuration Help",
     description:
-      "Roadrunner Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Get help with RoadRunner email setup and configuration, including account settings and common issues accessing your email.",
     url: "https://sbcmailme.com/road-runner-mail",
   },
   twitter: {
-    title: "Roadrunner Mail",
+    title: "RoadRunner Email Setup & Configuration Help",
     description:
-      "Roadrunner Mail login, password recovery, account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Get help with RoadRunner email setup and configuration, including account settings and common issues accessing your email.",
   },
 };
 

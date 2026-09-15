@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Comcast Mail",
+  title: "Comcast Email Setup & Configuration Help",
   description:
-    "Comcast Mail login, password recovery, email account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+    "Get help with Comcast email setup and configuration, including account settings and common issues when accessing your email.",
   alternates: {
     canonical: "https://sbcmailme.com/comcast",
   },
   openGraph: {
-    title: "Comcast Mail",
+    title: "Comcast Email Setup & Configuration Help | SBC Mail Me",
     description:
-      "Comcast Mail login, password recovery, email account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Get help with Comcast email setup and configuration, including account settings and common issues when accessing your email.",
     url: "https://sbcmailme.com/comcast",
   },
   twitter: {
-    title: "Comcast Mail",
+    title: "Comcast Email Setup & Configuration Help | SBC Mail Me",
     description:
-      "Comcast Mail login, password recovery, email account setup, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Get help with Comcast email setup and configuration, including account settings and common issues when accessing your email.",
   },
 };
 

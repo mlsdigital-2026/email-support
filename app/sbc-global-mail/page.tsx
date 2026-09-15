@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SBC Global Mail",
+  title: "SBCGlobal Email Password Reset & Account Help",
   description:
-    "SBC Global Mail login, password recovery, account setup, email security, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+    "Forgot your SBCGlobal email password? Get guidance for password resets, account access and common SBCGlobal email issues.",
   alternates: {
     canonical: "https://sbcmailme.com/sbc-global-mail",
   },
   openGraph: {
-    title: "SBC Global Mail",
+    title: "SBCGlobal Email Password Reset & Account Help",
     description:
-      "SBC Global Mail login, password recovery, account setup, email security, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Forgot your SBCGlobal email password? Get guidance for password resets, account access and common SBCGlobal email issues.",
     url: "https://sbcmailme.com/sbc-global-mail",
     siteName: "SBC Mail Me",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SBC Global Mail",
+    title: "SBCGlobal Email Password Reset & Account Help",
     description:
-      "SBC Global Mail login, password recovery, account setup, email security, IMAP, POP3, SMTP settings, and troubleshooting guides.",
+      "Forgot your SBCGlobal email password? Get guidance for password resets, account access and common SBCGlobal email issues.",
   },
 };
 

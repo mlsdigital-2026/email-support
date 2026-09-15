@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +19,71 @@ interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  if (slug === "account-recovery") {
+    return {
+      title: "Recover Email Account | Email Account Recovery Help",
+      description:
+        "Need to recover an email account? Get help with account recovery, access issues and common email account problems.",
+    };
+  }
+
+  if (slug === "password-reset") {
+    return {
+      title: "Reset Email Password | Email Password Reset Help",
+      description:
+        "Learn how to reset your email password and regain account access with practical help for common password reset issues.",
+    };
+  }
+
+  if (slug === "email-security") {
+    return {
+      title: "Email Security Services | Protect Your Email Account",
+      description:
+        "Explore email security services and practical ways to protect your account, strengthen security and reduce common email risks.",
+    };
+  }
+
+  if (slug === "forgot-password") {
+    return {
+      title: "Forgot My Password? Get Email Password Help",
+      description:
+        "Forgot your email password? Get helpful guidance for recovering or resetting your password and getting back into your account.",
+    };
+  }
+
+  if (slug === "login-help") {
+    return {
+      title: "Email Login Help | Fix Email Account Login Problems",
+      description:
+        "Having trouble signing in? Get email login help for account access, sign-in problems and common email login issues.",
+    };
+  }
+
+    if (slug === "email") {
+    return {
+      title: "Email Support & Account Assistance | SBC Mail Me",
+      description:
+        "Get email support and account assistance for login issues, password problems, account access, setup and other common email concerns.",
+    };
+  }
+
+  const service = services.find((item) => item.slug === slug);
+
+  if (!service) {
+    return {
+      title: "Service",
+    };
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+  };
 }
 
 export default async function ServiceDetail({ params }: Props) {
