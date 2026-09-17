@@ -10,7 +10,7 @@ export default function BlogSidebar({
   return (
     <aside className="space-y-8">
 
-      <div className="sticky top-28">
+      <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1">
 
         <TableOfContents blog={blog} />
 

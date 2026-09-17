@@ -236,7 +236,11 @@ export const accessSbcglobalEmailOnNewPhoneComputer: Blog = {
         "Check internet connection",
         "Restart your email app",
         "Remove and reconnect your account",
-        '<a href="https://sbcmailme.com/blog/sbcglobal-email-not-working" target="_blank" rel="noopener noreferrer">For more troubleshooting solutions, read: SBCGlobal Email Not Working? 9 Fixes That Actually Work</a>',
+      ],
+
+      afterBullets: [
+        "For more troubleshooting solutions, read:",
+        '<a href="https://sbcmailme.com/blog/sbcglobal-email-not-working" target="_blank" rel="noopener noreferrer">SBCGlobal Email Not Working? 9 Fixes That Actually Work</a>',
       ],
     },
     {
@@ -291,48 +295,6 @@ export const accessSbcglobalEmailOnNewPhoneComputer: Blog = {
         "Setting up an older email account on a new device can sometimes be confusing, especially when login details, security checks, or server settings create problems.",
 
         '<a href="https://sbcmailme.com/" target="_blank" rel="noopener noreferrer">SBCMailMe</a> provides helpful guidance for SBCGlobal email setup, login, and access-related issues. If you need further assistance, you can reach out at <a href="tel:+18555290095" target="_blank" rel="noopener noreferrer">+1 (855) 529-0095</a>.',
-      ],
-    },
-    {
-      heading: "Frequently Asked Questions",
-
-      paragraphs: [
-        "Below are answers to the most common questions people have when setting up or accessing their SBCGlobal email on a new device.",
-      ],
-    },
-    {
-      heading: "Q: How do I access my SBCGlobal email on a new phone?",
-
-      paragraphs: [
-        "You can access SBCGlobal email on a new phone by adding your account manually through your phone's email settings and entering the correct IMAP and SMTP details.",
-      ],
-    },
-    {
-      heading: "Q: Is SBCGlobal email still available?",
-
-      paragraphs: [
-        "Yes. Existing SBCGlobal.net email accounts can still be accessed through the current email system used for these accounts.",
-      ],
-    },
-    {
-      heading: "Q: Why is my SBCGlobal email not working on my new device?",
-
-      paragraphs: [
-        "The most common reasons are incorrect passwords, wrong server settings, account verification issues, or email app configuration problems.",
-      ],
-    },
-    {
-      heading: "Q: Can I use SBCGlobal email with Outlook?",
-
-      paragraphs: [
-        "Yes, SBCGlobal email can be configured in Outlook using the correct IMAP and SMTP server settings.",
-      ],
-    },
-    {
-      heading: "Q: What are SBCGlobal IMAP settings?",
-
-      paragraphs: [
-        "IMAP settings allow your email application to connect with your account and synchronize messages across devices.",
       ],
     },
     {
