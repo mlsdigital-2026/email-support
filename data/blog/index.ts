@@ -8,8 +8,8 @@ import { accessSbcglobalEmailOnNewPhoneComputer } from "./access-sbcglobal-email
 export const blogs = [
    accessSbcglobalEmailOnNewPhoneComputer,
   resetYourMailPassword,
-  forgotEmailPassword,
   changeEmailPassword,
   smtpSettingsExplained,
   sbcglobalEmailNotWorking,
+  forgotEmailPassword,
 ];
