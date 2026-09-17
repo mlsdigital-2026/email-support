@@ -2,6 +2,7 @@ export interface BlogSection {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
+  afterBullets?: string[];
 }
 
 export interface BlogFaq {

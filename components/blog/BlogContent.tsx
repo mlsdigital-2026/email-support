@@ -16,17 +16,35 @@ export default function BlogContent({ blog }: { blog: Blog }) {
           </h2>
 
           {section.paragraphs.map((paragraph, i) => (
-            <p key={i} className="mb-5 leading-8">
-              {paragraph}
-            </p>
+            <p
+              key={i}
+              className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
 
           {section.bullets && (
             <ul className="list-disc space-y-3 pl-6">
               {section.bullets.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li
+                  key={i}
+                  className="[&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
               ))}
             </ul>
+          )}
+
+          {section.afterBullets && (
+            <div className="mt-4">
+              {section.afterBullets.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
+            </div>
           )}
         </section>
       ))}
