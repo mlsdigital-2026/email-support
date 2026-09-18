@@ -103,6 +103,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="bkWRcNfyqL_UWfdvCdKklvZ9c-OB8K8tNAhQCJ6Auq8"
+        />
+
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="beforeInteractive">
           {`
