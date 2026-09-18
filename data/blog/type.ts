@@ -3,6 +3,10 @@ export interface BlogSection {
   paragraphs: string[];
   bullets?: string[];
   afterBullets?: string[];
+  table?: {
+    headers: string[];
+    rows: string[][];
+  };
 }
 
 export interface BlogFaq {
@@ -36,6 +40,8 @@ export interface Blog {
   sections: BlogSection[];
 
   faqs?: BlogFaq[];
+
+  finalThoughts?: BlogSection;
 
   tags?: string[];
 }

@@ -4,9 +4,11 @@ import { changeEmailPassword } from "./change-email-password";
 import { smtpSettingsExplained } from "./smtp-settings-explained";
 import { sbcglobalEmailNotWorking } from "./sbcglobal-email-not-working";
 import { accessSbcglobalEmailOnNewPhoneComputer } from "./access-sbcglobal-email-new-phone-computer";
+import { addSbcglobalEmailToOutlook } from "./add-sbcglobal-email-to-outlook";
 
 export const blogs = [
-   accessSbcglobalEmailOnNewPhoneComputer,
+  addSbcglobalEmailToOutlook,
+  accessSbcglobalEmailOnNewPhoneComputer,
   resetYourMailPassword,
   changeEmailPassword,
   smtpSettingsExplained,

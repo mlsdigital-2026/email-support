@@ -41,6 +41,38 @@ export default function BlogContent({ blog }: { blog: Blog }) {
             </ul>
           )}
 
+          {section.table && (
+            <div className="my-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+              <table className="min-w-full border-collapse text-left">
+                <thead>
+                  <tr>
+                    {section.table.headers.map((header, i) => (
+                      <th
+                        key={i}
+                        className="border-b border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-slate-800"
+                      >
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.table.rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={`${rowIndex}-${cellIndex}`}
+                          className="border-b border-slate-200 px-4 py-3 text-slate-700 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                          dangerouslySetInnerHTML={{ __html: cell }}
+                        />
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
           {section.afterBullets && (
             <div className="mt-4">
               {section.afterBullets.map((paragraph, i) => (
@@ -56,7 +88,7 @@ export default function BlogContent({ blog }: { blog: Blog }) {
       ))}
 
       {blog.faqs && blog.faqs.length > 0 && (
-        <section className="mt-16">
+        <section id="frequently-asked-questions" className="mt-16">
           <h2 className="mb-6 text-3xl font-bold text-slate-900">
             Frequently Asked Questions
           </h2>
@@ -90,6 +122,46 @@ export default function BlogContent({ blog }: { blog: Blog }) {
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {blog.finalThoughts && (
+        <section className="mt-16 scroll-mt-28">
+          <h2 className="mb-5 text-3xl font-bold text-slate-900">
+            {blog.finalThoughts.heading}
+          </h2>
+
+          {blog.finalThoughts.paragraphs.map((paragraph, i) => (
+            <p
+              key={i}
+              className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
+          ))}
+
+          {blog.finalThoughts.bullets && (
+            <ul className="list-disc space-y-3 pl-6">
+              {blog.finalThoughts.bullets.map((item, i) => (
+                <li
+                  key={i}
+                  className="[&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              ))}
+            </ul>
+          )}
+
+          {blog.finalThoughts.afterBullets && (
+            <div className="mt-4">
+              {blog.finalThoughts.afterBullets.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
+            </div>
+          )}
         </section>
       )}
     </article>

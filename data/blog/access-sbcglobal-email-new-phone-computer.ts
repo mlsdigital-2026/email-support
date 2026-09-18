@@ -20,7 +20,7 @@ export const accessSbcglobalEmailOnNewPhoneComputer: Blog = {
 
   category: "Email Setup",
 
-  date: "September 2026",
+  date: "September 16, 2026",
 
   author: "SBC Mail Me Team",
 

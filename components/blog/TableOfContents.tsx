@@ -13,10 +13,8 @@ export default function TableOfContents({
       </h3>
 
       <ul className="space-y-3">
-
         {blog.sections.map((section) => (
           <li key={section.heading}>
-
             <a
               href={`#${section.heading
                 .toLowerCase()
@@ -25,10 +23,32 @@ export default function TableOfContents({
             >
               {section.heading}
             </a>
-
           </li>
         ))}
 
+        {blog.faqs && blog.faqs.length > 0 && (
+          <li>
+            <a
+              href="#frequently-asked-questions"
+              className="block text-slate-600 transition hover:text-blue-600"
+            >
+              Frequently Asked Questions
+            </a>
+          </li>
+        )}
+
+        {blog.finalThoughts && (
+          <li>
+            <a
+              href={`#${blog.finalThoughts.heading
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")}`}
+              className="block text-slate-600 transition hover:text-blue-600"
+            >
+              {blog.finalThoughts.heading}
+            </a>
+          </li>
+        )}
       </ul>
 
     </div>
