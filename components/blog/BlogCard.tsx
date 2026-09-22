@@ -9,7 +9,10 @@ export default function BlogCard({
   blog: Blog;
 }) {
   return (
-    <article className="overflow-hidden rounded-3xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    <Link
+      href={`/blog/${blog.slug}`}
+      className="block overflow-hidden rounded-3xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+    >
 
       <Image
         src={blog.image}
@@ -40,16 +43,13 @@ export default function BlogCard({
             {blog.date}
           </div>
 
-          <Link
-            href={`/blog/${blog.slug}`}
-            className="font-semibold text-blue-600 hover:underline"
-          >
+          <span className="font-semibold text-blue-600">
             Read More →
-          </Link>
+          </span>
 
         </div>
 
       </div>
-    </article>
+    </Link>
   );
 }
