@@ -5,8 +5,10 @@ import { smtpSettingsExplained } from "./smtp-settings-explained";
 import { sbcglobalEmailNotWorking } from "./sbcglobal-email-not-working";
 import { accessSbcglobalEmailOnNewPhoneComputer } from "./access-sbcglobal-email-new-phone-computer";
 import { addSbcglobalEmailToOutlook } from "./add-sbcglobal-email-to-outlook";
+import {sbcglobalEmailPasswordReset} from "./sbcglobal-email-password-reset";
 
 export const blogs = [
+  sbcglobalEmailPasswordReset,
   addSbcglobalEmailToOutlook,
   accessSbcglobalEmailOnNewPhoneComputer,
   resetYourMailPassword,
