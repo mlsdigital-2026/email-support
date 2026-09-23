@@ -348,13 +348,6 @@ export const resetYourMailPassword: Blog = {
   ]
 },
 
-{
-  heading: "Frequently Asked Questions",
-
-  paragraphs: [
-    "The following questions are among the most common concerns users have when resetting an email password."
-  ]
-},
 
 {
   heading: "Conclusion",
