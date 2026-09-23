@@ -26,7 +26,7 @@ export default function BlogPage() {
 
       <BlogHero />
 
-      <section className="py-20">
+      <section className="pb-20 pt-0">
         <div className="mx-auto max-w-7xl px-6">
           <BlogGrid />
         </div>

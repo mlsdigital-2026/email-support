@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { blogs } from "@/data/blog";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import BlogContent from "@/components/blog/BlogContent";
@@ -123,6 +124,17 @@ export default async function BlogArticlePage({ params }: Props) {
           <h1 className="mt-6 max-w-5xl text-5xl font-bold leading-tight text-slate-900">
             {blog.title}
           </h1>
+
+          <div className="mt-8 max-w-5xl overflow-hidden rounded-2xl">
+            <Image
+              src={blog.image}
+              alt={blog.title}
+              width={1000}
+              height={500}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-6 text-slate-600">
             <span>{blog.author}</span>

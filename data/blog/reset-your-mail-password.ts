@@ -357,62 +357,6 @@ export const resetYourMailPassword: Blog = {
 },
 
 {
-  heading: "1. What should I do if I forgot my email password?",
-
-  paragraphs: [
-    "Use your email provider's official password recovery option and verify your identity using one of the available recovery methods."
-  ]
-},
-
-{
-  heading: "2. Can I reset my password without knowing the old password?",
-
-  paragraphs: [
-    "Yes. Most email providers allow password recovery without the previous password, provided you successfully verify that you own the account."
-  ]
-},
-
-{
-  heading: "3. How often should I change my email password?",
-
-  paragraphs: [
-    "There is no fixed schedule, but changing your password whenever you suspect unusual activity or after learning about a data breach is a good security practice."
-  ]
-},
-
-{
-  heading: "4. What makes a strong email password?",
-
-  paragraphs: [
-    "A strong password is long, unique, difficult to guess, and includes a combination of uppercase letters, lowercase letters, numbers, and symbols."
-  ]
-},
-
-{
-  heading: "5. What should I do after resetting my password?",
-
-  paragraphs: [
-    "Enable Two-Factor Authentication, review your recovery information, check connected devices, and monitor recent account activity."
-  ]
-},
-
-{
-  heading: "6. Why can't I receive my verification code?",
-
-  paragraphs: [
-    "This may happen because of incorrect recovery information, temporary network delays, spam filtering, or unavailable mobile service."
-  ]
-},
-
-{
-  heading: "7. Can I recover my email account if I lost access to all recovery methods?",
-
-  paragraphs: [
-    "Many email providers offer additional account verification procedures. The available options depend on your provider and your account history."
-  ]
-},
-
-{
   heading: "Conclusion",
 
   paragraphs: [
@@ -420,7 +364,45 @@ export const resetYourMailPassword: Blog = {
 
     "After creating a new password, strengthen your account further by enabling Two-Factor Authentication, updating your recovery information, reviewing connected devices, and monitoring account activity regularly. These simple habits significantly reduce the likelihood of unauthorized access and help keep your email account secure over time."
   ]
-}
+},
 
-  ]
-};
+  ],
+
+    faqs: [
+      {
+        question: "What should I do if I forgot my email password?",
+        answer:
+          "Use your email provider's official password recovery option and verify your identity using one of the available recovery methods.",
+      },
+      {
+        question: "Can I reset my password without knowing the old password?",
+        answer:
+          "Yes. Most email providers allow password recovery without the previous password, provided you successfully verify that you own the account.",
+      },
+      {
+        question: "How often should I change my email password?",
+        answer:
+          "There is no fixed schedule, but changing your password whenever you suspect unusual activity or after learning about a data breach is a good security practice.",
+      },
+      {
+        question: "What makes a strong email password?",
+        answer:
+          "A strong password is long, unique, difficult to guess, and includes a combination of uppercase letters, lowercase letters, numbers, and symbols.",
+      },
+      {
+        question: "What should I do after resetting my password?",
+        answer:
+          "Enable Two-Factor Authentication, review your recovery information, check connected devices, and monitor recent account activity.",
+      },
+      {
+        question: "Why can't I receive my verification code?",
+        answer:
+          "This may happen because of incorrect recovery information, temporary network delays, spam filtering, or unavailable mobile service.",
+      },
+      {
+        question: "Can I recover my email account if I lost access to all recovery methods?",
+        answer:
+          "Many email providers offer additional account verification procedures. The available options depend on your provider and your account history.",
+      },
+    ],
+  };
