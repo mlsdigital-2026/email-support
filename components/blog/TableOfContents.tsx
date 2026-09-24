@@ -49,6 +49,19 @@ export default function TableOfContents({
             </a>
           </li>
         )}
+
+        {blog.aboutUs && (
+          <li>
+            <a
+              href={`#${blog.aboutUs.heading
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")}`}
+              className="block text-slate-600 transition hover:text-blue-600"
+            >
+              {blog.aboutUs.heading}
+            </a>
+          </li>
+        )}
       </ul>
 
     </div>

@@ -126,7 +126,12 @@ export default function BlogContent({ blog }: { blog: Blog }) {
       )}
 
       {blog.finalThoughts && (
-        <section className="mt-16 scroll-mt-28">
+        <section
+          id={blog.finalThoughts.heading
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")}
+          className="mt-16 scroll-mt-28"
+        >
           <h2 className="mb-5 text-3xl font-bold text-slate-900">
             {blog.finalThoughts.heading}
           </h2>
@@ -154,6 +159,51 @@ export default function BlogContent({ blog }: { blog: Blog }) {
           {blog.finalThoughts.afterBullets && (
             <div className="mt-4">
               {blog.finalThoughts.afterBullets.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
+            </div>
+          )}
+        </section>
+      )}
+
+      {blog.aboutUs && (
+        <section
+          id={blog.aboutUs.heading
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")}
+          className="mt-16 scroll-mt-28"
+        >
+          <h2 className="mb-5 text-3xl font-bold text-slate-900">
+            {blog.aboutUs.heading}
+          </h2>
+
+          {blog.aboutUs.paragraphs.map((paragraph, i) => (
+            <p
+              key={i}
+              className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
+          ))}
+
+          {blog.aboutUs.bullets && (
+            <ul className="list-disc space-y-3 pl-6">
+              {blog.aboutUs.bullets.map((item, i) => (
+                <li
+                  key={i}
+                  className="[&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
+              ))}
+            </ul>
+          )}
+
+          {blog.aboutUs.afterBullets && (
+            <div className="mt-4">
+              {blog.aboutUs.afterBullets.map((paragraph, i) => (
                 <p
                   key={i}
                   className="mb-5 leading-8 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-blue-700"

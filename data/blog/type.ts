@@ -43,5 +43,7 @@ export interface Blog {
 
   finalThoughts?: BlogSection;
 
+  aboutUs?: BlogSection;
+
   tags?: string[];
 }
