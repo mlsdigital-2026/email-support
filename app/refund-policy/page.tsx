@@ -157,7 +157,7 @@ export default function RefundPolicyPage() {
           </p>
 
           <p className="mt-6 font-semibold text-slate-900">
-            Email: info@sbcmailme.com
+            Email: <a href="mailto:info@sbcmailme.com" className="text-blue-600 underline hover:text-blue-700">info@sbcmailme.com</a>
           </p>
         </section>
 

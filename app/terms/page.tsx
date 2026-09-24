@@ -163,7 +163,7 @@ export default function TermsAndConditionsPage() {
           </p>
 
           <p className="mt-4 font-semibold">
-            Email: info@sbcmailme.com
+            Email: <a href="mailto:info@sbcmailme.com" className="text-blue-600 underline hover:text-blue-700">info@sbcmailme.com</a>
           </p>
         </section>
       </section>

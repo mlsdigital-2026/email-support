@@ -7,8 +7,10 @@ import { accessSbcglobalEmailOnNewPhoneComputer } from "./access-sbcglobal-email
 import { addSbcglobalEmailToOutlook } from "./add-sbcglobal-email-to-outlook";
 import {sbcglobalEmailPasswordReset} from "./sbcglobal-email-password-reset";
 import {hackedEmailAccountRecovery} from "./hacked-email-account-recovery";
+import { signsEmailAccountCompromised } from "./signs-email-account-compromised";
 
 export const blogs = [
+  signsEmailAccountCompromised,
   hackedEmailAccountRecovery,
   sbcglobalEmailPasswordReset,
   addSbcglobalEmailToOutlook,
