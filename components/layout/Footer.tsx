@@ -1,15 +1,5 @@
 import Link from "next/link";
-// import {
-//   FaFacebookF,
-//   FaXTwitter,
-//   FaLinkedinIn,
-//   FaGithub,
-// } from "react-icons/fa6";
-import {
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -21,221 +11,168 @@ const quickLinks = [
 ];
 
 const services = [
-  {
-    name: "Account Recovery",
-    href: "/services/account-recovery",
-  },
-  {
-    name: "Password Reset",
-    href: "/services/password-reset",
-  },
-  {
-    name: "Login Help",
-    href: "/services/login-help",
-  },
-  {
-    name: "Email Security",
-    href: "/services/email-security",
-  },
+  { name: "Account Recovery", href: "/services/account-recovery" },
+  { name: "Password Reset", href: "/services/password-reset" },
+  { name: "Login Help", href: "/services/login-help" },
+  { name: "Email Security", href: "/services/email-security" },
 ];
 
 const resources = [
-  {
-    name: "Latest Articles",
-    href: "/blog",
-  },
-  {
-    name: "FAQs",
-    href: "/faq",
-  },
-  // {
-  //   name: "Support Center",
-  //   href: "/services",
-  // },
-  {
-    name: "Contact Us",
-    href: "/contact",
-  },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQs", href: "/faq" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
-
-      <div className="mx-auto max-w-7xl px-6 py-20">
-
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-[#031728] text-slate-300">
+      {/* Main Footer */}
+      <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-10">
 
           {/* Brand */}
+          <div className="lg:pr-12">
+            <Link
+              href="/"
+              aria-label="SBCMailMe home"
+              className="mb-6 inline-flex h-[68px] w-[145px] items-center justify-center overflow-hidden rounded-xl bg-white shadow-[0_0_24px_rgba(255,255,255,0.16)]"
+            >
+              <Image
+                src="/logo.png"
+                alt="SBCMailMe"
+                width={220}
+                height={72}
+                priority
+                className="h-auto w-[235px] max-w-none object-contain"
+              />
+            </Link>
 
-         {/* Disclaimer */}
-
-<div>
-
-  <h2 className="text-2xl font-bold text-white">
-    Disclaimer
-  </h2>
-
-  <p className="mt-6 leading-8 text-slate-300">
-    SBC Mail Me is an independent third-party provider of email account
-    recovery, password recovery, troubleshooting, and technical guidance.
-    We are not affiliated with, authorized by, endorsed by, or sponsored
-    by any email service provider or brand.
-  </p>
-
-  <p className="mt-6 leading-8 text-slate-400">
-    All trademarks, logos, brand names, and product names are the property
-    of their respective owners and are used solely for identification
-    purposes.
-  </p>
-
-</div>
+            <p className="max-w-md text-[15px] leading-7 text-slate-300">
+            SBC Mail Me provides clear, practical guidance for email account
+  access, password recovery, login issues, and email security. We help
+  users understand common email problems and follow straightforward
+  steps toward resolving them.
+            </p>
+          </div>
 
           {/* Quick Links */}
-
           <div>
-
-            <h3 className="mb-6 text-xl font-semibold text-white">
+            <h3 className="mb-5 text-base font-semibold text-white">
               Quick Links
             </h3>
 
-            <ul className="space-y-4">
-
+            <ul className="space-y-3.5">
               {quickLinks.map((item) => (
-
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="transition hover:text-blue-400"
+                    className="text-[15px] text-slate-300 transition-colors hover:text-blue-400"
                   >
                     {item.name}
                   </Link>
                 </li>
-
               ))}
-
             </ul>
-
           </div>
 
           {/* Services */}
-
           <div>
-
-            <h3 className="mb-6 text-xl font-semibold text-white">
+            <h3 className="mb-5 text-base font-semibold text-white">
               Services
             </h3>
 
-            <ul className="space-y-4">
-
+            <ul className="space-y-3.5">
               {services.map((item) => (
-
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="transition hover:text-blue-400"
+                    className="text-[15px] text-slate-300 transition-colors hover:text-blue-400"
                   >
                     {item.name}
                   </Link>
                 </li>
-
               ))}
-
             </ul>
-
           </div>
 
-          {/* Providers */}
-
+          {/* Resources */}
           <div>
-
-            <h3 className="mb-6 text-xl font-semibold text-white">
+            <h3 className="mb-5 text-base font-semibold text-white">
               Resources
             </h3>
 
-            <ul className="space-y-4">
-
+            <ul className="space-y-3.5">
               {resources.map((item) => (
-  <li key={item.name}>
-    <Link
-      href={item.href}
-      className="transition hover:text-blue-400"
-    >
-      {item.name}
-    </Link>
-  </li>
-))}
-
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-[15px] text-slate-300 transition-colors hover:text-blue-400"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-
           </div>
-
         </div>
 
+        {/* Disclaimer */}
+        {/* Disclaimer */}
+<div className="mt-14 border-t border-slate-700/70 pt-9">
+  <div className="mx-auto max-w-5xl text-center">
+    <h2 className="mb-4 text-xl font-semibold text-white">
+      Disclaimer
+    </h2>
+
+    <p className="text-[15px] leading-7 text-slate-300">
+      SBC Mail Me is an independent third-party provider of email account recovery, password recovery, troubleshooting, and technical guidance. We are not affiliated with, authorized by, endorsed by, or sponsored by any email service provider or brand.
+    </p>
+
+    <p className="mt-4 text-[15px] leading-7 text-slate-300">
+      All trademarks, logos, brand names, and product names are the property of their respective owners and are used solely for identification purposes.
+    </p>
+  </div>
+</div>
       </div>
 
-      {/* Bottom */}
-
-      <div className="border-t border-slate-800">
-
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-8 md:flex-row">
-
-         <p className="text-sm text-slate-400">
-  © {new Date().getFullYear()}{" "}
-  <Link href="/" className="hover:text-blue-400">
-    SBCMailMe.com
-  </Link>
-  . All rights reserved.
-</p>
-
-          <div className="flex gap-5">
-
-            {/* <Link href="#" className="hover:text-blue-400">
-              <FaFacebookF size={20} />
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800/80">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-center md:flex-row md:px-8 md:text-left">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()}{" "}
+            <Link
+              href="/"
+              className="text-slate-400 transition-colors hover:text-blue-400"
+            >
+              SBCMailMe.com
             </Link>
+            . All rights reserved.
+          </p>
 
-            <Link href="#" className="hover:text-blue-400">
-              <FaXTwitter size={20} />
-            </Link>
-
-            <Link href="#" className="hover:text-blue-400">
-              <FaLinkedinIn size={20} />
-            </Link>
-
-            <Link href="#" className="hover:text-blue-400">
-              <FaGithub size={20} />
-            </Link> */}
-
-          </div>
-
-          <div className="flex gap-6 text-sm">
-
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
             <Link
               href="/privacy-policy"
-              className="hover:text-blue-400"
+              className="text-slate-500 transition-colors hover:text-blue-400"
             >
               Privacy Policy
             </Link>
 
             <Link
               href="/terms"
-              className="hover:text-blue-400"
+              className="text-slate-500 transition-colors hover:text-blue-400"
             >
               Terms & Conditions
             </Link>
-             <Link
+
+            <Link
               href="/refund-policy"
-              className="hover:text-blue-400"
+              className="text-slate-500 transition-colors hover:text-blue-400"
             >
               Refund Policy
             </Link>
-
           </div>
-
         </div>
-
       </div>
-
     </footer>
   );
 }
